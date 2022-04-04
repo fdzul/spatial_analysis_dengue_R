@@ -1,0 +1,57 @@
+---
+title: "Instalación de Paquetes en R"
+author: "Felipe Antonio Dzul Manzanilla"
+date: "2022-01-24"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: 
+      - default
+      - default-fonts
+      - duke-blue
+      - hygge-duke
+      - libs/cc-fonts.css
+      - libs/figure-captions.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: center
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringanExtra, echo = FALSE}
+xaringanExtra::use_progress_bar(color = "#0051BA", location = "top")
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+```{r share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "https://www.ssaver.gob.mx/wp-content/uploads/2021/04/cropped-logoencabezado6abr2.jpg",
+  width = "310px",
+  height = "428px",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
+```
+
+# **Temas**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+- Instalación de paquetes en CRAN.
+- Instalación de paquetes en github.
+- Instalación de paquetes tar.gz
+- Instalación de paquetes para el análisis espacial y análisis espacio temporal
+- Instalación de paquetes desarrollados por el departamento
+
+
+
+
