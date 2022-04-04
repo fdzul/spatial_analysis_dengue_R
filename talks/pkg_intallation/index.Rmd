@@ -65,9 +65,13 @@ xaringanExtra::use_logo(
 #install.packages("ggplot2")
 ```
 
+---
+# **github**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
+[github](https://github.com/)
 
-
+[https://github.com/](https://github.com/)
 
 
