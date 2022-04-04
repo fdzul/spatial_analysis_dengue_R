@@ -17,7 +17,9 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
-class: center
+
+class: center, left
+
 ```{r xaringan-fit-screen, echo=FALSE}
 xaringanExtra::use_fit_screen()
 ```
@@ -43,15 +45,28 @@ xaringanExtra::use_logo(
 )
 ```
 
+
 # **Temas**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 - Instalación de R.
+&nbsp;
+
 - Instalación de RStudio.
+&nbsp;
+
 - Instalación de paquetes en CRAN.
+&nbsp;
+
 - Instalación de paquetes en github.
+&nbsp;
+
 - Instalación de paquetes tar.gz
+&nbsp;
+
 - Instalación de paquetes para el análisis espacial y análisis espacio temporal.
+&nbsp;
+
 - Instalación de paquetes desarrollados por el departamento.
 
 ---
@@ -84,5 +99,24 @@ xaringanExtra::use_logo(
 
 
 
+---
 
+# Thanks!
+
+&nbsp;
+
+- ***Biografia*** : https://fdzul.github.io/web_site_fadm/
+- ***email***       :     felipe.dzul.m@gmail.com
+
+- ***celular***     :     228 229 3419
+
+- ***slides***:     https://animated-longma-729cee.netlify.app/talks/pkg_intallation/#1
+
+
+
+
+.footnote[La presentación fue creada via [**xaringan**](https://github.com/yihui/xaringan),
+[**revealjs**](https://revealjs.com/),
+[remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr),
+& [R Markdown](https://rmarkdown.rstudio.com) en [R]() & [RStudio](2.R_Scripts/libs/rstudio_leaflet/rstudio_leaflet.css).]
 
