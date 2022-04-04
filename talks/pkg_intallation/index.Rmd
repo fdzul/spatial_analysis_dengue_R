@@ -46,11 +46,13 @@ xaringanExtra::use_logo(
 # **Temas**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+- Instalación de R.
+- Instalación de RStudio.
 - Instalación de paquetes en CRAN.
 - Instalación de paquetes en github.
 - Instalación de paquetes tar.gz
-- Instalación de paquetes para el análisis espacial y análisis espacio temporal
-- Instalación de paquetes desarrollados por el departamento
+- Instalación de paquetes para el análisis espacial y análisis espacio temporal.
+- Instalación de paquetes desarrollados por el departamento.
 
 ---
 # **CRAN**
