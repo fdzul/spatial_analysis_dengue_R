@@ -75,3 +75,12 @@ xaringanExtra::use_logo(
 [https://github.com/](https://github.com/)
 
 
+---
+# **tar.gz**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+
+
+
+
