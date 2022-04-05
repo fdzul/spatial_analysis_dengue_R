@@ -79,7 +79,7 @@ xaringanExtra::use_logo(
 [https://cran.r-project.org/](https://cran.r-project.org/)
 
 ```{r, echo=TRUE}
-install.packages("ggplot2")
+#install.packages("ggplot2")
 ```
 
 ---
