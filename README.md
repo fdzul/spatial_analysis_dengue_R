@@ -45,33 +45,6 @@ general interesado en el tema.
 
 ## Temario
 
-<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-Temas
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Hotspots de casos de Dengue
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Hotspots de la abundancia de Huevos
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Definición de las área de riesgo de Transmisión
-</td>
-</tr>
-</tbody>
-</table>
-
 ## Paquetes
 
 1)  [denhotspots](https://fdzul.github.io/denhotspots/)

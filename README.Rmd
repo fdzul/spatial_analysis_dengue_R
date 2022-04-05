@@ -47,15 +47,7 @@ El curso esta complementado con el desarrollo de paquetes en R y el [manual para
 
 ## Temario
 
-```{r temario, echo=FALSE}
-tibble::tibble(Temas = c("Hotspots de Casos",
-                         "Hotspots de la abundancia de Huevos",
-                         "Definición de las área de riesgo de Transmisión"),
-               ) |>
-    kableExtra::kable() |>
-    kableExtra::kable_classic()
 
-```
 
 
 
