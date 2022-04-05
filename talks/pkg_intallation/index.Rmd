@@ -165,6 +165,24 @@ Para archivos binarios en MACOS (tgz)
 # **Paquetes para el análisis espacial**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+Primero se debe entrar a la página de [CRAN task view](https://cran.r-project.org/web/views/)
+
+
+Instalación de ctv (CRAN task View)
+```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
+#install.packages("ctv")
+```
+
+Instalar todos los paquetes para el análisis espacial
+```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
+# ctv::install.views("Spatial")
+```
+
+Instalar todos los paquetes para el análisis espacio-temporal
+```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
+# ctv::install.views("SpatioTemporal")
+```
+
 
 ---
 # **Paquetes Desarollados por vectores**
