@@ -162,12 +162,12 @@ Para archivos binarios en MACOS (tgz)
 
 
 ---
-# **Instalación de Paquetes para el análisis espacial**
+# **Paquetes para el análisis espacial**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
 ---
-# **Instalación de Paquetes Desarollados por vectores**
+# **Paquetes Desarollados por vectores**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
@@ -178,6 +178,7 @@ Para archivos binarios en MACOS (tgz)
 &nbsp;
 
 - ***Biografia*** : https://fdzul.github.io/web_site_fadm/
+
 - ***email***       :     felipe.dzul.m@gmail.com
 
 - ***celular***     :     228 229 3419
