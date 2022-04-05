@@ -272,7 +272,46 @@ Felipe Antonio Dzul Manzanilla
 </tbody>
 </table>
 
-### Módulo IV
+### Módulo IV. Modelo estratégico de focalización del dengue en las localidades urbanas endémicas de México.
+
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Tema
+</th>
+<th style="text-align:left;">
+Instructor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Hotspots de casos
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hotspots del vector
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Definición de riesgo de transmisión
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Paquetes
 
