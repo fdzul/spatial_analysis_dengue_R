@@ -117,16 +117,19 @@ tibble::tibble(Tema = c("Bajar las bases de Ovitrampas",
 ```{r temario_modulo_4, echo=FALSE}
 tibble::tibble(Tema = c("Hotspots de casos",
                         "Hotspots del vector",
-                        "Definición de riesgo de transmisión"),
+                        "Definición de riesgo de transmisión",
+                        "Visualización de riesgo de transmisión"),
                Instructor = c(rep("Felipe Antonio Dzul Manzanilla", 
-                                  times = 3))) |>
+                                  times = 4))) |>
     kableExtra::kable() |>
     kableExtra::kable_classic()
 
 ```
 
 
+### Módulo IV. Cadenas de tranmisión del dengue en las localidades urbanas endémicas de México.
 
+### Módulo V. Log Gaussian Cox Process Espacial en las localidades urbanas endémicas de México.
 
 
 ## Paquetes

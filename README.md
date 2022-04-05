@@ -310,8 +310,20 @@ Definición de riesgo de transmisión
 Felipe Antonio Dzul Manzanilla
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+Visualización de riesgo de transmisión
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
 </tbody>
 </table>
+
+### Módulo IV. Cadenas de tranmisión del dengue en las localidades urbanas endémicas de México.
+
+### Módulo V. Log Gaussian Cox Process Espacial en las localidades urbanas endémicas de México.
 
 ## Paquetes
 
