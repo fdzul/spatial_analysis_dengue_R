@@ -83,9 +83,8 @@ En la consola de R o RStudio se corre el siguiente comando para
 para instalar el paquete:
 
 Para un paquete.
-```{r, echo=TRUE}
+```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
 #install.packages("ggplot2")
-#library(ggplot2)
 ```
 
 Para varios paquetes.
@@ -96,7 +95,7 @@ Para varios paquetes.
 
 Con el siguiente comando se puede verificar que se instalo correctamente.
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
 library(ggplot2)
 ```
 
