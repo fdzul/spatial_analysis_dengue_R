@@ -123,6 +123,14 @@ Instalación de Paquetes desarrollos por SESVER-CENAPRECE-InDRE
 Felipe Antonio Dzul Manzanilla
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+Datos espaciales
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
 </tbody>
 </table>
 
