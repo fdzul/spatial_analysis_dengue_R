@@ -47,7 +47,18 @@ El curso esta complementado con el desarrollo de paquetes en R y el [manual para
 
 ## Temario
 
+```{r temario, echo=FALSE}
+tibble::tibble(Temas = c("Bases del SINAVE",
+                         "Geocodificación",
+                         "Extraer la localidad",
+                         "Contar los casos por polygono",
+                         "Calcular los Hotspots",
+                         "Visualizar los Hotspots"),
+               ) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic()
 
+```
 
 
 

@@ -45,6 +45,48 @@ general interesado en el tema.
 
 ## Temario
 
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Temas
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bases del SINAVE
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Geocodificación
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Extraer la localidad
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Contar los casos por polygono
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Calcular los Hotspots
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Visualizar los Hotspots
+</td>
+</tr>
+</tbody>
+</table>
+
 ## Paquetes
 
 1)  [denhotspots](https://fdzul.github.io/denhotspots/)
