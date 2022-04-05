@@ -31,13 +31,38 @@ epidemiológica.
 -   5)  Implementar el modelo Log Gaussian Cox Process en las
         localidades urbanas endémicas de México.
 
-## Audiencia del curso.
+## Audiencia.
 
 El curso esta complementado con el desarrollo de paquetes en R y el
-manual para la identificación de los hotspots en las localidades urbanas
-endémicas. tanto los cursos, el parquete y el manual, no solo está
-dirigido al personal operativo, mandos medios y directivos de los
-Programas de Prevención y Control de las arbovirosis transmitidas por
-Aedes de la Secretaria de Salud de México, sino también a la comunidad
-académica relacionada con la investigación operativa sobre los hotspots
-de dengue y al público en general interesado en el tema.
+[manual para la identificación de los hotspots en las localidades
+urbanas endémicas](https://fdzul.github.io/manual_hotspots/). tanto los
+cursos, el parquete y el manual, no solo está dirigido al personal
+operativo, mandos medios y directivos de los Programas de Prevención y
+Control de las arbovirosis transmitidas por Aedes de la Secretaria de
+Salud de México, sino también a la comunidad académica relacionada con
+la investigación operativa sobre los hotspots de dengue y al público en
+general interesado en el tema.
+
+## Temario
+
+## Paquetes
+
+1)  [denhotspots](https://fdzul.github.io/denhotspots/)
+
+2)  [deneggs](https://fdzul.github.io/deneggs/)
+
+3)  [boldenr](https://fdzul.github.io/boldenr/)
+
+4)  [rgeomex](https://fdzul.github.io/rgeomex/)
+
+## Manuales
+
+1)  [manual para la identificación de los hotspots en las localidades
+    urbanas endémicas](https://fdzul.github.io/manual_hotspots/)
+
+2)  [Modelo Estratégico de Focalización del Dengue en áreas urbanas de
+    México](https://fdzul.github.io/strategic_mod_den_targeting/)
+
+## Biografia
+
+[Felipe Antonio Dzul Manzanilla](https://fdzul.github.io/web_site_fadm/)
