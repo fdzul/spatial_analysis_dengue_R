@@ -304,7 +304,7 @@ Felipe Antonio Dzul Manzanilla
 </tr>
 <tr>
 <td style="text-align:left;">
-Definición de riesgo de transmisión
+Definición del riesgo de transmisión
 </td>
 <td style="text-align:left;">
 Felipe Antonio Dzul Manzanilla
@@ -312,7 +312,7 @@ Felipe Antonio Dzul Manzanilla
 </tr>
 <tr>
 <td style="text-align:left;">
-Visualización de riesgo de transmisión
+Visualización del riesgo de transmisión
 </td>
 <td style="text-align:left;">
 Felipe Antonio Dzul Manzanilla

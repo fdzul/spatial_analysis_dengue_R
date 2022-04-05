@@ -117,8 +117,8 @@ tibble::tibble(Tema = c("Bajar las bases de Ovitrampas",
 ```{r temario_modulo_4, echo=FALSE}
 tibble::tibble(Tema = c("Hotspots de casos",
                         "Hotspots del vector",
-                        "Definición de riesgo de transmisión",
-                        "Visualización de riesgo de transmisión"),
+                        "Definición del riesgo de transmisión",
+                        "Visualización del riesgo de transmisión"),
                Instructor = c(rep("Felipe Antonio Dzul Manzanilla", 
                                   times = 4))) |>
     kableExtra::kable() |>
