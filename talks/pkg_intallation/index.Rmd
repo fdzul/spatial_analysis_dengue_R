@@ -18,7 +18,7 @@ output:
       countIncrementalSlides: false
 ---
 
-class: center, left
+class: left, top
 
 ```{r xaringan-fit-screen, echo=FALSE}
 xaringanExtra::use_fit_screen()
