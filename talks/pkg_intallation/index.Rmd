@@ -123,6 +123,12 @@ Instalación de remotes
 #install.packages("remotes")
 ```
 
+& a continuacion correr el siguiente comando.
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
+devtools::install_github("fdzul/dendata")
+
+```
 
 
 ---
