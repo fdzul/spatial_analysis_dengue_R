@@ -30,3 +30,14 @@ epidemiológica.
 
 -   5)  Implementar el modelo Log Gaussian Cox Process en las
         localidades urbanas endémicas de México.
+
+## Audiencia del curso.
+
+El curso esta complementado con el desarrollo de paquetes en R y el
+manual para la identificación de los hotspots en las localidades urbanas
+endémicas. tanto los cursos, el parquete y el manual, no solo está
+dirigido al personal operativo, mandos medios y directivos de los
+Programas de Prevención y Control de las arbovirosis transmitidas por
+Aedes de la Secretaria de Salud de México, sino también a la comunidad
+académica relacionada con la investigación operativa sobre los hotspots
+de dengue y al público en general interesado en el tema.
