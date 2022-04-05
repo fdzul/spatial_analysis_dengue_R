@@ -117,7 +117,7 @@ Felipe Antonio Dzul Manzanilla
 </tr>
 <tr>
 <td style="text-align:left;">
-Instalación de Paquetes desarrollos por SESVER-CENAPRECE-InDRE
+Instalación de Paquetes desarrollados por SESVER-CENAPRECE-InDRE
 </td>
 <td style="text-align:left;">
 Felipe Antonio Dzul Manzanilla

@@ -58,7 +58,7 @@ tibble::tibble(Tema = c("Instalar R",
                          "Instalación de Paquetes desde github",
                          "Instalación de Paquetes desde un archivo",
                          "Instalación de Paquetes para el análisis espacial",
-                         "Instalación de Paquetes desarrollos por SESVER-CENAPRECE-InDRE",
+                         "Instalación de Paquetes desarrollados por SESVER-CENAPRECE-InDRE",
                         "Datos espaciales"),
                Instructor = c(rep("Felipe Antonio Dzul Manzanilla", times = 9))) |>
     kableExtra::kable() |>
