@@ -155,9 +155,9 @@ install.packages("C:/Users/felip/Downloads/ggplot2_3.3.5.zip",
 Para archivos binarios en MACOS (tgz)
 
 ```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
-# install.packages("C:/Users/felip/Downloads/ggplot2_3.3.5.tgz", 
-#                 repos = NULL, 
-#                 type = "win.binary")
+ install.packages("C:/Users/felip/Downloads/ggplot2_3.3.5.tgz", 
+                 repos = NULL, 
+                 type = "source")
 ```
 
 
