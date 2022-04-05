@@ -93,6 +93,21 @@ tibble::tibble(Temas = c("Bases del SINAVE",
 ```
 
 
+```{r temario_modulo_3, echo=FALSE}
+tibble::tibble(Tema = c("Bajar las bases de Ovitrampas",
+                        "Análisis Geoestadístico con INLA",
+                        "Algoritmo para el Análisis Geoestadístico",
+                        "Visualización de la predicion de huevos",
+                        "Hotspots de huevos e Intensidad",
+                        "Visualizacion de los hotspots de huevos"),
+               Instructor = c("Luis Hernández-Herrera",
+                              rep("Felipe Antonio Dzul Manzanilla", 
+                                  times = 5))) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic()
+
+```
+
 
 ## Paquetes
 

@@ -206,6 +206,68 @@ Felipe Antonio Dzul Manzanilla
 </tr>
 </tbody>
 </table>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Tema
+</th>
+<th style="text-align:left;">
+Instructor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bajar las bases de Ovitrampas
+</td>
+<td style="text-align:left;">
+Luis Hernández-Herrera
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Análisis Geoestadístico con INLA
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Algoritmo para el Análisis Geoestadístico
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Visualización de la predicion de huevos
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hotspots de huevos e Intensidad
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Visualizacion de los hotspots de huevos
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+</tbody>
+</table>
 
 ## Paquetes
 
