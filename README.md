@@ -137,7 +137,8 @@ Felipe Antonio Dzul Manzanilla
 -   [Slide
     1](https://animated-longma-729cee.netlify.app/talks/pkg_intallation/#1)
 
--   [Slide 2]()
+-   [Slide
+    2](https://animated-longma-729cee.netlify.app/talks/spatial_data/#1)
 
 ### Módulo II. Hotspots de los casos de dengue en las localidades urbanas endémicas de México.
 
