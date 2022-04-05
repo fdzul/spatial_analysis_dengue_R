@@ -1,7 +1,7 @@
 ---
 title: "Instalación de Paquetes en R"
 author: "Felipe Antonio Dzul Manzanilla"
-date: "2022-01-24"
+date: '2022: Last compiled `r Sys.Date()`'
 output:
   xaringan::moon_reader:
     lib_dir: libs
