@@ -205,7 +205,7 @@ El Departamento de Prevención y Control de Enfermedades Transmitidas por Vector
 
 &nbsp;
 
-- ***Biografia*** : https://fdzul.github.io/web_site_fadm/
+- ***Bio*** : https://fdzul.github.io/web_site_fadm/
 
 - ***email***       :     felipe.dzul.m@gmail.com
 
