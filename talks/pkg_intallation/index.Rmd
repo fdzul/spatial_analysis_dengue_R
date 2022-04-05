@@ -78,9 +78,29 @@ xaringanExtra::use_logo(
 
 [https://cran.r-project.org/](https://cran.r-project.org/)
 
+
+En la consola de R o RStudio se corre el siguiente comando para
+para instalar el paquete:
+
+Para un paquete.
 ```{r, echo=TRUE}
 #install.packages("ggplot2")
+#library(ggplot2)
 ```
+
+Para varios paquetes.
+```{r, echo=TRUE}
+#install.packages(c("ggplot2", "sf", "tmap"))
+#library(ggplot2)
+```
+
+Con el siguiente comando se puede verificar que se instalo correctamente.
+
+```{r, echo=TRUE}
+library(ggplot2)
+```
+
+
 
 ---
 # **github**
