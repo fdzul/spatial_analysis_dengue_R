@@ -80,7 +80,7 @@ xaringanExtra::use_logo(
 
 - ***celular***     :     228 229 3419
 
-- ***slides***:     https://animated-longma-729cee.netlify.app/talks/pkg_intallation/#1
+- ***slides***:     https://animated-longma-729cee.netlify.app/talks/spatial_data/#1
 
 
 
