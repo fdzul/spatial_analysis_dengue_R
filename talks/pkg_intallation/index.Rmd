@@ -132,8 +132,12 @@ devtools::install_github("fdzul/dendata")
 
 
 ---
-# **tar.gz**
+# **tar.gz** or **zip**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r}
+install.packages("C:/Users/felip/Downloads/ggplot2_3.3.5.zip", repos = NULL, type = "win.binary")
+```
 
 
 
