@@ -53,6 +53,9 @@ general interesado en el tema.
 <th style="text-align:left;">
 Temas
 </th>
+<th style="text-align:left;">
+Instructor
+</th>
 </tr>
 </thead>
 <tbody>
@@ -60,30 +63,56 @@ Temas
 <td style="text-align:left;">
 Bases del SINAVE
 </td>
+<td style="text-align:left;">
+Luis Hernández-Herrera
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Geocodificación
+Geocodificación en Bachgeo
+</td>
+<td style="text-align:left;">
+Pedro Santamaría
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Geocodificación en R
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Extraer la localidad
 </td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Contar los casos por polygono
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Calcular los Hotspots
 </td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
 </tr>
 <tr>
 <td style="text-align:left;">
 Visualizar los Hotspots
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
 </td>
 </tr>
 </tbody>
