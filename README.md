@@ -16,20 +16,20 @@ epidemiológica.
 
 ## Objetivos específicos.
 
--   1)  Identificar los hotspots de los casos de dengue en las
-        localidades urbanas endémicas de México.
+1)  Identificar los hotspots de los casos de dengue en las localidades
+    urbanas endémicas de México.
 
--   2)  Identificar los hotspots de la abundancia de huevos del vector
-        del dengue en las localidades urbanas endémicas de México.
+2)  Identificar los hotspots de la abundancia de huevos del vector del
+    dengue en las localidades urbanas endémicas de México.
 
--   3)  Desarrollar un modelo estratégico de focalización del dengue en
-        las localidades urbanas endémicas de México.
+3)  Desarrollar un modelo estratégico de focalización del dengue en las
+    localidades urbanas endémicas de México.
 
--   4)  Identificar las cadenas de tranmisión activa del dengue en las
-        localidades urbanas endémicas de México.
+4)  Identificar las cadenas de tranmisión activa del dengue en las
+    localidades urbanas endémicas de México.
 
--   5)  Implementar el modelo Log Gaussian Cox Process en las
-        localidades urbanas endémicas de México.
+5)  Implementar el modelo Log Gaussian Cox Process en las localidades
+    urbanas endémicas de México.
 
 ## Audiencia.
 
@@ -44,6 +44,8 @@ la investigación operativa sobre los hotspots de dengue y al público en
 general interesado en el tema.
 
 ## Temario
+
+### I) Identificar los hotspots de los casos de dengue en las localidades urbanas endémicas de México.
 
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
