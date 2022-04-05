@@ -45,7 +45,88 @@ general interesado en el tema.
 
 ## Temario
 
-### I) Identificar los hotspots de los casos de dengue en las localidades urbanas endémicas de México.
+## Modulo I. Requisitos Básicos
+
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Tema
+</th>
+<th style="text-align:left;">
+Instructor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Instalar R
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Instalar RStudio
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Introducción a RStudio
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Instalación de Paquetes desde CRAN
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Instalación de Paquetes desde github
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Instalación de Paquetes desde un archivo
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Instalación de Paquetes para el análisis espacial
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Instalación de Paquetes desarrollos por SESVER-CENAPRECE-InDRE
+</td>
+<td style="text-align:left;">
+Felipe Antonio Dzul Manzanilla
+</td>
+</tr>
+</tbody>
+</table>
+
+### Modulo II. Hotspots de los casos de dengue en las localidades urbanas endémicas de México.
 
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>

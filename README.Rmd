@@ -47,9 +47,30 @@ El curso esta complementado con el desarrollo de paquetes en R y el [manual para
 
 ## Temario
 
-### I) Identificar los hotspots de los casos de dengue en las localidades urbanas endémicas de México.
 
-```{r temario, echo=FALSE}
+## Modulo I. Requisitos Básicos
+
+```{r temario_modulo_1, echo=FALSE}
+tibble::tibble(Tema = c("Instalar R",
+                         "Instalar RStudio",
+                         "Introducción a RStudio",
+                         "Instalación de Paquetes desde CRAN",
+                         "Instalación de Paquetes desde github",
+                         "Instalación de Paquetes desde un archivo",
+                         "Instalación de Paquetes para el análisis espacial",
+                         "Instalación de Paquetes desarrollos por SESVER-CENAPRECE-InDRE"),
+               Instructor = c(rep("Felipe Antonio Dzul Manzanilla", times = 8))) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic()
+
+```
+
+
+
+
+### Modulo II. Hotspots de los casos de dengue en las localidades urbanas endémicas de México.
+
+```{r temario_modulo_II, echo=FALSE}
 tibble::tibble(Temas = c("Bases del SINAVE",
                          "Geocodificación en Bachgeo",
                          "Geocodificación en R",
