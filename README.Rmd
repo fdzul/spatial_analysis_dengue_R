@@ -1,5 +1,6 @@
 ---
 output: github_document
+always_allow_html: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -46,6 +47,17 @@ El curso esta complementado con el desarrollo de paquetes en R y el [manual para
 
 ## Temario
 
+```{r temario, echo=FALSE}
+tibble::tibble(Temas = c("Hotspots de Casos",
+                         "Hotspots de la abundancia de Huevos",
+                         "Definición de las área de riesgo de Transmisión"),
+               ) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic()
+
+```
+
+
 
 ## Paquetes
 
@@ -64,10 +76,17 @@ El curso esta complementado con el desarrollo de paquetes en R y el [manual para
 2) [Modelo Estratégico de Focalización del Dengue en áreas urbanas de México](https://fdzul.github.io/strategic_mod_den_targeting/)
 
 
-## Biografia 
-
+## Instructores 
 
 [Felipe Antonio Dzul Manzanilla](https://fdzul.github.io/web_site_fadm/)
+
+[Fabian Correa Morales]()
+
+[Luis Hernández-Herrera]()
+
+[Pedro Santamaria]()
+
+[Heron-Huerta]()
 
 
 
