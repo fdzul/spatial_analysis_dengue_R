@@ -48,7 +48,7 @@ El curso esta complementado con el desarrollo de paquetes en R y el [manual para
 ## Temario
 
 
-## Modulo I. Requisitos Básicos
+## Módulo I. Requisitos Básicos
 
 ```{r temario_modulo_1, echo=FALSE}
 tibble::tibble(Tema = c("Instalar R",
@@ -69,7 +69,7 @@ tibble::tibble(Tema = c("Instalar R",
 
 
 
-### Modulo II. Hotspots de los casos de dengue en las localidades urbanas endémicas de México.
+### Módulo II. Hotspots de los casos de dengue en las localidades urbanas endémicas de México.
 
 ```{r temario_modulo_II, echo=FALSE}
 tibble::tibble(Temas = c("Bases del SINAVE",
@@ -93,6 +93,8 @@ tibble::tibble(Temas = c("Bases del SINAVE",
 ```
 
 
+### Módulo III. Hotspots de la abundancia de huevos del vector del dengue en las localidades urbanas endémicas de México
+
 ```{r temario_modulo_3, echo=FALSE}
 tibble::tibble(Tema = c("Bajar las bases de Ovitrampas",
                         "Análisis Geoestadístico con INLA",
@@ -108,6 +110,8 @@ tibble::tibble(Tema = c("Bajar las bases de Ovitrampas",
 
 ```
 
+
+### Módulo IV
 
 ## Paquetes
 

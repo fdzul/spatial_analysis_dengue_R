@@ -45,7 +45,7 @@ general interesado en el tema.
 
 ## Temario
 
-## Modulo I. Requisitos Básicos
+## Módulo I. Requisitos Básicos
 
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
@@ -134,7 +134,7 @@ Felipe Antonio Dzul Manzanilla
 </tbody>
 </table>
 
-### Modulo II. Hotspots de los casos de dengue en las localidades urbanas endémicas de México.
+### Módulo II. Hotspots de los casos de dengue en las localidades urbanas endémicas de México.
 
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
@@ -206,6 +206,9 @@ Felipe Antonio Dzul Manzanilla
 </tr>
 </tbody>
 </table>
+
+### Módulo III. Hotspots de la abundancia de huevos del vector del dengue en las localidades urbanas endémicas de México
+
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -268,6 +271,8 @@ Felipe Antonio Dzul Manzanilla
 </tr>
 </tbody>
 </table>
+
+### Módulo IV
 
 ## Paquetes
 
