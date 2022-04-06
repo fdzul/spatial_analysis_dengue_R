@@ -73,7 +73,6 @@ xaringanExtra::use_logo(
 
 ---
 # Tipos de mapas
-<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
 ```{r, eval=TRUE, echo =FALSE, fig.width=6, fig.height=6}
@@ -150,7 +149,8 @@ DiagrammeR::grViz("digraph {
  animated -> {ggplot tmap}
  
   
-}")
+}",
+height = 600)
 
 ```
 
