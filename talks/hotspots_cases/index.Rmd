@@ -58,7 +58,7 @@ xaringanExtra::use_logo(
 
 - Contar los casos por polygono.
 
-- Aplicar el estadístico espacial local [$G^*$]().
+- Aplicar el estadístico espacial local [$$G^*$$]().
 
 - Visualizar los hotspots.
 
