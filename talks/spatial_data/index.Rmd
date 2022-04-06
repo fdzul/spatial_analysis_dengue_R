@@ -81,6 +81,15 @@ knitr::include_graphics("maps/tipos_mapas.png")
 ```
 
 
+---
+# Requisito de un mapa
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.can-edit.key-likes[
+- La información geográfica (json, sh, etc).
+- La base de datos.
+- La variable de interes.
+]
 
 ---
 
