@@ -80,6 +80,38 @@ xaringanExtra::use_logo(
 knitr::include_graphics("maps/tipos_mapas.png")
 ```
 
+---
+# Datos Espaciales 
+
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+.panelset[
+
+.panel[.panel-name[Point Pattern Data]
+```{r point_pattern_data, echo = FALSE, warning=FALSE, message=FALSE }
+
+```
+
+]
+.panel[.panel-name[Geostatistical Data]
+
+]
+
+.panel[.panel-name[Areal Data]
+![](maps/static_maps/ggplot_maps.jpg)
+
+]
+
+]
+
+
+
+
+
 
 ---
 # Requisito de un mapa
