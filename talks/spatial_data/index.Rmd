@@ -81,7 +81,8 @@ knitr::include_graphics("maps/tipos_mapas.png")
 
 ---
 # Tipos de mapas
-```{r, echo=FALSE}
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+```{r, echo=FALSE, fig.height=4, fig.width=5}
 DiagrammeR::grViz("digraph {
                   # graph definitions
   graph [layout = dot, rankdir = TB]
