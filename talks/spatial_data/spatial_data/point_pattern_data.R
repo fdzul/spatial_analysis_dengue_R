@@ -1,5 +1,4 @@
 
-file.choose()
 # Step 1. load the dataset ####
 load("C:/Users/felip/OneDrive/proyects/geocoding_mex/2021/den_mex_2021/9.RData_geocoded/den2021_positivos.RData")
 
