@@ -81,7 +81,6 @@ knitr::include_graphics("maps/tipos_mapas.png")
 
 ---
 # Tipos de mapas
-<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 ```{r, echo=FALSE}
 DiagrammeR::grViz("digraph {
                   # graph definitions
@@ -149,8 +148,7 @@ DiagrammeR::grViz("digraph {
  animated -> {ggplot tmap}
  
   
-}",
-height = 900)
+}")
 
 ```
 
