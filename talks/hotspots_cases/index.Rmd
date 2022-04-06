@@ -1,0 +1,73 @@
+---
+title: "Hotspots de la Transmisión de Dengue"
+author: "Felipe Antonio Dzul Manzanilla"
+date: '2022: Last compiled `r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: 
+      - default
+      - default-fonts
+      - duke-blue
+      - hygge-duke
+      - libs/cc-fonts.css
+      - libs/figure-captions.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: left, top
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringanExtra, echo = FALSE}
+xaringanExtra::use_progress_bar(color = "#0051BA", location = "top")
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+```{r share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "https://www.ssaver.gob.mx/wp-content/uploads/2021/04/cropped-logoencabezado6abr2.jpg",
+  width = "310px",
+  height = "428px",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
+```
+
+# **Temas**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+
+
+---
+# Thanks!
+
+&nbsp;
+
+- ***Bio*** : https://fdzul.github.io/web_site_fadm/
+
+- ***email***       :     felipe.dzul.m@gmail.com
+
+- ***celular***     :     228 229 3419
+
+- ***slides***:     https://animated-longma-729cee.netlify.app/talks/spatial_data/#1
+
+
+
+
+.footnote[La presentación fue creada via [**xaringan**](https://github.com/yihui/xaringan),
+[**revealjs**](https://revealjs.com/),
+[remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr),
+& [R Markdown](https://rmarkdown.rstudio.com) en [R]() & [RStudio](2.R_Scripts/libs/rstudio_leaflet/rstudio_leaflet.css).]
