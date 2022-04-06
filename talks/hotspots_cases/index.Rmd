@@ -58,9 +58,9 @@ xaringanExtra::use_logo(
 
 - ***Bio*** : https://fdzul.github.io/web_site_fadm/
 
-- ***email***       :     felipe.dzul.m@gmail.com
+- ***email***       :     [felipe.dzul.m@gmail.com]()
 
-- ***celular***     :     228 229 3419
+- ***celular***     :     [228 229 3419]()
 
 - ***slides***:     https://animated-longma-729cee.netlify.app/talks/hotspots_cases/#1
 
