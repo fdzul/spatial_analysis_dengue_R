@@ -80,6 +80,80 @@ xaringanExtra::use_logo(
 knitr::include_graphics("maps/tipos_mapas.png")
 ```
 
+---
+# Tipos de mapas
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+```{r}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, 
+  style = filled, 
+  color = grey, 
+  nodesep = .5,
+  fixedsize = true, 
+  width = 2] 
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  ##### Spatial Data
+  
+  areal [label = 'Areal Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  pp_data [label = 'Point Pattern Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  geo_data [label = 'Geostatistical Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  spatial_data [label = 'Spatial Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  
+  ##### map type
+  maps [label = 'Maps',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+  static [label = 'Static',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+  interactive [label = 'Interactive',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+  animated [label = 'Animated',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+  
+  satellital [label = 'Satellital',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'white']
+  no_satellital [label = 'Non Satellital',  fillcolor =  '#8BC3FC', color = 'white', fontcolor = 'white']
+  
+  ##### packages
+  
+  # static maps
+ base_r [label = 'Base R',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ lattice [label = 'lattice',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ ggplot [label = 'ggplot2',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ ggspatial [label = 'ggspatial',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ ggmap [label = 'ggmap',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ tmap [label = 'tmap',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ cartography [label = 'cartography',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ mapsf [label = 'mapsf',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  
+ # intercative maps
+ leaflet [label = 'leaflet',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ mapview [label = 'mapview',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ # animated maps
+ 
+ 
+ ##### define the relation
+ 
+ # Static maps
+ spatial_data -> {areal pp_data geo_data} -> maps -> {static interactive animated}
+ static -> {satellital, no_satellital} -> base_r
+ base_r -> {lattice ggplot tmap cartography, mapsf}
+ ggplot -> {ggmap ggspatial}
+
+ # Interactive maps
+ interactive -> {leaflet tmap mapview}
+ 
+ # animated maps
+ 
+ animated -> {ggplot tmap}
+ 
+  
+}")
+
+```
+
 
 ---
 # Point Pattern Data 
