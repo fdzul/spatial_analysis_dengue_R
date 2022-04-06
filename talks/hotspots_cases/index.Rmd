@@ -48,7 +48,19 @@ xaringanExtra::use_logo(
 # **Temas**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+- Bases del [SINAVE](https://sinave.gob.mx/).
 
+- Geocodificación en [bachgeo](https://es.batchgeo.com/).
+
+- Geododificación en [R](https://cran.r-project.org/).
+
+- Extraer la localidad del [INEGI](https://www.inegi.org.mx/temas/mg/#Descargas).
+
+- Contar los casos por polygono.
+
+- Aplicar el estadístico espacial local $G^*$.
+
+- Visualizar los hotspots.
 
 
 ---
