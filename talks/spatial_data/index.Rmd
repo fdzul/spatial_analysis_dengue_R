@@ -325,7 +325,7 @@ ggplot2::ggplot() +
 ]
 
 .panel[.panel-name[Mapa ggplot2]
-![](6.Maps/static_maps/ggplot_maps.jpg)
+![](maps/static_maps/ggplot_maps.jpg)
 ]
 .panel[.panel-name[tmap]
 ```{r maptmap, fig.show='hide', warning=FALSE, message=FALSE}
@@ -343,7 +343,7 @@ tmap::tm_shape(x) +
 ```
 ]
 .panel[.panel-name[Mapa tmap]
-![](6.Maps/static_maps/tmap_maps.jpg)
+![](maps/static_maps/tmap_maps.jpg)
 ]
 ]
 
