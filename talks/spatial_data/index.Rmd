@@ -168,6 +168,9 @@ l |>
 
 ]
 .panel[.panel-name[Geostatistical Data]
+```{r geostatistical_data, echo = FALSE, warning=FALSE, message=FALSE}
+
+```
 
 ]
 
