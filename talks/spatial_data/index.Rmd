@@ -260,6 +260,94 @@ l |>
 - La variable de interes.
 ]
 
+
+
+---
+# Mapas estáticos en R
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+.panelset[
+
+.panel[.panel-name[base R]
+```{r map_base_r, fig.show='hide', warning=FALSE, message=FALSE}
+# step 1. load municipality & add the dengue cases ####
+library(sf)
+x <- rgeomex::AGEM_inegi19_mx |>
+    dplyr::filter(CVE_ENT %in% c("30")) |>
+    dplyr::mutate(casos = rpois(n = dplyr::n(), lambda = 4))
+# Step 2. plot the map with R base ####
+plot(x["casos"], 
+     key.pos = 4,
+     axes = TRUE, 
+     graticule = TRUE,
+     key.width = .2,
+     key.length = .8)
+```
+]
+
+.panel[.panel-name[Mapa base R]
+```{r map_with_base_r, echo=FALSE, warning=FALSE, message=FALSE}
+# step 1. load municipality & add the dengue cases ####
+library(sf)
+x <- rgeomex::AGEM_inegi19_mx |>
+    dplyr::filter(CVE_ENT %in% c("30")) |>
+    dplyr::mutate(casos = rpois(n = dplyr::n(), lambda = 4))
+# Step 2. plot the map with R base ####
+plot(x["casos"], 
+     key.pos = 4,
+     axes = TRUE, 
+     graticule = TRUE,
+     key.width = .2,
+     key.length = .8)
+```
+]
+
+
+.panel[.panel-name[ggplot2]
+```{r map_ggplot2, fig.show='hide', warning=FALSE, message=FALSE}
+# step 1. load municipality & add the dengue cases ####
+library(sf)
+x <- rgeomex::AGEM_inegi19_mx |>
+    dplyr::filter(CVE_ENT %in% c("30")) |>
+    dplyr::mutate(casos = rpois(n = dplyr::n(), lambda = 4)) 
+
+# Step 2. plot the map with ggplot2 ####
+ggplot2::ggplot() +
+    ggplot2::geom_sf(data = x,
+                     ggplot2::aes(fill = casos)) +
+    fishualize::scale_fill_fish() +
+    ggspatial::annotation_scale(location = "bl") +
+    ggspatial::annotation_north_arrow(location = "tr")
+```
+]
+
+.panel[.panel-name[Mapa ggplot2]
+![](6.Maps/static_maps/ggplot_maps.jpg)
+]
+.panel[.panel-name[tmap]
+```{r maptmap, fig.show='hide', warning=FALSE, message=FALSE}
+# step 1. load municipality & add the dengue cases ####
+library(sf)
+x <- rgeomex::AGEM_inegi19_mx |>
+    dplyr::filter(CVE_ENT %in% c("30")) |>
+    dplyr::mutate(casos = rpois(n = dplyr::n(), lambda = 4))
+# Step 2. plot the map with tmap ####
+library(tmap)
+tmap::tm_shape(x) +
+    tmap::tm_polygons(col = "casos") +
+    tmap::tm_compass(position = c(.2, .9)) +
+    tmap::tm_scale_bar(position = c(.1, .02))
+```
+]
+.panel[.panel-name[Mapa tmap]
+![](6.Maps/static_maps/tmap_maps.jpg)
+]
+]
+
+
+
+
 ---
 
 # Thanks!
