@@ -150,7 +150,7 @@ DiagrammeR::grViz("digraph {
  
   
 }",
-height = 600)
+height = 900)
 
 ```
 
