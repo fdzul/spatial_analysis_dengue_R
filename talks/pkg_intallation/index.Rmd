@@ -248,7 +248,20 @@ devtools::install_github("fdzul/boldenr")
 # **Paquete deneggs**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
-   1) Instalar  
+   1) Instalar primero el paquete [INLA](https://www.r-inla.org/)
+   
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+#install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
+
+```
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+#devtools::install_github("fdzul/boldenr")
+```
+
+
+   
+   2) Instalar deneggs
 
 ---
 
