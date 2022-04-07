@@ -255,13 +255,12 @@ devtools::install_github("fdzul/boldenr")
 
 ```
 
-```{r, warning=FALSE, message=FALSE, error=FALSE}
-#devtools::install_github("fdzul/boldenr")
-```
-
-
    
    2) Instalar deneggs
+   
+   ```{r, warning=FALSE, message=FALSE, error=FALSE}
+#devtools::install_github("fdzul/deneggs")
+```
 
 ---
 
