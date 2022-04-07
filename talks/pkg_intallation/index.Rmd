@@ -197,6 +197,27 @@ El Departamento de Prevención y Control de Enfermedades Transmitidas por Vector
    3) [boldenr](https://fdzul.github.io/boldenr/)
    
    4) [rgeomex](https://fdzul.github.io/rgeomex/)
+   
+Primero hay que instalar otros paquetes de R y otros softwar (SatScan).
+
+--- **Instalacion de otro paquetes y sofwarte**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+[SaTScan™](https://www.satscan.org/)
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+#install.packages("rsatscan")
+```
+
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+devtools::install_github("thanhleviet/knox")
+```
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+devtools::install_github("davidsjoberg/similiars", )
+```
+
 
 ---
 # **Instalación**
@@ -221,6 +242,11 @@ devtools::install_github("fdzul/rgeomex")
 devtools::install_github("fdzul/boldenr")
 ```
 
+---
+# **Instalación del paquete deneggs**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+   1) Instalar  
 
 ---
 
