@@ -17,6 +17,10 @@
     <script src="libs/shareon-1.4.1/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+    <script src="libs/viz-1.8.2/viz.js"></script>
+    <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
     <link rel="stylesheet" href="libs/cc-fonts.css" type="text/css" />
     <link rel="stylesheet" href="libs/figure-captions.css" type="text/css" />
   </head>
@@ -94,10 +98,12 @@ top:1em;right:1em;
 })()</script>
 </div>
 
-## **Análisis de la Información epidemiológica y entomológica**
+## **Análisis espacial del dengue**
 &lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
 
 
+<div id="htmlwidget-e0a54283ad25412a0fb0" style="width:100%;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e0a54283ad25412a0fb0">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  # vigilancia epidemiológica \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  dat_hist [label = \"Bases Históricas\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  dat_act [label = \"Bases Actuales\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  dat_acumu [label = \"Bases Acumuladas\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n   dat_trans_ac [label = \"Transmisión activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  epi -> [dat_hist dat_act]\n  dat_act -> {dat_acumu, dat_trans_ac} -> pp_data\n  \n  dat_hist -> areal\n  \n    \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 ---
@@ -114,7 +120,7 @@ top:1em;right:1em;
 
 - Contar los casos por polygono.
 
-- Aplicar el estadístico espacial local `$$G^*$$`.
+- Aplicar el estadístico espacial local `\(G^*\)`.
 
 - Visualizar los hotspots.
 

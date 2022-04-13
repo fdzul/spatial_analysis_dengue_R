@@ -49,7 +49,7 @@ xaringanExtra::use_logo(
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
-```{r ,echo=FALSE, out.width='100%', fig.align='center'}
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
 DiagrammeR::grViz("digraph {
                   # graph definitions
   graph [layout = dot, rankdir = TB]
@@ -61,6 +61,29 @@ DiagrammeR::grViz("digraph {
   nodesep = .5,
   fixedsize = true, 
   width = 2] 
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  # vigilancia epidemiológica 
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  dat_hist [label = 'Bases Históricas',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  dat_act [label = 'Bases Actuales',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  dat_acumu [label = 'Bases Acumuladas',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+   dat_trans_ac [label = 'Transmisión activa',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  
+  ##### Spatial Data
+  
+  areal [label = 'Areal Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  pp_data [label = 'Point Pattern Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  
+  epi -> [dat_hist dat_act]
+  dat_act -> {dat_acumu, dat_trans_ac} -> pp_data
+  
+  dat_hist -> areal
   
     
 }")
