@@ -48,7 +48,6 @@ xaringanExtra::use_logo(
 ## **Análisis espacial del dengue**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
-
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
 DiagrammeR::grViz("digraph {
                   # graph definitions
@@ -65,31 +64,42 @@ DiagrammeR::grViz("digraph {
   # edge definition
   edge [color = grey, arrowhead = normal, arrowtail = dot]
   
-  # vigilancia epidemiológica 
+  ##### epidemiological data
+  
   epi [label = 'Vigilancia Epidemiológica',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
-  
-  dat_hist [label = 'Bases Históricas',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
-  dat_act [label = 'Bases Actuales',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
-  
-  dat_acumu [label = 'Bases Acumuladas',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
-   dat_trans_ac [label = 'Transmisión activa',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_historic [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_datos_actuales [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_acumulados [label = 'Datos Acumulados',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_trans_activa [label = 'Transmisión Activa',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   
   
   ##### Spatial Data
   
-  areal [label = 'Areal Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  areal [label = 'Areal Data',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
   pp_data [label = 'Point Pattern Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
   
-  epi -> [dat_hist dat_act]
-  dat_act -> {dat_acumu, dat_trans_ac} -> pp_data
   
-  dat_hist -> areal
+ 
+ # intercative maps
+ leaflet [label = 'leaflet',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ mapview [label = 'mapview',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ # animated maps
+ 
+ 
+ ##### define the relation
+ 
+ 
+ 
+ 
+
+
+
+ 
   
-    
 }")
+
 ```
-
-
 ---
 
 # **temas**
