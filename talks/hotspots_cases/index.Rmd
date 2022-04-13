@@ -59,7 +59,7 @@ DiagrammeR::grViz("digraph {
   color = grey, 
   nodesep = .5,
   fixedsize = true, 
-  width = 2] 
+  width = 2.5] 
   
   # edge definition
   edge [color = grey, arrowhead = normal, arrowtail = dot]
@@ -92,6 +92,8 @@ DiagrammeR::grViz("digraph {
  cluster_s [label = 'ClusterSeer',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
  satscan [label = 'SatScan',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
  
+ r_rstudio [label = 'R & RStudio',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ 
  
  ##### define the relation
  
@@ -101,7 +103,7 @@ DiagrammeR::grViz("digraph {
  cadenas -> cluster_s
  cluster_ana -> satscan
  
- 
+ r_rstudio -> {geoda cluster_s, satscan}
  
  
  
