@@ -213,6 +213,9 @@ Felipe Antonio Dzul Manzanilla
 </tbody>
 </table>
 
+-   [Slide
+    3](https://animated-longma-729cee.netlify.app/talks/hotspots_cases/#1)
+
 ### Módulo III. Hotspots de la abundancia de huevos del vector del dengue en las localidades urbanas endémicas de México
 
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">

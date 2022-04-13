@@ -94,6 +94,8 @@ tibble::tibble(Temas = c("Bases del SINAVE",
 
 ```
 
+-   [Slide 3](https://animated-longma-729cee.netlify.app/talks/hotspots_cases/#1)
+
 
 ### Módulo III. Hotspots de la abundancia de huevos del vector del dengue en las localidades urbanas endémicas de México
 
