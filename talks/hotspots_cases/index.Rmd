@@ -103,7 +103,7 @@ DiagrammeR::grViz("digraph {
  cadenas -> cluster_s
  cluster_ana -> satscan
  
- r_rstudio -> {geoda cluster_s, satscan}
+ {geoda cluster_s, satscan} -> r_studio
  
  
  
