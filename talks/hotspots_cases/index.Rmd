@@ -45,10 +45,26 @@ xaringanExtra::use_logo(
 )
 ```
 
-## **Análisis de la Información epidemiológica y entomológica**
+## **Análisis espacial del dengue**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
+```{r ,echo=FALSE, out.width='100%', fig.align='center'}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, 
+  style = filled, 
+  color = grey, 
+  nodesep = .5,
+  fixedsize = true, 
+  width = 2] 
+  
+    
+}")
+```
 
 
 ---
@@ -65,7 +81,7 @@ xaringanExtra::use_logo(
 
 - Contar los casos por polygono.
 
-- Aplicar el estadístico espacial local $$G^*$$.
+- Aplicar el estadístico espacial local $G^*$.
 
 - Visualizar los hotspots.
 
