@@ -68,7 +68,7 @@ DiagrammeR::grViz("digraph {
   
   epi [label = 'Vigilancia Epidemiológica',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   data_historic [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
-  data_datos_actuales [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_datos_actuales [label = 'Datos Actuales',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   data_acumulados [label = 'Datos Acumulados',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   data_trans_activa [label = 'Transmisión Activa',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   
@@ -86,15 +86,21 @@ DiagrammeR::grViz("digraph {
  cluster_ana [label = 'Cluster Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
  
- 
- 
  # software
+ 
+ geoda [label = 'Geoda',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ cluster_s [label = 'ClusterSeer',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ satscan [label = 'SatScan',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ 
  
  ##### define the relation
  
  epi -> {data_historic  data_datos_actuales}
- data_historic -> areal -> hotspots
+ data_historic -> areal -> hotspots -> geoda
  data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana}
+ cadenas -> cluster_s
+ cluster_ana -> satscan
+ 
  
  
  
