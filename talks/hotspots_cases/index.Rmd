@@ -106,18 +106,18 @@ DiagrammeR::grViz("digraph {
  
  {geoda cluster_s, satscan} -> r_rstudio -> denhotspot
  
- 
- 
-
-
-
- 
-  
 }")
 
 ```
----
 
+---
+# **temas**
+
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+
+---
 # **temas**
 
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
