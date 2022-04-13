@@ -48,7 +48,12 @@ xaringanExtra::use_logo(
 # **Temas**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
-- Bases del [SINAVE](https://sinave.gob.mx/).
+- Análisis de la Información epidemiológica y entomológica
+
+
+---
+
+# **temas**
 
 - Geocodificación en [bachgeo](https://es.batchgeo.com/).
 
