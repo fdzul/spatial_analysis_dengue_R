@@ -93,7 +93,8 @@ DiagrammeR::grViz("digraph {
  satscan [label = 'SatScan',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
  
  r_rstudio [label = 'R & RStudio',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
- 
+
+  denhotspot [label = 'denhotspots Package',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
  
  ##### define the relation
  
@@ -103,7 +104,7 @@ DiagrammeR::grViz("digraph {
  cadenas -> cluster_s
  cluster_ana -> satscan
  
- {geoda cluster_s, satscan} -> r_rstudio
+ {geoda cluster_s, satscan} -> r_rstudio -> denhotspots
  
  
  
