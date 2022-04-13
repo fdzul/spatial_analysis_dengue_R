@@ -80,16 +80,21 @@ DiagrammeR::grViz("digraph {
   
   
  
- # intercative maps
- leaflet [label = 'leaflet',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
- mapview [label = 'mapview',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ # Análisis 
+ hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ cadenas [label = 'Cadenas de Transmisión',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ cluster_ana [label = 'Cluster Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
+ 
+ 
+ 
+ # software
  
  ##### define the relation
  
  epi -> {data_historic  data_datos_actuales}
- data_historic -> areal
- data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data
+ data_historic -> areal -> hotspots
+ data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana}
  
  
  
