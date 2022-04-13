@@ -351,14 +351,17 @@ Felipe Antonio Dzul Manzanilla
 
 ## Instructores
 
-[Felipe Antonio Dzul Manzanilla](https://fdzul.github.io/web_site_fadm/)
+[Dr. Felipe Antonio Dzul
+Manzanilla](https://fdzul.github.io/web_site_fadm/)
 
-[Fabian Correa Morales]()
+[Dr. Fabian Correa Morales]()
 
-[Luis Hernández-Herrera]()
+[Biol. Luis Hernández-Herrera]()
 
-[Pedro Santamaria]()
+[Biol. Pedro Santamaria]()
 
-[Heron-Huerta]()
+[M.C. Heron-Huerta]()
+
+[Dr. Angel Arguello]()
 
 ## Inscripción
