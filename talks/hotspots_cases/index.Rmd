@@ -104,7 +104,7 @@ DiagrammeR::grViz("digraph {
  cadenas -> cluster_s
  cluster_ana -> satscan
  
- {geoda cluster_s, satscan} -> r_rstudio -> denhotspots
+ {geoda cluster_s, satscan} -> r_rstudio -> denhotspot
  
  
  
