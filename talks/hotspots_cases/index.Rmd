@@ -84,10 +84,12 @@ DiagrammeR::grViz("digraph {
  leaflet [label = 'leaflet',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  mapview [label = 'mapview',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
- # animated maps
- 
  
  ##### define the relation
+ 
+ epi -> {data_historic  data_datos_actuales}
+ data_historic -> areal
+ data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data
  
  
  
