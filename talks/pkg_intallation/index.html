@@ -4,7 +4,7 @@
     <title>Instalación de Paquetes en R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Felipe Antonio Dzul Manzanilla" />
-    <script src="libs/header-attrs-2.13/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/duke-blue.css" rel="stylesheet" />
@@ -24,9 +24,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Instalación de Paquetes en R
+]
+.author[
 ### Felipe Antonio Dzul Manzanilla
-### 2022: Last compiled 2022-04-13
+]
+.date[
+### 2022: Last compiled 2022-09-27
+]
 
 ---
 
@@ -141,7 +147,6 @@ Para varios paquetes.
 
 ```r
 #install.packages(c("ggplot2", "sf", "tmap"))
-#library(ggplot2)
 ```
 
 Con el siguiente comando se puede verificar que se instalo correctamente.
@@ -181,9 +186,41 @@ Instalación de remotes
 
 
 ```r
-devtools::install_github("fdzul/dendata")
+#devtools::install_github("fdzul/dendata")
 ```
 
+---
+# **github**
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+
+Instalación de pak
+
+
+```r
+#install.packages("pak")
+```
+
+&amp; a continuacion correr el siguiente comando.
+
+
+```r
+pak::pkg_install("fdzul/dendata")
+```
+
+```
+##  
+## → Will install 1 package.
+## → Will download 1 package with unknown size.
+## + dendata   0.1.0 [bld][cmp][dl] (GitHub: 335e905)
+## ℹ Getting 1 pkg with unknown size
+## ✔ Got dendata 0.1.0 (source) (1.64 MB)
+## ℹ Packaging dendata 0.1.0
+## ✔ Packaged dendata 0.1.0 (2.1s)
+## ℹ Building dendata 0.1.0
+## ✔ Built dendata 0.1.0 (1.6s)
+## ✔ Installed dendata 0.1.0 (github::fdzul/dendata@335e905) (62ms)
+## ✔ 1 pkg: added 1, dld 1 (NA B) [9.1s]
+```
 
 ---
 # **tar.gz** &amp; **Archivos binarios**
@@ -324,10 +361,10 @@ devtools::install_github("fdzul/boldenr")
    
    2) Instalar deneggs
    
-   
-   ```r
-   #devtools::install_github("fdzul/deneggs")
-   ```
+
+```r
+#devtools::install_github("fdzul/deneggs")
+```
 
 ---
 
@@ -398,6 +435,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

@@ -212,6 +212,7 @@ son las áreas o las unidades espaciales con valores altos de $\color{#2ECC40}G_
 
 
 
+
 .footnote[La presentación fue creada via [**xaringan**](https://github.com/yihui/xaringan),
 [**revealjs**](https://revealjs.com/),
 [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr),

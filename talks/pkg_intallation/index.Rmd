@@ -90,7 +90,6 @@ Para un paquete.
 Para varios paquetes.
 ```{r, echo=TRUE}
 #install.packages(c("ggplot2", "sf", "tmap"))
-#library(ggplot2)
 ```
 
 Con el siguiente comando se puede verificar que se instalo correctamente.
@@ -126,10 +125,26 @@ Instalación de remotes
 & a continuacion correr el siguiente comando.
 
 ```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
-devtools::install_github("fdzul/dendata")
+#devtools::install_github("fdzul/dendata")
 
 ```
 
+---
+# **github**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+Instalación de pak
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
+#install.packages("pak")
+```
+
+& a continuacion correr el siguiente comando.
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
+pak::pkg_install("fdzul/dendata")
+
+```
 
 ---
 # **tar.gz** & **Archivos binarios**
@@ -258,7 +273,7 @@ devtools::install_github("fdzul/boldenr")
    
    2) Instalar deneggs
    
-   ```{r, warning=FALSE, message=FALSE, error=FALSE}
+```{r, warning=FALSE, message=FALSE, error=FALSE}
 #devtools::install_github("fdzul/deneggs")
 ```
 
