@@ -240,16 +240,16 @@ devtools::install_github("davidsjoberg/similiars", )
 # **Instalación**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+[rgeomex](https://fdzul.github.io/rgeomex/)
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+pak::pkg_install("fdzul/rgeomex")
+```
+
 [denhotspots](https://fdzul.github.io/denhotspots/)
  
 ```{r, warning=FALSE, message=FALSE, error=FALSE}
 devtools::install_github("fdzul/denhotspots")
-```
-
-[rgeomex](https://fdzul.github.io/rgeomex/)
-
-```{r, warning=FALSE, message=FALSE, error=FALSE}
-devtools::install_github("fdzul/rgeomex")
 ```
 
 
