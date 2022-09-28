@@ -38,9 +38,9 @@ xaringanExtra::use_share_again()
 
 ```{r xaringan-logo, echo=FALSE}
 xaringanExtra::use_logo(
-  image_url = "https://www.ssaver.gob.mx/wp-content/uploads/2021/04/cropped-logoencabezado6abr2.jpg",
-  width = "310px",
-  height = "428px",
+  image_url = "https://www.gob.mx/cms/uploads/action_program/main_image/26942/post_post_portadavectores.gif",
+  width = "100px",
+  height = "150px",
   position = xaringanExtra::css_position(top = "1em", right = "1em")
 )
 ```
