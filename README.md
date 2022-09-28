@@ -330,9 +330,9 @@ Felipe Antonio Dzul Manzanilla
 </tbody>
 </table>
 
-### Módulo IV. Cadenas de tranmisión del dengue en las localidades urbanas endémicas de México.
+### Módulo V. Cadenas de tranmisión del dengue en las localidades urbanas endémicas de México.
 
-### Módulo V. Log Gaussian Cox Process Espacial en las localidades urbanas endémicas de México.
+### Módulo VI. Log Gaussian Cox Process Espacial en las localidades urbanas endémicas de México.
 
 ## Paquetes
 
