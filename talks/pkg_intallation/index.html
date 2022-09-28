@@ -209,8 +209,17 @@ pak::pkg_install("fdzul/dendata")
 
 ```
 ##  
-## ℹ No downloads are needed
-## ✔ 1 pkg: kept 1 [2.8s]
+## → Will install 1 package.
+## → Will download 1 package with unknown size.
+## + dendata   0.1.0 [bld][cmp][dl] (GitHub: 335e905)
+## ℹ Getting 1 pkg with unknown size
+## ✔ Cached copy of dendata 0.1.0 (source) is the latest build
+## ℹ Packaging dendata 0.1.0
+## ✔ Packaged dendata 0.1.0 (467ms)
+## ℹ Building dendata 0.1.0
+## ✔ Built dendata 0.1.0 (1.6s)
+## ✔ Installed dendata 0.1.0 (github::fdzul/dendata@335e905) (62ms)
+## ✔ 1 pkg: added 1 [5.3s]
 ```
 
 ---
@@ -324,15 +333,12 @@ pak::pkg_install("fdzul/rgeomex")
 ```
 
 ```
-## 
-## ✔ Updated metadata database: 4.40 MB in 6 files.
-## 
-## ℹ Updating metadata database
-## ✔ Updating metadata database ... done
+## ℹ Loading metadata database
+## ✔ Loading metadata database ... done
 ## 
 ##  
 ## ℹ No downloads are needed
-## ✔ 1 pkg + 29 deps: kept 26 [11.1s]
+## ✔ 1 pkg + 29 deps: kept 26 [3.2s]
 ```
 
 [denhotspots](https://fdzul.github.io/denhotspots/)
@@ -368,6 +374,37 @@ devtools::install_github("fdzul/boldenr")
 ```r
 #devtools::install_github("fdzul/deneggs")
 ```
+
+
+---
+# **INLA in MAC OS**
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+
+En mac se requiere instalar [X11](https://www.baeldung.com/linux/x11), ya sea por medio de [xcode](https://developer.apple.com/xcode/) o [XQuartz](https://www.xquartz.org/)
+
+[XQuartz]()
+
+
+
+1) abrir la terminal 
+
+2 ir a la pagina de [Homebrew](https://brew.sh/)
+
+3) copiar y pegar el siguiente link en la terminal
+
+
+```r
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+
+4) ejecutar el siguiente código en la terminal
+
+
+```r
+# brew install xquartz
+```
+
 
 ---
 

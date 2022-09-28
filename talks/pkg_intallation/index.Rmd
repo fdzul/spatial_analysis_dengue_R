@@ -277,6 +277,35 @@ devtools::install_github("fdzul/boldenr")
 #devtools::install_github("fdzul/deneggs")
 ```
 
+
+---
+# **INLA in MAC OS**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+En mac se requiere instalar [X11](https://www.baeldung.com/linux/x11), ya sea por medio de [xcode](https://developer.apple.com/xcode/) o [XQuartz](https://www.xquartz.org/)
+
+[XQuartz]()
+
+
+
+1) abrir la terminal 
+
+2 ir a la pagina de [Homebrew](https://brew.sh/)
+
+3) copiar y pegar el siguiente link en la terminal
+
+```{r}
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+
+4) ejecutar el siguiente código en la terminal
+
+```{r}
+# brew install xquartz
+```
+
+
 ---
 
 # Thanks!
