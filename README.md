@@ -40,8 +40,8 @@ cursos, el parquete y el manual, no solo está dirigido al personal
 operativo, mandos medios y directivos de los Programas de Prevención y
 Control de las arbovirosis transmitidas por Aedes de la Secretaria de
 Salud de México, sino también a la comunidad académica relacionada con
-la investigación operativa sobre el análisis de dengue y al público en
-general interesado en el tema.
+la investigación operativa sobre el análisis espacial de dengue y al
+público en general interesado en el tema.
 
 ## Temario
 
