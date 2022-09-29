@@ -181,7 +181,7 @@ $$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}
 
 donde:
  
-$\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}$ el numerador, es la suma de los valores $x_{j}$ de la localidad de interes de la unidad espacial de interes $x_{i}$ &
+$\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}$ el numerador, es la suma de los valores $x_{j}$ de la unidad espacial de interes $x_{ij}$ &
  
   
 
@@ -195,6 +195,107 @@ son las áreas o las unidades espaciales con valores altos de $\color{#2ECC40}G_
 
 
 .tiny[.blue[.footnote[ Getis & Ord 1991; Ord & Getis 1995]]]
+
+
+---
+### Cálculo del estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE,dpi=300, warning = FALSE,message = FALSE, fig.align ="center", out.width = "80%"}
+# Step 2. load the locality ####
+x <- rgeomex::extract_ageb(locality = "Homun", cve_geo = "31")
+
+#  Step 2. simulate dengue cases ####
+set.seed(123456)
+x$ageb$nb_n <- MASS::rnegbin(n = nrow(x$ageb),
+                             mu = 10,
+                             theta = 0.2)
+row.names(x$ageb) <- stringr::str_sub(row.names(x$ageb),
+                                      start = 3,
+                                      end = -1)
+# Step 4. mapa de cases #####
+library(ggplot2)
+ggplot2::ggplot()+
+    ggplot2::geom_sf(data = x$ageb,
+                     ggplot2::aes(fill = as.factor(nb_n)),
+                     label = rownames(x$ageb)) +
+    ggplot2::scale_fill_viridis_d("Casos") +
+    ggplot2::theme_void() +
+    ggplot2::geom_sf_label(data = x$ageb,
+                           ggplot2::aes(label = rownames(x$ageb)),
+                           label.size = 0.1,
+                           size = 2.5,
+                           alpha = 0.5)
+
+```
+
+
+---
+### Cálculo del estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+Spatial Weight Matrix $\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}$
+
+```{r swm, echo=FALSE, warning = FALSE,message = FALSE, fig.align ="left", out.width = "50%"}
+# Create the neighborhoods ####
+nb_q <- spdep::nb2listw(spdep::poly2nb(x$ageb), style="B", zero.policy=TRUE)
+
+# Crate the matrix ####
+library(Matrix)
+library(spatialreg)
+matrix <- as(as(nb_q, "CsparseMatrix"), "matrix")
+df <- as.data.frame(matrix)
+
+library(magrittr)
+library(kableExtra)
+kableExtra::kbl(df) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T, font_size = 20)
+```
+
+Casos por cada unidad espacial 
+
+```{r swm_casos, echo=FALSE, warning = FALSE,message = FALSE, fig.align ="left", out.width = "50%"}
+y_matriz <- matrix(data = x$ageb$nb_n,
+                   nrow = 1, 
+                   ncol = nrow(x$ageb))
+colnames(y_matriz) <- row.names(y_matriz)
+dimnames(y_matriz) <- list("casos", row.names(x$ageb))
+
+kableExtra::kbl(y_matriz) %>%
+  kable_styling(bootstrap_options = "striped", full_width = T, font_size = 20)
+```
+
+
+
+---
+### Cálculo del estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+$$\color{#2ECC40}{G_{i}^{*}} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{1+ 1}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} = \frac{\color{#FF4136}{2}}{\color{#0074D9}{209}}= \color{#2ECC40}{0.009569378}$$
+
+$$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{17 + 1 + 5 + 37 + 0}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{60}}{\color{#0074D9}{209}} =\color{#2ECC40}{0.2870813}$$
+
+
+
+
+
+Corrección de Bonferroni: $1-\alpha$ = $(1-\alpha)^{n}$
+
+```{r, echo=FALSE}
+ getis_ord_umbral <- function(n, alpha){
+        round(qnorm(p = -((1-alpha)/n) + 1, mean = 0, sd = 1), digits = 4)
+ }
+c(8)
+getis_ord_umbral(n = c(8), alpha = c(.95, .99))
+```
+
+
+Criterio:
+$$\color{#2ECC40}{G_{i}^{*}} >= 1-\alpha = (1-\alpha)^{n}$$ es Hotspots, de lo contratio es No Hotspots
 
 ---
 # Thanks!

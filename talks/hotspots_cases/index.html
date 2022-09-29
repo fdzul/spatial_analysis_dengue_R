@@ -4,7 +4,7 @@
     <title>Hotspots de la Transmisión de Dengue</title>
     <meta charset="utf-8" />
     <meta name="author" content="Felipe Antonio Dzul Manzanilla" />
-    <script src="libs/header-attrs-2.13/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/duke-blue.css" rel="stylesheet" />
@@ -21,6 +21,8 @@
     <script src="libs/viz-1.8.2/viz.js"></script>
     <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
     <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="libs/cc-fonts.css" type="text/css" />
     <link rel="stylesheet" href="libs/figure-captions.css" type="text/css" />
   </head>
@@ -28,9 +30,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Hotspots de la Transmisión de Dengue
+]
+.author[
 ### Felipe Antonio Dzul Manzanilla
-### 2022: Last compiled 2022-04-13
+]
+.date[
+### 2022: Last compiled 2022-09-29
+]
 
 ---
 
@@ -101,8 +109,8 @@ top:1em;right:1em;
 ## **Análisis espacial del dengue**
 &lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
 
-<div id="htmlwidget-cb04fb1f7e5c3f4459ee" style="width:100%;height:504px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cb04fb1f7e5c3f4459ee">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos Actuales\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos Acumulados\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s, satscan} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8359311c022c8360a903" style="width:100%;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8359311c022c8360a903">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos Actuales\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos Acumulados\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s, satscan} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ---
 # **Hotspots de Dengue**
@@ -122,8 +130,8 @@ top:1em;right:1em;
 11. Visualizar los hotspots.
 ]
 .pull-right[
-<div id="htmlwidget-1d3961c410a22f4395ac" style="width:100%;height:550px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1d3961c410a22f4395ac">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  cases_ageb [label = \"Casos por AGEBs\"]\n  z_score [label = \"Z-score\"]\n  gi [label = \"Estadístico Espacial Local (Gi*)\"]\n  bonferroni [label = \"Corrección de Bonferroni\"]\n  hotspots [label = \"Hotspots\", style = filled, color = orange]\n  \n  # flow chart for inegi\n  inegi [label = \"INEGI\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc [label = \"Localidades Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb [label = \"AGEB Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc_esp [label = \"Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb_esp [label = \"AGEBs de la Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  mat [label = \"Matriz de Adjacencias\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> z_score -> gi -> bonferroni -> hotspots \n  inegi -> {ageb, loc}\n  loc -> loc_esp -> ageb_esp\n  ageb -> ageb_esp\n  ageb_esp -> mat\n  mat -> cases_ageb \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4379659df6ae7ad81e38" style="width:100%;height:550px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4379659df6ae7ad81e38">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  cases_ageb [label = \"Casos por AGEBs\"]\n  z_score [label = \"Z-score\"]\n  gi [label = \"Estadístico Espacial Local (Gi*)\"]\n  bonferroni [label = \"Corrección de Bonferroni\"]\n  hotspots [label = \"Hotspots\", style = filled, color = orange]\n  \n  # flow chart for inegi\n  inegi [label = \"INEGI\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc [label = \"Localidades Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb [label = \"AGEB Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc_esp [label = \"Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb_esp [label = \"AGEBs de la Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  mat [label = \"Matriz de Adjacencias\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> z_score -> gi -> bonferroni -> hotspots \n  inegi -> {ageb, loc}\n  loc -> loc_esp -> ageb_esp\n  ageb -> ageb_esp\n  ageb_esp -> mat\n  mat -> cases_ageb \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 .tiny[.blue[.footnote[ Dzul-Manzanilla et al 2021]]]
@@ -137,7 +145,7 @@ top:1em;right:1em;
 
 donde:
  
-`\(\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}\)` el numerador, es la suma de los valores `\(x_{j}\)` de la localidad de interes de la unidad espacial de interes `\(x_{i}\)` &amp;
+`\(\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}\)` el numerador, es la suma de los valores `\(x_{j}\)` de la unidad espacial de interes `\(x_{ij}\)` &amp;
  
   
 
@@ -152,6 +160,190 @@ son las áreas o las unidades espaciales con valores altos de `\(\color{#2ECC40}
 
 .tiny[.blue[.footnote[ Getis &amp; Ord 1991; Ord &amp; Getis 1995]]]
 
+
+---
+### Cálculo del estadístico Espacial Local `\(\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}\)`
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+### Cálculo del estadístico Espacial Local `\(\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}\)`
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+
+
+Spatial Weight Matrix `\(\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}\)`
+
+&lt;table class="table table-striped" style="font-size: 20px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 349 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 350 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 351 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 352 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 353 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 354 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 355 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 356 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 349 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 350 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 351 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 352 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 353 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 354 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 355 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 356 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Casos por cada unidad espacial 
+
+&lt;table class="table table-striped" style="font-size: 20px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 349 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 350 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 351 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 352 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 353 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 354 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 355 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; 356 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; casos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 148 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+---
+### Cálculo del estadístico Espacial Local `\(\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}\)`
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+
+
+`$$\color{#2ECC40}{G_{i}^{*}} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{1+ 1}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} = \frac{\color{#FF4136}{2}}{\color{#0074D9}{209}}= \color{#2ECC40}{0.009569378}$$`
+
+`$$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{17 + 1 + 5 + 37 + 0}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{60}}{\color{#0074D9}{209}} =\color{#2ECC40}{0.2870813}$$`
+
+
+
+
+
+Corrección de Bonferroni: `\(1-\alpha\)` = `\((1-\alpha)^{n}\)`
+
+
+```
+## [1] 8
+```
+
+```
+## [1] 2.4977 3.0233
+```
+
+
+Criterio:
+`$$\color{#2ECC40}{G_{i}^{*}} &gt;= 1-\alpha = (1-\alpha)^{n}$$` es Hotspots, de lo contratio es No Hotspots
+
 ---
 # Thanks!
 
@@ -164,6 +356,7 @@ son las áreas o las unidades espaciales con valores altos de `\(\color{#2ECC40}
 - ***celular***     :     [228 229 3419]()
 
 - ***slides***:     https://animated-longma-729cee.netlify.app/talks/hotspots_cases/#1
+
 
 
 
@@ -219,6 +412,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
