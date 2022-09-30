@@ -312,6 +312,8 @@ $$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}
 ### Cálculo del estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+&nbsp;
+
 .pull-left[
 
 ```{r, echo=FALSE}
@@ -328,7 +330,9 @@ kableExtra::kbl() |>
 ]
 
 .pull-right[
-Corrección de Bonferroni: $1-\alpha$ = $(1-\alpha)^{n}$
+Corrección de Bonferroni: 
+
+$1-\alpha$ = $(1-\alpha)^{n}$
 
 ```{r, echo=FALSE}
  getis_ord_umbral <- function(n, alpha){
@@ -339,7 +343,10 @@ getis_ord_umbral(n = c(8), alpha = c(.95, .99))
 ```
 
 Criterio:
+
+Si
 $$\color{#2ECC40}{G_{i}^{*}} >= 1-\alpha = (1-\alpha)^{n}$$
+es Hotspots, de lo contrario es no Hotspots
 ]
 ---
 # Thanks!
