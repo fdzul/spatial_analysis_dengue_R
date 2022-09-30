@@ -279,8 +279,32 @@ $$\color{#2ECC40}{G_{i}^{*}} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \colo
 $$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
 {\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{17 + 1 + 5 + 37 + 0}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{60}}{\color{#0074D9}{209}} =\color{#2ECC40}{0.2870813}$$
 
+$$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{17 + 1 + 0}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{18}}{\color{#0074D9}{209}} =\color{#2ECC40}{0.0861244}$$
+
+$$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{1 + 37}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{38}}{\color{#0074D9}{209}} =\color{#2ECC40}{0.1818182}$$
 
 
+
+---
+### Cálculo del estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+$$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{37 + 0}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{37}}{\color{#0074D9}{209}} =\color{#2ECC40}{0.1770335}$$
+$$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{1 + 5 + 148 + 0}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{154}}{\color{#0074D9}{209}} =\color{#2ECC40}{0.1770335}$$
+
+$$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{1 + 1 +148 + 37}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{187}}{\color{#0074D9}{209}} =\color{#2ECC40}{0.8947368}$$
+
+$$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{0}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{0}}{\color{#0074D9}{209}} =\color{#2ECC40}{0}$$
+
+---
+### Cálculo del estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
 Corrección de Bonferroni: $1-\alpha$ = $(1-\alpha)^{n}$
