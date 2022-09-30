@@ -306,41 +306,41 @@ $$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}
 
 
 $$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
-{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{0}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{0}}{\color{#0074D9}{209}} =\color{#2ECC40}{0}$$
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}} = \frac{\color{#FF4136}{0}}{\color{#0074D9}{17 + 1 + 1 + 5 + 148 +37 + 0 + 0}} =  \frac{\color{#FF4136}{0}}{\color{#0074D9}{209}} =\color{#2ECC40}{0.0000000}$$
 
 ---
 ### Cálculo del estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+.pull-left[
 
 ```{r, echo=FALSE}
 x$ageb |>
     dplyr::select(nb_n) |>
     sf::st_drop_geometry() |>
-    dplyr::mutate(casos_vecinos = c(2, 60, 18, 38, 37, 154, 187, 0)) |>
-    dplyr::mutate(getis = casos_vecinos/sum(nb_n)) |>
+    #dplyr::mutate(casos_vecinos = c(2, 60, 18, 38, 37, 154, 187, 0)) |>
+    dplyr::mutate(getis = c(2, 60, 18, 38, 37, 154, 187, 0)/sum(nb_n)) |>
     dplyr::mutate(z_score = (getis-mean(getis))/sd(getis)) |>
 kableExtra::kbl() |>
     kableExtra::kable_styling(bootstrap_options = "striped", 
                               full_width = T, font_size = 20)
 ```
+]
 
-
-
+.pull-right[
 Corrección de Bonferroni: $1-\alpha$ = $(1-\alpha)^{n}$
 
 ```{r, echo=FALSE}
  getis_ord_umbral <- function(n, alpha){
         round(qnorm(p = -((1-alpha)/n) + 1, mean = 0, sd = 1), digits = 4)
  }
-c(8)
+
 getis_ord_umbral(n = c(8), alpha = c(.95, .99))
 ```
 
-
 Criterio:
-$$\color{#2ECC40}{G_{i}^{*}} >= 1-\alpha = (1-\alpha)^{n}$$ es Hotspots, de lo contratio es No Hotspots
-
+$$\color{#2ECC40}{G_{i}^{*}} >= 1-\alpha = (1-\alpha)^{n}$$
+]
 ---
 # Thanks!
 
