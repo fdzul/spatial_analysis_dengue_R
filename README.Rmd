@@ -1,6 +1,7 @@
 ---
 output: github_document
 always_allow_html: true
+cover-image: images/cover.jpg
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
