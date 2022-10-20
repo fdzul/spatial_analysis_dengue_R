@@ -394,7 +394,7 @@ z |>
     #head(n = 30) |>
     kableExtra::kable() |>
     kableExtra::kable_classic() |>
-    kableExtra::scroll_box(width = "100%", height = "90%")
+    kableExtra::scroll_box(width = "100%", height = "80%")
 
 
 ```
@@ -437,12 +437,16 @@ hotspots |>
     dplyr::mutate(Intensidad = rowSums(hotspots)) |>
     dplyr::filter(!is.na(Intensidad)) |>
     dplyr::arrange(dplyr::desc(Intensidad)) |>
-    head(n = 30) |>
 kableExtra::kable() |>
     kableExtra::kable_classic() |>
-     kableExtra::scroll_box(width = "100%", height = "600px" )
+     kableExtra::scroll_box(width = "100%", height = "500px" )
 
 ```
+---
+# Mapa de Intensidad de la Transmisión de Dengue
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
 
 ---
 # Thanks!
