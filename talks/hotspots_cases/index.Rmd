@@ -353,6 +353,37 @@ Si
 $$\color{#2ECC40}{G_{i}^{*}} >= 1-\alpha = (1-\alpha)^{n}$$
 es Hotspots, de lo contrario es no Hotspots
 ]
+
+---
+# Distribucion de casos por AGEB
+```{r echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
+#
+load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+# map ####
+x$ageb |>
+    dplyr::bind_cols(z) |>
+    dplyr::select(c(dplyr::starts_with("DENV"))) |>
+    tidyr::pivot_longer(cols = dplyr::starts_with("DENV_")) |>
+    tidyr::separate(col = name,
+                    into = c(NA, "year")) |>
+    dplyr::filter(year <= "2015") |>
+    ##
+    ggplot2::ggplot() +
+    ggplot2::geom_sf(ggplot2::aes(fill = value),
+                     color = "gray80") +
+    ggplot2::facet_wrap(facets = "year") +
+    fishualize::scale_fill_fish(discrete = FALSE,  option = "Hypsypops_rubicundus") +
+    cowplot::theme_map()
+
+```
+
+
+
+---
+# Distribucion de casos por AGEB
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
 ---
 # Thanks!
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
