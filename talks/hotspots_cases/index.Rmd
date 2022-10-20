@@ -415,7 +415,7 @@ names(getis) <- unlist(stringr::str_extract_all(names(getis),
 getis |>
     kableExtra::kable(digits = 3) |>
     kableExtra::kable_classic() |>
-    kableExtra::scroll_box()
+    kableExtra::scroll_box(width = "100%", height = "200px")
     
 
 ```
