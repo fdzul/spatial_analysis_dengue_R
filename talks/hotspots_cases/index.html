@@ -109,8 +109,8 @@ top:1em;right:1em;
 ## **Análisis espacial del dengue**
 &lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
 
-<div id="htmlwidget-2ce0576ff5536aaa9267" style="width:100%;height:504px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2ce0576ff5536aaa9267">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos Actuales\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos Acumulados\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n lgcp [label = \"Spatial LGCP\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana lgcp}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-95ed7f08543f1eea8512" style="width:100%;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-95ed7f08543f1eea8512">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos Actuales\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos Acumulados\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n lgcp [label = \"Spatial LGCP\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana lgcp}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ---
 # **Hotspots de Dengue**
@@ -130,8 +130,8 @@ top:1em;right:1em;
 11. Visualizar los hotspots.
 ]
 .pull-right[
-<div id="htmlwidget-6aa23f353e76e652cd05" style="width:100%;height:550px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6aa23f353e76e652cd05">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  cases_ageb [label = \"Casos por AGEBs\"]\n  z_score [label = \"Z-score\"]\n  gi [label = \"Estadístico Espacial Local (Gi*)\"]\n  bonferroni [label = \"Corrección de Bonferroni\"]\n  hotspots [label = \"Hotspots\", style = filled, color = orange]\n  \n  # flow chart for inegi\n  inegi [label = \"INEGI\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc [label = \"Localidades Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb [label = \"AGEB Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc_esp [label = \"Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb_esp [label = \"AGEBs de la Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  mat [label = \"Matriz de Adjacencias\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> z_score -> gi -> bonferroni -> hotspots \n  inegi -> {ageb, loc}\n  loc -> loc_esp -> ageb_esp\n  ageb -> ageb_esp\n  ageb_esp -> mat\n  mat -> cases_ageb \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c1dca53f0fa3fbeef305" style="width:100%;height:550px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c1dca53f0fa3fbeef305">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  cases_ageb [label = \"Casos por AGEBs\"]\n  z_score [label = \"Z-score\"]\n  gi [label = \"Estadístico Espacial Local (Gi*)\"]\n  bonferroni [label = \"Corrección de Bonferroni\"]\n  hotspots [label = \"Hotspots\", style = filled, color = orange]\n  \n  # flow chart for inegi\n  inegi [label = \"INEGI\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc [label = \"Localidades Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb [label = \"AGEB Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc_esp [label = \"Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb_esp [label = \"AGEBs de la Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  mat [label = \"Matriz de Adjacencias\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> z_score -> gi -> bonferroni -> hotspots \n  inegi -> {ageb, loc}\n  loc -> loc_esp -> ageb_esp\n  ageb -> ageb_esp\n  ageb_esp -> mat\n  mat -> cases_ageb \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 .tiny[.blue[.footnote[ Dzul-Manzanilla et al 2021]]]
@@ -460,23 +460,23 @@ es Hotspots, de lo contrario es no Hotspots
 ---
 # Casos por AGEB
 
-&lt;div style="border: 1px solid #ddd; padding: 5px; "&gt;&lt;table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'&gt;
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:100%; overflow-x: scroll; width:100%; "&gt;&lt;table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; 2008 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2009 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2010 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2011 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2012 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2014 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2015 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2013 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2016 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2017 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2018 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2019 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2020 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2021 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2008 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2009 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2010 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2011 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2012 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2014 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2015 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2013 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2016 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2017 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2018 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2019 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2020 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2021 &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
@@ -8551,7 +8551,7 @@ es Hotspots, de lo contrario es no Hotspots
 ---
 #  Estadístico Espacial Local `\(\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}\)`
 
-&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100%; "&gt;&lt;table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'&gt;
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:100%; overflow-x: scroll; width:100%; "&gt;&lt;table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2008 &lt;/th&gt;
@@ -16641,24 +16641,24 @@ es Hotspots, de lo contrario es no Hotspots
 ---
 #  Hotspots e Intensidad
 
-&lt;div style="border: 1px solid #ddd; padding: 5px; "&gt;&lt;table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'&gt;
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:100%; overflow-x: scroll; width:100%; "&gt;&lt;table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; 2008 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2009 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2010 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2011 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2012 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2013 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2014 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2015 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2016 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2017 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2018 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2019 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2020 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; 2021 &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Intensidad &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2008 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2009 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2010 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2011 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2012 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2013 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2014 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2015 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2016 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2017 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2018 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2019 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2020 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; 2021 &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; Intensidad &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
