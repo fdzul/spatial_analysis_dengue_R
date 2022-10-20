@@ -38,9 +38,9 @@ xaringanExtra::use_share_again()
 
 ```{r xaringan-logo, echo=FALSE}
 xaringanExtra::use_logo(
-  image_url = "https://www.ssaver.gob.mx/wp-content/uploads/2021/04/cropped-logoencabezado6abr2.jpg",
-  width = "310px",
-  height = "428px",
+  image_url = "https://www.gob.mx/cms/uploads/action_program/main_image/26942/post_post_portadavectores.gif",
+  width = "110px",
+  height = "228px",
   position = xaringanExtra::css_position(top = "1em", right = "1em")
 )
 ```
@@ -84,6 +84,7 @@ DiagrammeR::grViz("digraph {
  hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  cadenas [label = 'Cadenas de Transmisión',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  cluster_ana [label = 'Cluster Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ lgcp [label = 'Spatial LGCP',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
  
  # software
@@ -100,11 +101,11 @@ DiagrammeR::grViz("digraph {
  
  epi -> {data_historic  data_datos_actuales}
  data_historic -> areal -> hotspots -> geoda
- data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana}
+ data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana lgcp}
  cadenas -> cluster_s
  cluster_ana -> satscan
  
- {geoda cluster_s, satscan} -> r_rstudio -> denhotspot
+ {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot
  
 }")
 
@@ -201,7 +202,7 @@ son las áreas o las unidades espaciales con valores altos de $\color{#2ECC40}G_
 ### Cálculo del estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
-```{r, echo=FALSE,dpi=300, warning = FALSE,message = FALSE, out.width = "80%"}
+```{r, echo=FALSE,dpi=300, warning = FALSE,message = FALSE,out.width = "80%"}
 # Step 2. load the locality ####
 x <- rgeomex::extract_ageb(locality = "Homun", cve_geo = "31")
 
@@ -225,7 +226,8 @@ ggplot2::ggplot()+
                            ggplot2::aes(label = rownames(x$ageb)),
                            label.size = 0.1,
                            size = 2.5,
-                           alpha = 0.5)
+                           alpha = 0.5) +
+    ggplot2::ggtitle("Homun, Yuc.")
 
 ```
 
@@ -235,7 +237,7 @@ ggplot2::ggplot()+
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
-Spatial Weight Matrix $\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}$
+Spatial Weight Matrix $\color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}$
 
 ```{r swm, echo=FALSE, warning = FALSE,message = FALSE, fig.align ="left", out.width = "50%"}
 # Create the neighborhoods ####
@@ -253,7 +255,7 @@ kableExtra::kbl(df) %>%
   kable_styling(bootstrap_options = "striped", full_width = T, font_size = 20)
 ```
 
-Casos por cada unidad espacial 
+Casos por cada unidad espacial $\color{#FF4136}x_{\color{#FF4136}i}$
 
 ```{r swm_casos, echo=FALSE, warning = FALSE,message = FALSE, fig.align ="left", out.width = "50%"}
 y_matriz <- matrix(data = x$ageb$nb_n,
@@ -334,6 +336,7 @@ Corrección de Bonferroni:
 
 $1-\alpha$ = $(1-\alpha)^{n}$
 
+$n = 8, alpha = c(.95, 0.99)$
 ```{r, echo=FALSE}
  getis_ord_umbral <- function(n, alpha){
         round(qnorm(p = -((1-alpha)/n) + 1, mean = 0, sd = 1), digits = 4)
@@ -350,7 +353,7 @@ es Hotspots, de lo contrario es no Hotspots
 ]
 ---
 # Thanks!
-
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 &nbsp;
 
 - ***Bio*** : https://fdzul.github.io/web_site_fadm/
