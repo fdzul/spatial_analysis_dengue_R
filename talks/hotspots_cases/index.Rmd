@@ -291,7 +291,7 @@ $$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}
 
 
 ---
-### Cálculo del estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
+### Cálculo del Estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 &nbsp;
@@ -380,9 +380,69 @@ x$ageb |>
 
 
 ---
-# Distribucion de casos por AGEB
-<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+# Casos por AGEB
 
+```{r,  echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
+
+load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+# Casos
+
+names(z) <- unlist(stringr::str_extract_all(names(z),
+                                            pattern = "[[:digit:]]{4}"))
+
+z |>
+    #head(n = 30) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic() |>
+    kableExtra::scroll_box()
+
+
+```
+
+
+---
+#  Estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
+
+```{r,  echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
+
+load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+# Getis ####
+getis <- hotspots |>
+    dplyr::select(dplyr::starts_with("getis_"))
+names(getis) <- unlist(stringr::str_extract_all(names(getis),
+                                             pattern = "[[:digit:]]{4}"))
+
+getis |>
+    head(n = 30) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic()
+    
+
+```
+
+---
+#  Hotspots e Intensidad
+
+```{r,  echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
+
+load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+# Hotspots ####
+hotspots <- hotspots |>
+    dplyr::select(dplyr::starts_with("hotspots"))
+
+names(hotspots) <- unlist(stringr::str_extract_all(names(hotspots),
+                          pattern = "[[:digit:]]{4}"))
+    
+hotspots |>
+    dplyr::mutate(Intensidad = rowSums(hotspots)) |>
+    dplyr::filter(!is.na(Intensidad)) |>
+    dplyr::arrange(dplyr::desc(Intensidad)) |>
+    head(n = 30) |>
+kableExtra::kable() |>
+    kableExtra::kable_classic() |>
+     kableExtra::scroll_box()
+
+```
 
 ---
 # Thanks!
