@@ -208,7 +208,7 @@ x <- rgeomex::extract_ageb(locality = "Homun", cve_geo = "31")
 
 #  Step 2. simulate dengue cases ####
 set.seed(123456)
-x$ageb$nb_n <- MASS::rnegbin(n = nrow(x$ageb),
+x$ageb$n <- MASS::rnegbin(n = nrow(x$ageb),
                              mu = 10,
                              theta = 0.2)
 row.names(x$ageb) <- stringr::str_sub(row.names(x$ageb),
@@ -218,7 +218,7 @@ row.names(x$ageb) <- stringr::str_sub(row.names(x$ageb),
 library(ggplot2)
 ggplot2::ggplot()+
     ggplot2::geom_sf(data = x$ageb,
-                     ggplot2::aes(fill = as.factor(nb_n)),
+                     ggplot2::aes(fill = as.factor(n)),
                      label = rownames(x$ageb)) +
     ggplot2::scale_fill_viridis_d("Casos") +
     ggplot2::theme_void() +
@@ -258,13 +258,13 @@ kableExtra::kbl(df) %>%
 Casos por cada unidad espacial $\color{#FF4136}x_{\color{#FF4136}i}$
 
 ```{r swm_casos, echo=FALSE, warning = FALSE,message = FALSE, fig.align ="left", out.width = "50%"}
-y_matriz <- matrix(data = x$ageb$nb_n,
+y_matriz <- matrix(data = x$ageb$n,
                    nrow = 1, 
                    ncol = nrow(x$ageb))
 colnames(y_matriz) <- row.names(y_matriz)
 dimnames(y_matriz) <- list("casos", row.names(x$ageb))
 
-kableExtra::kbl(y_matriz) %>%
+kableExtra::kbl(y_matriz) |>
   kable_styling(bootstrap_options = "striped", full_width = T, font_size = 20)
 ```
 
@@ -320,11 +320,11 @@ $$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}
 
 ```{r, echo=FALSE}
 x$ageb |>
-    dplyr::select(nb_n) |>
+    dplyr::select(n) |>
     sf::st_drop_geometry() |>
-    dplyr::mutate(xi = c(2, 60, 18, 38, 37, 154, 187, 0)) |>
-    dplyr::mutate(gi = round(c(2, 60, 18, 38, 37, 154, 187, 0)/sum(nb_n),
-                                digits = 3)) |>
+    dplyr::mutate(wx = c(2, 60, 18, 38, 37, 154, 187, 0)) |>
+    dplyr::mutate(gi = round(wx/sum(n),digits = 3)) |>
+    #dplyr::mutate(gi_star = round((n+wx)/sum(n),digits = 3)) |>
     dplyr::mutate(gi_z = round((gi-mean(gi))/sd(gi),
                                   digits = 3)) |>
 kableExtra::kbl() |>
