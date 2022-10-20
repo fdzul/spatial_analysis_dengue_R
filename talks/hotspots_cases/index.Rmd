@@ -413,9 +413,9 @@ names(getis) <- unlist(stringr::str_extract_all(names(getis),
                                              pattern = "[[:digit:]]{4}"))
 
 getis |>
-    head(n = 30) |>
-    kableExtra::kable() |>
-    kableExtra::kable_classic()
+    kableExtra::kable(digits = 3) |>
+    kableExtra::kable_classic() |>
+    kableExtra::scroll_box()
     
 
 ```
