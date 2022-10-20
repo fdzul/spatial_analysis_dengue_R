@@ -25,7 +25,7 @@ epidemiológica.
 3)  Desarrollar un modelo estratégico de focalización del dengue en las
     localidades urbanas endémicas de México.
 
-4)  Identificar las cadenas de tranmisión activa del dengue en las
+4)  Identificar las cadenas de transmisión activa del dengue en las
     localidades urbanas endémicas de México.
 
 5)  Implementar el modelo Log Gaussian Cox Process en las localidades
@@ -38,7 +38,7 @@ El curso esta complementado con el desarrollo de paquetes en R y el
 urbanas endémicas](https://fdzul.github.io/manual_hotspots/). Tanto los
 cursos, el parquete y el manual, no solo está dirigido al personal
 operativo, mandos medios y directivos de los Programas de Prevención y
-Control de las arbovirosis transmitidas por Aedes de la Secretaria de
+Control de las arbovirosis transmitidas por Aedes de la Secretaría de
 Salud de México, sino también a la comunidad académica relacionada con
 la investigación operativa sobre el análisis espacial de dengue y al
 público en general interesado en el tema.
@@ -368,5 +368,3 @@ Manzanilla](https://fdzul.github.io/web_site_fadm/)
 [Dr. Angel Arguello]()
 
 ## Inscripción
-
-x
