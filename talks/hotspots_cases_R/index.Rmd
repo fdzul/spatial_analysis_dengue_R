@@ -45,8 +45,7 @@ xaringanExtra::use_logo(
 )
 ```
 
-# **Hotspots de Dengue**
-<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+# **Cálculo de los Hotspots de Dengue**
 
 .pull-left[
 
@@ -125,6 +124,96 @@ DiagrammeR::grViz("digraph {
 height = 550)
 ```
 
+]
+
+
+---
+# **Geocodificación de las bases de dengue en R**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+## 0. Darse de alta en el servicio de Geocoding API de google 
+
+## 1. Subir las bases de dengue.
+
+## 2. Geocodificar las bases de dengue.
+
+## 3. Unir las bases de dengue.
+
+
+---
+
+# **Geocodificación**
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+.panelset[
+
+.panel[.panel-name[Paso 1. Subir las Bases]
+```{r geocoding_step_1, fig.show='hide', warning=FALSE, message=FALSE}
+
+# Step 1. Subir la base de datos de dengue de la semana pasada #####
+# y  <- denhotspots::read_dengue_dataset() 
+
+# Step 2. Subir la base de datos de dengue de la semana actual ####
+# x  <- denhotspots::read_dengue_dataset() 
+
+
+# Step 3. extraer los casos (ids) no geocodificados de la semana actual ###
+#z <- x |>
+#    dplyr::filter(!VEC_ID %in% c(y$VEC_ID)) |>
+#    dplyr::arrange(VEC_ID)
+
+
+# Step 4. guardar los resultados ####
+#write.csv(z, file = "positive_denmx_2022_10_17.csv")
+
+
+```
+]
+
+.panel[.panel-name[Paso 2. geocodificar]
+```{r geocoding_step_2, fig.show='hide', warning=FALSE, message=FALSE}
+
+
+
+
+```
+]
+
+.panel[.panel-name[Paso 3. Salvar las Bases]
+```{r geocoding_step_3, fig.show='hide', warning=FALSE, message=FALSE}
+
+```
+]
+
+
 
 ]
 
+
+
+
+---
+
+# Dios Botic!
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+&nbsp;
+
+- ***Bio*** : https://fdzul.github.io/web_site_fadm/
+
+- ***email***       :     felipe.dzul.m@gmail.com
+
+- ***celular***     :     228 229 3419
+
+- ***slides***:     https://animated-longma-729cee.netlify.app/talks/spatial_data/#1
+
+
+
+
+.footnote[La presentación fue creada via [**xaringan**](https://github.com/yihui/xaringan),
+[**revealjs**](https://revealjs.com/),
+[remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr),
+& [R Markdown](https://rmarkdown.rstudio.com) en [R]() & [RStudio](2.R_Scripts/libs/rstudio_leaflet/rstudio_leaflet.css).]
