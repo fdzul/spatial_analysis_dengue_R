@@ -233,7 +233,7 @@ xaringanExtra::use_panelset()
 .panel[.panel-name[Dataset]
 ```{r}
 # Step 1. load the dengue geocoded dataset ####
-#load("C:/Users/HOME/OneDrive/proyects/priority_research_projects/hotspots_high_risk_localities_138/8.RData/geocoded_dataset.RData")
+load("C:/Users/HOME/OneDrive/proyects/priority_research_projects/hotspots_high_risk_localities_138/8.RData/geocoded_dataset.RData")
 
 
 ```
@@ -243,8 +243,8 @@ xaringanExtra::use_panelset()
 .panel[.panel-name[Extract Locality]
 ```{r}
 # Step 2. extract the locality #####
-#x <- rgeomex::extract_ageb(locality = "Acapulco de Juarez", 
-#                           cve_geo = "12")
+x <- rgeomex::extract_ageb(locality = "Acapulco de Juarez", 
+                           cve_geo = "12")
 
 
 ```
@@ -253,14 +253,14 @@ xaringanExtra::use_panelset()
 
 .panel[.panel-name[Cases by AGEB]
 ```{r}
-#library(magrittr)
-#z <- denhotspots::point_to_polygons(x = y,
-#                                    y = x$ageb,
-#                                    ids = names(x$ageb)[-10],
-#                                    time = ANO,
-#                                    coords = c("long", "lat"),
-#                                    crs = 4326,
-#                                    dis = "DENV") 
+library(magrittr)
+z <- denhotspots::point_to_polygons(x = y,
+                                    y = x$ageb,
+                                    ids = names(x$ageb)[-10],
+                                    time = ANO,
+                                    coords = c("long", "lat"),
+                                    crs = 4326,
+                                    dis = "DENV") 
 
 ```
 
@@ -268,12 +268,12 @@ xaringanExtra::use_panelset()
 
 .panel[.panel-name[Hotspots]
 ```{r}
-#hotspots <- denhotspots::gihi(x = z,
-#                              id = names(z)[c(1:9)], 
-#                              time = "year",
-#                              dis = "DENV",
-#                              gi_hi = "gi",
-#                              alpha = 0.95)
+hotspots <- denhotspots::gihi(x = z,
+                              id = names(z)[c(1:9)], 
+                              time = "year",
+                              dis = "DENV",
+                              gi_hi = "gi",
+                              alpha = 0.95)
 
 ```
 
@@ -284,9 +284,28 @@ xaringanExtra::use_panelset()
 ]
 
 ---
-# Visualización 
+# Visualización. Mapa Estático
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+.panelset.sideways[
+```{r include=FALSE}
+estatic_map <- c(source = "Código",
+                 output = "Mapa")
+#interactive_map <- c(source = "Código",
+#                     output = "Mapa")
+```
+```{r panelset = estatic_map}
+denhotspots::staticmap_intensity(x = hotspots,
+                                 pal = rcartocolor::carto_pal,
+                                 pal_name = TRUE,
+                                 name = "OrYel",
+                                 breaks = 1,
+                                 dir_pal = -1,
+                                 x_leg = 0.5,
+                                 y_leg = 0.1,
+                                 ageb = TRUE)
+```
+]
 
 
 ---
