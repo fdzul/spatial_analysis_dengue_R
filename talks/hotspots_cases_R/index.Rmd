@@ -284,15 +284,15 @@ hotspots <- denhotspots::gihi(x = z,
 ]
 
 ---
-# Visualización. Mapa Estático
+# Visualización
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 .panelset.sideways[
 ```{r include=FALSE}
-estatic_map <- c(source = "Código",
-                 output = "Mapa")
-#interactive_map <- c(source = "Código",
-#                     output = "Mapa")
+estatic_map <- c(source = "Static Map Code",
+                 output = "Static Map")
+interactive_map <- c(source = "Interactive Map Code",
+                     output = "Interactive Map")
 ```
 ```{r panelset = estatic_map}
 denhotspots::staticmap_intensity(x = hotspots,
@@ -305,6 +305,15 @@ denhotspots::staticmap_intensity(x = hotspots,
                                  y_leg = 0.1,
                                  ageb = TRUE)
 ```
+```{r panelset = interactive_map}
+source("C:/Users/HOME/Dropbox/r_developments/r_dashboards/github_pages/test_dashboard/3.Functions/hotspots_map.R")
+hotspots_map(cve_ent = "12",
+             locality = "Acapulco de Juarez",
+             hotspots = hotspots,
+             static_map = FALSE)
+```
+
+
 ]
 
 
