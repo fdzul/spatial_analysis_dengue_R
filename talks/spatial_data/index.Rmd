@@ -343,9 +343,13 @@ l |>
 .panelset.sideways[
 ```{r include=FALSE}
 base_r <- c(source = "Base R",
-                 output = "Base R Map")
+            output = "Base R Map")
 ggplot_2 <- c(source = "ggplot2",
-                     output = "ggplot Map")
+              output = "ggplot Map")
+map_tmap <- c(source = "tmap",
+              output = "tmap Map")
+
+
 ```
 
 ```{r panelset = base_r, warning=FALSE, message=FALSE}
@@ -353,7 +357,8 @@ ggplot_2 <- c(source = "ggplot2",
 library(sf)
 x <- rgeomex::AGEM_inegi19_mx |>
     dplyr::filter(CVE_ENT %in% c("30")) |>
-    dplyr::mutate(casos = rpois(n = dplyr::n(), lambda = 4))
+    dplyr::mutate(casos = rpois(n = dplyr::n(), 
+                                lambda = 4))
 # Step 2. plot the map with R base ####
 plot(x["casos"], 
      key.pos = 4,
@@ -368,7 +373,8 @@ plot(x["casos"],
 library(sf)
 x <- rgeomex::AGEM_inegi19_mx |>
     dplyr::filter(CVE_ENT %in% c("30")) |>
-    dplyr::mutate(casos = rpois(n = dplyr::n(), lambda = 4)) 
+    dplyr::mutate(casos = rpois(n = dplyr::n(), 
+                                lambda = 4)) 
 
 # Step 2. plot the map with ggplot2 ####
 ggplot2::ggplot() +
@@ -379,41 +385,14 @@ ggplot2::ggplot() +
     ggspatial::annotation_north_arrow(location = "tr")
 ```
 
-]
 
-
----
-# Mapas estáticos en R
-
-.panelset[
-
-.panel[.panel-name[base R]
-
-]
-
-.panel[.panel-name[Mapa base R]
-```{r map_with_base_r, echo=FALSE, warning=FALSE, message=FALSE}
-
-```
-]
-
-
-.panel[.panel-name[ggplot2]
-```{r map_ggplot2, fig.show='hide', warning=FALSE, message=FALSE}
-
-```
-]
-
-.panel[.panel-name[Mapa ggplot2]
-![](maps/static_maps/ggplot_maps.jpg)
-]
-.panel[.panel-name[tmap]
-```{r maptmap, fig.show='hide', warning=FALSE, message=FALSE}
+```{r panelset = map_tmap, warning=FALSE, message=FALSE}
 # step 1. load municipality & add the dengue cases ####
 library(sf)
 x <- rgeomex::AGEM_inegi19_mx |>
     dplyr::filter(CVE_ENT %in% c("30")) |>
-    dplyr::mutate(casos = rpois(n = dplyr::n(), lambda = 4))
+    dplyr::mutate(casos = rpois(n = dplyr::n(), 
+                                lambda = 4))
 # Step 2. plot the map with tmap ####
 library(tmap)
 tmap::tm_shape(x) +
@@ -421,12 +400,8 @@ tmap::tm_shape(x) +
     tmap::tm_compass(position = c(.2, .9)) +
     tmap::tm_scale_bar(position = c(.1, .02))
 ```
-]
-.panel[.panel-name[Mapa tmap]
-![](maps/static_maps/tmap_maps.jpg)
-]
-]
 
+]
 
 
 
