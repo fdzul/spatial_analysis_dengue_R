@@ -241,9 +241,10 @@ load("C:/Users/HOME/OneDrive/proyects/priority_research_projects/hotspots_high_r
 ]
 
 .panel[.panel-name[Extract Locality]
-```{r}
+```{r, message=FALSE, warning=FALSE}
 # Step 2. extract the locality #####
-x <- rgeomex::extract_ageb(locality = c("Guadalajara", "Zapopan", "Tlaquepaque", "Tonala"), 
+x <- rgeomex::extract_ageb(locality = c("Guadalajara", "Zapopan", 
+                                        "Tlaquepaque", "Tonalá"), 
                            cve_geo = "14")
 
 
@@ -305,10 +306,11 @@ denhotspots::staticmap_intensity(x = hotspots,
                                  y_leg = 0.1,
                                  ageb = TRUE)
 ```
-```{r panelset = interactive_map}
+```{r panelset = interactive_map,  message=FALSE, warning=FALSE}
 source("C:/Users/HOME/Dropbox/r_developments/r_dashboards/github_pages/test_dashboard/3.Functions/hotspots_map.R")
 hotspots_map(cve_ent = "14",
-             locality = c("Guadalajara", "Zapopan", "Tlaquepaque", "Tonala"),
+             locality = c("Guadalajara", "Zapopan", 
+                          "Tlaquepaque", "Tonalá"),
              hotspots = hotspots,
              static_map = FALSE)
 ```
