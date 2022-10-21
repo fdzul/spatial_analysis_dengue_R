@@ -133,11 +133,11 @@ height = 550)
 
 
 ## 0. Darse de alta en el servicio de Geocoding API de google 
-
+&nbsp;
 ## 1. Subir las bases de dengue.
-
+&nbsp;
 ## 2. Geocodificar las bases de dengue.
-
+&nbsp;
 ## 3. Unir las bases de dengue.
 
 
@@ -145,7 +145,7 @@ height = 550)
 
 # **Geocodificación**
 
-```{r xaringan-panelset, echo=FALSE}
+```{r xaringan-panelset_geocoding, echo=FALSE}
 xaringanExtra::use_panelset()
 ```
 
@@ -186,7 +186,7 @@ xaringanExtra::use_panelset()
 #                                      pattern = " VER,",
 #                                      replacement = " ,")
 # Step 3. geocoding ###
-library(ggmap)
+#library(ggmap)
 #denhotspots::geocoden(infile = "positive_denmx_2022_10_17")
 # Step 4. load the dengue geocoded & dengue dataset #####
 #z <- readRDS("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/positive_denmx_2022_10_17_temp_geocoded.rds")
@@ -222,16 +222,74 @@ library(ggmap)
 
 ```
 ]
+]
+
+---
+# Identificación de los Hotspots en R
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.panelset[
+
+.panel[.panel-name[Dataset]
+```{r}
+# Step 1. load the dengue geocoded dataset ####
+#load("C:/Users/HOME/OneDrive/proyects/priority_research_projects/hotspots_high_risk_localities_138/8.RData/geocoded_dataset.RData")
 
 
+```
+
+]
+
+.panel[.panel-name[Extract Locality]
+```{r}
+# Step 2. extract the locality #####
+#x <- rgeomex::extract_ageb(locality = "Acapulco de Juarez", 
+#                           cve_geo = "12")
+
+
+```
+
+]
+
+.panel[.panel-name[Cases by AGEB]
+```{r}
+#library(magrittr)
+#z <- denhotspots::point_to_polygons(x = y,
+#                                    y = x$ageb,
+#                                    ids = names(x$ageb)[-10],
+#                                    time = ANO,
+#                                    coords = c("long", "lat"),
+#                                    crs = 4326,
+#                                    dis = "DENV") 
+
+```
+
+]
+
+.panel[.panel-name[Hotspots]
+```{r}
+#hotspots <- denhotspots::gihi(x = z,
+#                              id = names(z)[c(1:9)], 
+#                              time = "year",
+#                              dis = "DENV",
+#                              gi_hi = "gi",
+#                              alpha = 0.95)
+
+```
 
 ]
 
 
 
+]
 
 ---
+# Visualización 
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+
+
+---
 # Dios Botic!
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 &nbsp;

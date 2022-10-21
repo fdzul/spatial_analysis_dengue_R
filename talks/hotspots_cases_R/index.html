@@ -110,15 +110,15 @@ top:1em;right:1em;
 
 .pull-left[
 
-<div id="htmlwidget-45c4e6f06a0939af5625" style="width:100%;height:550px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-45c4e6f06a0939af5625">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  cases_ageb [label = \"Casos por AGEBs\"]\n  z_score [label = \"Z-score\"]\n  gi [label = \"Estadístico Espacial Local (Gi*)\"]\n  bonferroni [label = \"Corrección de Bonferroni\"]\n  hotspots [label = \"Hotspots\", style = filled, color = orange]\n  \n  # flow chart for inegi\n  inegi [label = \"INEGI\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc [label = \"Localidades Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb [label = \"AGEB Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc_esp [label = \"Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb_esp [label = \"AGEBs de la Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  mat [label = \"Matriz de Adjacencias\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> z_score -> gi -> bonferroni -> hotspots \n  inegi -> {ageb, loc}\n  loc -> loc_esp -> ageb_esp\n  ageb -> ageb_esp\n  ageb_esp -> mat\n  mat -> cases_ageb \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-96b76216d3b9c625e0d9" style="width:100%;height:550px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-96b76216d3b9c625e0d9">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  cases_ageb [label = \"Casos por AGEBs\"]\n  z_score [label = \"Z-score\"]\n  gi [label = \"Estadístico Espacial Local (Gi*)\"]\n  bonferroni [label = \"Corrección de Bonferroni\"]\n  hotspots [label = \"Hotspots\", style = filled, color = orange]\n  \n  # flow chart for inegi\n  inegi [label = \"INEGI\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc [label = \"Localidades Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb [label = \"AGEB Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc_esp [label = \"Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb_esp [label = \"AGEBs de la Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  mat [label = \"Matriz de Adjacencias\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> z_score -> gi -> bonferroni -> hotspots \n  inegi -> {ageb, loc}\n  loc -> loc_esp -> ageb_esp\n  ageb -> ageb_esp\n  ageb_esp -> mat\n  mat -> cases_ageb \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 ]
 .pull-right[
 
-<div id="htmlwidget-56bedf36d840636e4d55" style="width:100%;height:550px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-56bedf36d840636e4d55">{"x":{"diagram":"digraph {\n\n\n# graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"DENV dataset\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n   geocode [label = \"Geocoding\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n   cases_ageb [label = \"Cases/AGEB\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n   hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n   vizualization [label = \"Visualization\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n   static [label = \"Static Map\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n   interactive [label = \"Interactive Map\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> hotspots -> vizualization -> {static interactive}\n  \n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6a352d263f6223619af9" style="width:100%;height:550px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6a352d263f6223619af9">{"x":{"diagram":"digraph {\n\n\n# graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"DENV dataset\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n   geocode [label = \"Geocoding\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n   cases_ageb [label = \"Cases/AGEB\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n   hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n   vizualization [label = \"Visualization\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n   static [label = \"Static Map\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n   interactive [label = \"Interactive Map\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> hotspots -> vizualization -> {static interactive}\n  \n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ]
 
@@ -129,11 +129,11 @@ top:1em;right:1em;
 
 
 ## 0. Darse de alta en el servicio de Geocoding API de google 
-
+&amp;nbsp;
 ## 1. Subir las bases de dengue.
-
+&amp;nbsp;
 ## 2. Geocodificar las bases de dengue.
-
+&amp;nbsp;
 ## 3. Unir las bases de dengue.
 
 
@@ -179,7 +179,7 @@ top:1em;right:1em;
 #                                      pattern = " VER,",
 #                                      replacement = " ,")
 # Step 3. geocoding ###
-library(ggmap)
+#library(ggmap)
 #denhotspots::geocoden(infile = "positive_denmx_2022_10_17")
 # Step 4. load the dengue geocoded &amp; dengue dataset #####
 #z &lt;- readRDS("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/positive_denmx_2022_10_17_temp_geocoded.rds")
@@ -214,16 +214,72 @@ library(ggmap)
 #save(z, file = "9.RData_geocoded/den22_sonora.RData")
 ```
 ]
+]
 
+---
+# Identificación de los Hotspots en R
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
 
+.panelset[
+
+.panel[.panel-name[Dataset]
+
+```r
+# Step 1. load the dengue geocoded dataset ####
+#load("C:/Users/HOME/OneDrive/proyects/priority_research_projects/hotspots_high_risk_localities_138/8.RData/geocoded_dataset.RData")
+```
+
+]
+
+.panel[.panel-name[Extract Locality]
+
+```r
+# Step 2. extract the locality #####
+#x &lt;- rgeomex::extract_ageb(locality = "Acapulco de Juarez", 
+#                           cve_geo = "12")
+```
+
+]
+
+.panel[.panel-name[Cases by AGEB]
+
+```r
+#library(magrittr)
+#z &lt;- denhotspots::point_to_polygons(x = y,
+#                                    y = x$ageb,
+#                                    ids = names(x$ageb)[-10],
+#                                    time = ANO,
+#                                    coords = c("long", "lat"),
+#                                    crs = 4326,
+#                                    dis = "DENV") 
+```
+
+]
+
+.panel[.panel-name[Hotspots]
+
+```r
+#hotspots &lt;- denhotspots::gihi(x = z,
+#                              id = names(z)[c(1:9)], 
+#                              time = "year",
+#                              dis = "DENV",
+#                              gi_hi = "gi",
+#                              alpha = 0.95)
+```
 
 ]
 
 
 
+]
 
 ---
+# Visualización 
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
 
+
+
+---
 # Dios Botic!
 &lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
 &amp;nbsp;
