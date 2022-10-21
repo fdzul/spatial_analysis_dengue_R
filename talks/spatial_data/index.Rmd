@@ -340,11 +340,15 @@ l |>
 
 ---
 # Mapas estáticos en R
+.panelset.sideways[
+```{r include=FALSE}
+base_r <- c(source = "Base R",
+                 output = "Base R Map")
+ggplot_2 <- c(source = "ggplot2",
+                     output = "ggplot Map")
+```
 
-.panelset[
-
-.panel[.panel-name[base R]
-```{r map_base_r, fig.show='hide', warning=FALSE, message=FALSE}
+```{r panelset = base_r, warning=FALSE, message=FALSE}
 # step 1. load municipality & add the dengue cases ####
 library(sf)
 x <- rgeomex::AGEM_inegi19_mx |>
@@ -358,28 +362,8 @@ plot(x["casos"],
      key.width = .2,
      key.length = .8)
 ```
-]
 
-.panel[.panel-name[Mapa base R]
-```{r map_with_base_r, echo=FALSE, warning=FALSE, message=FALSE}
-# step 1. load municipality & add the dengue cases ####
-library(sf)
-x <- rgeomex::AGEM_inegi19_mx |>
-    dplyr::filter(CVE_ENT %in% c("30")) |>
-    dplyr::mutate(casos = rpois(n = dplyr::n(), lambda = 4))
-# Step 2. plot the map with R base ####
-plot(x["casos"], 
-     key.pos = 4,
-     axes = TRUE, 
-     graticule = TRUE,
-     key.width = .2,
-     key.length = .8)
-```
-]
-
-
-.panel[.panel-name[ggplot2]
-```{r map_ggplot2, fig.show='hide', warning=FALSE, message=FALSE}
+```{r panelset = ggplot_2, warning=FALSE, message=FALSE}
 # step 1. load municipality & add the dengue cases ####
 library(sf)
 x <- rgeomex::AGEM_inegi19_mx |>
@@ -393,6 +377,30 @@ ggplot2::ggplot() +
     fishualize::scale_fill_fish() +
     ggspatial::annotation_scale(location = "bl") +
     ggspatial::annotation_north_arrow(location = "tr")
+```
+
+]
+
+
+---
+# Mapas estáticos en R
+
+.panelset[
+
+.panel[.panel-name[base R]
+
+]
+
+.panel[.panel-name[Mapa base R]
+```{r map_with_base_r, echo=FALSE, warning=FALSE, message=FALSE}
+
+```
+]
+
+
+.panel[.panel-name[ggplot2]
+```{r map_ggplot2, fig.show='hide', warning=FALSE, message=FALSE}
+
 ```
 ]
 
