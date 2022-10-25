@@ -70,10 +70,20 @@ xaringanExtra::use_logo(
   - tmap
   - mapview
 
+
+---
+# Clasificación de los Datos Espaciales
+
+
+
+.footnote[[Krainski et al 2019](https://www.taylorfrancis.com/books/mono/10.1201/9780429031892/advanced-spatial-modeling-stochastic-partial-differential-equations-using-inla-elias-krainski-virgilio-g%C3%B3mez-rubio-haakon-bakka-amanda-lenzi-daniela-castro-camilo-daniel-simpson-finn-lindgren-h%C3%A5vard-rue)]
+
+
 ---
 # Tipos de mapas
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
-```{r, echo=FALSE, out.width='100%', fig.align='center'}
+```{r map_type, echo=FALSE, out.width='100%', fig.align='center'}
+
 DiagrammeR::grViz("digraph {
                   # graph definitions
   graph [layout = dot, rankdir = TB]
@@ -145,6 +155,7 @@ DiagrammeR::grViz("digraph {
 ```
 
 
+
 ---
 # Datos Espaciales 
 
@@ -156,7 +167,7 @@ xaringanExtra::use_panelset()
 
 .panel[.panel-name[Point Pattern Data]
 
-```{r point_pattern_data2, echo = FALSE, warning=FALSE, message=FALSE }
+```{r poin_pattern_data, echo = FALSE, warning=FALSE, message=FALSE }
 # Step 1. load the dataset ####
 load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2021/den_mex_2021/9.RData_geocoded/den2021_positivos.RData")
 
@@ -324,6 +335,8 @@ l |>
 ]
 
 ]
+
+
 
 
 ---
