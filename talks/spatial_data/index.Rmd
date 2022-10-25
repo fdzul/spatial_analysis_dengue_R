@@ -73,6 +73,77 @@ xaringanExtra::use_logo(
 
 ---
 # Clasificación de los Datos Espaciales
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r spatial_data_classification, echo=FALSE, out.width='100%', fig.align='center'}
+
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, 
+  style = filled, 
+  color = grey, 
+  nodesep = .5,
+  fixedsize = true, 
+  width = 2] 
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  ##### Spatial Data
+  
+  areal [label = 'Areal Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  lattice_data [label = 'Lattice Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  pp_data [label = 'Point Pattern Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  geo_data [label = 'Geostatistical Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  spatial_data [label = 'Spatial Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  
+  
+  
+  #####
+ 
+  
+ # 
+ continuo [label = 'Continuo',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+ discrete [label = 'Discreto',  fillcolor =  '#F4B400', color = 'white', fontcolor = 'black']
+ 
+ #
+ fixed  [label = 'Fijo',  fillcolor =  '#4285F4', color = 'white', fontcolor = 'white']
+ random  [label = 'Aleatorio',  fillcolor =  '#4285F4', color = 'white', fontcolor = 'white']
+ 
+ regular  [label = 'Regular',  fillcolor =  '#4285F4', color = 'white', fontcolor = 'white']
+ irregular  [label = 'Irregular',  fillcolor =  '#4285F4', color = 'white', fontcolor = 'white']
+ 
+ # examples
+ cases [label = 'Casos',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+ ovitraps [label = 'Ovitrampas',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+ ageb [label = 'Casos/colonia/ageb',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+ grid [label = 'Casos/areas geométricas',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+ 
+ ##### define the relation
+ 
+ #
+ spatial_data -> {continuo discrete} 
+ continuo -> {fixed random}
+ discrete -> {regular, irregular}
+ fixed -> geo_data
+ random -> pp_data
+ irregular -> areal
+ regular -> lattice_data
+ pp_data -> cases
+ geo_data -> ovitraps
+ areal -> ageb
+ lattice_data -> grid
+
+ 
+ 
+  
+}")
+
+```
+
 
 
 
