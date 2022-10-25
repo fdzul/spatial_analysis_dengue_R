@@ -45,6 +45,137 @@ xaringanExtra::use_logo(
 )
 ```
 
+## Ciclo de Vida del Programa de Prevención y Control del Dengue
+
+```{r, dpi=300,echo=FALSE, fig.align ="center", out.height="80%",out.width = "100%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = circle, style = filled, color = grey,
+  fixedsize = true, width = 2] 
+  
+  ###########
+  prog_den [label = 'Programa de Dengue',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
+  brote [label = 'Brote',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   cp [label = 'Control de Probables',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   node [shape = circle, style = filled, color = grey] 
+    irs [label = 'Rociado Residual',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   cl [label = 'Control Larvario',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   ovitraps [label = 'Ovitrampas',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  adult [label = 'Colecta de Adultos',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  enc_ver [label = 'Encuesta Verificación',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   plat [label = 'Plataforma',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  
+  #########
+  node [shape = rectangle, style = filled, color = grey, fixedsize = true, width = 2.5] 
+  hotspots [label = 'Hotspots',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  act [label = 'Casos Actuales',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+ 
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'black']
+  ent [label = 'Vigilancia Entomológica',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'black']
+ ind [label = 'Indicadores',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'black']
+  ###################
+  prog_den -> {epi, ent}[penwidth = 4]
+  
+  
+  act -> {
+  brote[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  cp[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  } -> plat[penwidth = 4]
+  epi -> {act, hotspots}[penwidth = 4]
+  hotspots -> {
+  cl[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  irs[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  } -> plat[penwidth = 4]
+  ent -> {adult, 
+  ovitraps,
+  enc_ver} -> plat[penwidth = 4]  
+  plat -> ind[penwidth = 4]
+  ind -> prog_den[penwidth = 4]
+  #ind -> {enc_ver, ovitraps, adult, cl, irs, cp, brote}
+
+ 
+ 
+ 
+  }", 
+  height = 600)
+
+```
+
+---
+### Línea de tiempo de la información epidemiológica & entomológica
+
+```{r,dpi=300, echo=FALSE, fig.align ="center", out.height="80%", out.width = "100%", warning=FALSE, message=FALSE}
+library(timevis)
+a <- timevis::timevis(data = data.frame(start = c("2008-01-01", 
+                                                  "2011-01-01",
+                                                  "2017-01-01",
+                                                  "2017-01-01",
+                                                  "2008-01-01",
+                                                  "2021-01-01", 
+                                                  "2021-03-01"),
+                                        end = c("2021-03-31", 
+                                                "2021-03-31", 
+                                                "2019-12-31",
+                                                "2019-12-31", 
+                                                "2020-12-31", 
+                                                "2021-03-31", 
+                                                "2021-03-31"),
+                          #style = c("color: darkblue; font-size: 15px; border-color: darkblue; border: 2px solid darkblue;"),
+                          content = c("Vigilancia Epidemiológica Pasiva", 
+                                      "Vigilancia Entomológica con Ovitrampas", 
+                                      "Vigilancia Entomológica con Adultos",
+                                      "Entomovirología",
+                                      "Hotspots Históricos",
+                                      "Actuales (clusters de casos y cadenas de transmisión)",
+                                      "Transmisión Activa (Identificación de cadenas de transmisión: knox test)"),
+                          #type = c("background"),
+                          style = c("text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkred; border: 2px solid black; background-color: firebrick;",
+                                    "text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkblue; border: 2px solid black; background-color: dodgerblue;",
+                                    "text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkblue; border: 2px solid black; background-color: dodgerblue;", 
+                                    "text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkgreen; border: 2px solid black; background-color: darkgreen;",
+                                    "text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkorange; border: 2px solid black; background-color: darkorange;", 
+                                    "text-align: left; font-weight: bold; color: black; font-size: 15px; border-color: darkorange; border: 1.5px solid black; background-color: darkorange;", 
+                                    "text-align: righ; font-weight: bold; color: black; font-size: 15px; border-color: darkorange; border: 1px solid gray; background-color: darkorange;"),
+                          group = c(1, 2, 2,3, 4, 4,4)),
+        groups = data.frame(id = 1:4, 
+                            content = c("Paciente", 
+                                        "Vector",
+                                        "Virus-Vector",
+                                        "Análisis espacial"),
+                            style = c("text-align: center; font-weight: bold; color: black; font-size: 20px; border-color: darkred; border: 2px solid black; background-color: firebrick;",
+                                      "text-align: center; font-weight: bold; color: black; font-size: 20px; border-color: darkblue; border: 2px solid black; background-color: dodgerblue;",
+                                      "text-align: center; font-weight: bold; color: black; font-size: 20px; border-color: darkgreen; border: 2px solid black; background-color: darkgreen;",
+                                      "vertical-align: middle; text-align: center; font-weight: bold; color: black; font-size: 20px; border-color: darkorange; border: 2px solid black; background-color: darkorange;")))
+
+a
+
+
+style <- "
+.vis-time-axis { 
+background-color: lightgray;
+backgroud-border: 3px solid #73AD21;
+backgroun-opacity; 0.1;
+font-weight: bold;
+text-align: center;
+vertical-align: middle;
+border: 1.5px solid #73AD21;
+font-size: 15px;}
+.vis-odd {
+color: blue;
+vertical-align: middle;
+  }
+
+"
+htmltools::html_print(htmltools::tagList(htmltools::tags$style(style), a))
+
+```
+
+
+---
 ## **Análisis espacial del dengue**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
