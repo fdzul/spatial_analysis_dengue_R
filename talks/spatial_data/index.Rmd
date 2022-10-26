@@ -449,6 +449,7 @@ ggplot2::ggplot() +
                      fill = NA, 
                      col = "#DB4437") +
     cowplot::theme_map()
+
 ```
 
 ```{r panelset = hexagonal_grid, warning=FALSE, message=FALSE}
@@ -468,39 +469,12 @@ ggplot2::ggplot() +
                      fill = NA, 
                      col = "#DB4437") +
     cowplot::theme_map()
+
 ```
 
 ```{r panelset = triangular_grid, warning=FALSE, message=FALSE}
-# Step 1. define the directory of ovitraps ####
-path_ovitraps <- "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/14_jalisco"
-path_coord <- paste(path_ovitraps, "DescargaOvitrampasMesFco.txt", sep = "/")
 
-# Step 2. create the mesh ####
 
-spde_mod <- deneggs::eggs_hotspots(path_lect = path_ovitraps,
-                                   cve_ent = 14,
-                                   locality  = c("Guadalajara", "Tlaquepaque",
-                                                 "Zapopan", "Tonalá"),
-                                   path_coord =  path_coord,
-                                   longitude  = "Pocision_X",
-                                   latitude =  "Pocision_Y",
-                                   aproximation = "gaussian",
-                                   integration = "eb",
-                                   fam = "zeroinflatednbinomial1",
-                                   k = 30,
-                                   palette_vir  = "magma",
-                                   leg_title = "Huevos",
-                                   plot = TRUE,
-                                   hist_dataset = FALSE, #####
-                                   sem = lubridate::epiweek(Sys.Date())-1,
-                                   var = "eggs",
-                                   cell_size = 1000,
-                                   alpha = .99)
-
-# Step 3. plot the grid ####
-ggplot2::ggplot() +
-    inlabru::gg(data = spde_mod$mesh) +
-    cowplot::theme_map()
 ```
 
 ]
