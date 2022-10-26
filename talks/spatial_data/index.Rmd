@@ -407,6 +407,59 @@ l |>
 
 ]
 
+---
+# Datos Espaciales 
+
+.panelset.sideways[
+```{r include=FALSE}
+square_grid <- c(source = "Square Grid",
+                 output = "Square Grid map")
+hexagonal_grid <- c(source = "Hexagonal Grid",
+                    output = "Hexagonal Grid Map")
+triangular_grid <- c(source = "Triangular Grid",
+                     output = "Triangular Grid Map")
+
+
+```
+
+```{r panelset = square_grid, warning=FALSE, message=FALSE}
+# Step 1. load the locality ####
+nc <- sf::st_read(system.file("shape/nc.shp", package="sf"))
+
+loc <- rgeomex::extract_ageb(locality = c("Guadalajara",
+                                          "Zapopan",
+                                          "Tlaquepaque",
+                                          "Tonalá"),
+                             cve_geo = "14")
+
+
+# Step 2. make the grid #####
+grid_square = sf::st_make_grid(x = loc$locality,
+                                    square = TRUE,
+                                    cellsize = 0.01)
+grid_square <-grid_square[loc$locality]
+
+
+# Step 3. plot the grid ####
+ggplot2::ggplot() +
+    ggplot2::geom_sf(data = loc$locality,
+                     fill = NA,
+                     col = "#4285F4") +
+    ggplot2::geom_sf(data = grid_square,
+                     fill = NA, 
+                     col = "#DB4437") +
+    cowplot::theme_map()
+```
+
+```{r panelset = hexagonal_grid, warning=FALSE, message=FALSE}
+
+```
+
+```{r panelset = triangular_grid, warning=FALSE, message=FALSE}
+
+```
+
+]
 
 
 
@@ -424,6 +477,7 @@ l |>
 
 ---
 # Mapas estáticos en R
+
 .panelset.sideways[
 ```{r include=FALSE}
 base_r <- c(source = "Base R",
@@ -432,8 +486,6 @@ ggplot_2 <- c(source = "ggplot2",
               output = "ggplot Map")
 map_tmap <- c(source = "tmap",
               output = "tmap Map")
-
-
 ```
 
 ```{r panelset = base_r, warning=FALSE, message=FALSE}
