@@ -452,7 +452,22 @@ ggplot2::ggplot() +
 ```
 
 ```{r panelset = hexagonal_grid, warning=FALSE, message=FALSE}
+# Step 2. make the grid #####
+grid_hexagonal = sf::st_make_grid(x = loc$locality,
+                                    square = FALSE,
+                                    cellsize = 0.01)
+grid_hexagonal <-grid_hexagonal[loc$locality]
 
+
+# Step 3. plot the grid ####
+ggplot2::ggplot() +
+    ggplot2::geom_sf(data = loc$locality,
+                     fill = NA,
+                     col = "#4285F4") +
+    ggplot2::geom_sf(data = grid_hexagonal,
+                     fill = NA, 
+                     col = "#DB4437") +
+    cowplot::theme_map()
 ```
 
 ```{r panelset = triangular_grid, warning=FALSE, message=FALSE}
