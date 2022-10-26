@@ -238,7 +238,7 @@ xaringanExtra::use_panelset()
 
 .panel[.panel-name[Point Pattern Data]
 
-```{r poin_pattern_data, out.width='80%',echo = FALSE, warning=FALSE, message=FALSE }
+```{r poin_pattern_data, out.width='80%', echo = FALSE, warning=FALSE, message=FALSE }
 # Step 1. load the dataset ####
 load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2021/den_mex_2021/9.RData_geocoded/den2021_positivos.RData")
 
@@ -317,7 +317,7 @@ l |>
 
 .panel[.panel-name[Geoestatistical Data]
 
-```{r geostatistical_data, out.width='80%',echo = FALSE, warning=FALSE, message=FALSE}
+```{r geostatistical_data, out.width='80%', echo = FALSE, warning=FALSE, message=FALSE}
 # Step 2. load the dataset ####
 load("C:/Users/HOME/OneDrive/cursos_impartidos/2022/maps_R/8.RData/guadalajara_12.RData")
 
