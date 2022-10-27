@@ -57,11 +57,11 @@ DiagrammeR::grViz("digraph {
   
   ###########
   # node definitions
-  node [shape = circle, style = filled, color = black,fixedsize = true, width = 2] 
+  node [shape = circle, style = filled, color = black, fixedsize = true, width = 2] 
   prog_den [label = 'Programa de Dengue',  fillcolor =  '#4285F4', color = 'white', fontcolor = 'white']
   #
   brote [label = 'Brote',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
-  cp [label = 'Control de Probables',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
+  control_probables [label = 'Control de Probables',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
   
   node [shape = circle, style = filled, color = grey] 
   irs [label = 'Rociado Residual',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
@@ -74,27 +74,44 @@ DiagrammeR::grViz("digraph {
   #########
   node [shape = rectangle, style = filled, color = black, fixedsize = true, width = 2.5] 
   hotspots [label = 'Hotspots',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
-  act [label = 'Casos Actuales',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
+  #act [label = 'Casos Actuales',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
  
-  epi [label = 'Vigilancia Epidemiológica',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
+  # Vigilancia epidemiológica
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor = '#DB4437', color = 'white', fontcolor = 'white']
+  
+  #
+  data_historic [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_datos_actuales [label = 'Datos Actuales',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_acumulados [label = 'Datos Acumulados',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_trans_activa [label = 'Transmisión Activa',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  
   ent [label = 'Vigilancia Entomológica',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
- ind [label = 'Indicadores',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'black']
+  
+  
+  
+  ind [label = 'Indicadores',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'black']
   ###################
   prog_den -> {epi, ent}[penwidth = 4]
   
+  epi -> {data_historic  data_datos_actuales}[penwidth = 4]
+  data_datos_actuales -> {data_acumulados, data_trans_activa}[penwidth = 4]
   
-  act -> {
-  brote[arrowhead = crow, arrowtail = box, color = 'Maroon']
-  cp[arrowhead = crow, arrowtail = box, color = 'Maroon']
-  } -> plat[penwidth = 4]
-  epi -> {act, hotspots}[penwidth = 4]
+  data_historic -> {hotspots}[penwidth = 4]
+  
+  data_trans_activa -> {control_probables}[penwidth = 4]
+  data_acumulados -> {brote}[penwidth = 4]
+  
+ 
+  
+  #epi -> {act, hotspots}[penwidth = 4]
+  
   hotspots -> {
   cl[arrowhead = crow, arrowtail = box, color = 'Maroon']
   irs[arrowhead = crow, arrowtail = box, color = 'Maroon']
   } -> plat[penwidth = 4]
-  ent -> {adult, 
-  ovitraps,
-  enc_ver} -> plat[penwidth = 4]  
+  
+  ent -> {adult, ovitraps, enc_ver} -> plat[penwidth = 4]  
   plat -> ind[penwidth = 4]
   ind -> prog_den[penwidth = 4]
   #ind -> {enc_ver, ovitraps, adult, cl, irs, cp, brote}
