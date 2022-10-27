@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Hotspots de la Transmisión de Dengue</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Felipe Antonio Dzul Manzanilla" />
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/duke-blue.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/hygge-duke.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra_fit-screen-0.2.6/fit-screen.js"></script>
+    <script src="libs/xaringanExtra-progressBar-0.0.1/progress-bar.js"></script>
+    <link href="libs/tachyons-4.12.0/tachyons.min.css" rel="stylesheet" />
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon-1.4.1/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+    <script src="libs/viz-1.8.2/viz.js"></script>
+    <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+    <link href="libs/visjs-7.4.9/vis-timeline-graph2d.min.css" rel="stylesheet" />
+    <script src="libs/visjs-7.4.9/vis-timeline-graph2d.min.js"></script>
+    <link href="libs/timeline-0.4/timevis.css" rel="stylesheet" />
+    <script src="libs/timevis-binding-2.0.0/timevis.js"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+    <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+    <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+    <style>h1 {font-size: 34px;}
+           h1.title {font-size: 38px;}
+           h2 {font-size: 30px;}
+           h3 {font-size: 24px;}
+           h4 {font-size: 18px;}
+           h5 {font-size: 16px;}
+           h6 {font-size: 12px;}
+           code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+           pre:not([class]) { background-color: white }</style>
+    <link rel="stylesheet" href="libs/cc-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="libs/figure-captions.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Hotspots de la Transmisión de Dengue
+]
+.author[
+### Felipe Antonio Dzul Manzanilla
+]
+.date[
+### 2022: Last compiled 2022-10-27
+]
+
+---
+
+
+class: left, top
+
+
+
+<style>.xe__progress-bar__container {
+  top:0;
+  opacity: 1;
+  position:absolute;
+  right:0;
+  left: 0;
+}
+.xe__progress-bar {
+  height: 0.25em;
+  background-color: #0051BA;
+  width: calc(var(--slide-current) / var(--slide-total) * 100%);
+}
+.remark-visible .xe__progress-bar {
+  animation: xe__progress-bar__wipe 200ms forwards;
+  animation-timing-function: cubic-bezier(.86,0,.07,1);
+}
+@keyframes xe__progress-bar__wipe {
+  0% { width: calc(var(--slide-previous) / var(--slide-total) * 100%); }
+  100% { width: calc(var(--slide-current) / var(--slide-total) * 100%); }
+}</style>
+
+
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 228px;
+z-index: 0;
+background-image: url(https://www.gob.mx/cms/uploads/action_program/main_image/26942/post_post_portadavectores.gif);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+### Ciclo de Vida del Programa de Prevención y Control del Dengue
+
+<div id="htmlwidget-323003b67900c4747b69" style="width:100%;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-323003b67900c4747b69">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = circle, style = filled, color = grey,\n  fixedsize = true, width = 2] \n  \n  ###########\n  prog_den [label = \"Programa de Dengue\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"black\"]\n  brote [label = \"Brote\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n   cp [label = \"Control de Probables\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n   node [shape = circle, style = filled, color = grey] \n    irs [label = \"Rociado Residual\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n   cl [label = \"Control Larvario\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n   ovitraps [label = \"Ovitrampas\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  adult [label = \"Colecta de Adultos\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  enc_ver [label = \"Encuesta Verificación\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n   plat [label = \"Plataforma\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  \n  #########\n  node [shape = rectangle, style = filled, color = grey, fixedsize = true, width = 2.5] \n  hotspots [label = \"Hotspots\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  act [label = \"Casos Actuales\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"black\"]\n  ent [label = \"Vigilancia Entomológica\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"black\"]\n ind [label = \"Indicadores\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"black\"]\n  ###################\n  prog_den -> {epi, ent}[penwidth = 4]\n  \n  \n  act -> {\n  brote[arrowhead = crow, arrowtail = box, color = \"Maroon\"]\n  cp[arrowhead = crow, arrowtail = box, color = \"Maroon\"]\n  } -> plat[penwidth = 4]\n  epi -> {act, hotspots}[penwidth = 4]\n  hotspots -> {\n  cl[arrowhead = crow, arrowtail = box, color = \"Maroon\"]\n  irs[arrowhead = crow, arrowtail = box, color = \"Maroon\"]\n  } -> plat[penwidth = 4]\n  ent -> {adult, \n  ovitraps,\n  enc_ver} -> plat[penwidth = 4]  \n  plat -> ind[penwidth = 4]\n  ind -> prog_den[penwidth = 4]\n  #ind -> {enc_ver, ovitraps, adult, cl, irs, cp, brote}\n\n \n \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+---
+### Línea de tiempo de la información epidemiológica &amp; entomológica
+
+<div id="htmlwidget-c6bcad3cac6ea78ae033" class="timevis html-widget" style="width:100%;height:100%;">
+<div class="btn-group zoom-menu">
+<button type="button" class="btn btn-default btn-lg zoom-in" title="Zoom in">+</button>
+<button type="button" class="btn btn-default btn-lg zoom-out" title="Zoom out">-</button>
+</div>
+</div>
+<script type="application/json" data-for="htmlwidget-c6bcad3cac6ea78ae033">{"x":{"items":[{"start":"2008-01-01","end":"2021-03-31","content":"Vigilancia Epidemiológica Pasiva","style":"text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #DB4437; border: 2px solid white; background-color: #DB4437;","group":"1"},{"start":"2011-01-01","end":"2021-03-31","content":"Vigilancia Entomológica con Ovitrampas","style":"text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;","group":"2"},{"start":"2017-01-01","end":"2019-12-31","content":"Vigilancia Entomológica con Adultos","style":"text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;","group":"2"},{"start":"2017-01-01","end":"2019-12-31","content":"Entomovirología","style":"text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #0F9D58; border: 2px solid white; background-color: #0F9D58;","group":"3"},{"start":"2008-01-01","end":"2020-12-31","content":"Hotspots Históricos","style":"text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;","group":"4"},{"start":"2021-01-01","end":"2021-03-31","content":"Actuales (clusters de casos y cadenas de transmisión)","style":"text-align: left; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;","group":"4"},{"start":"2021-03-01","end":"2021-03-31","content":"Transmisión Activa (Identificación de cadenas de transmisión: knox test)","style":"text-align: righ; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;","group":"4"}],"groups":[{"id":"1","content":"Paciente","style":"text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #DB4437; border: 2px solid white; background-color: #DB4437;"},{"id":"2","content":"Vector","style":"text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;"},{"id":"3","content":"Virus-Vector","style":"text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #0F9D58; border: 2px solid white; background-color: #0F9D58;"},{"id":"4","content":"Análisis espacial","style":"vertical-align: middle; text-align: center; font-weight: bold; color: white; font-size: 20px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;"}],"showZoom":true,"zoomFactor":0.5,"fit":true,"options":[],"height":null,"timezone":null,"api":[]},"evals":[],"jsHooks":[]}</script>
+
+
+---
+## **Análisis espacial del vector del Dengue**
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+
+<div id="htmlwidget-414ec979174edff63f59" style="width:100%;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-414ec979174edff63f59">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"#FF5A5F\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos Actuales\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos Acumulados\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n lgcp [label = \"Spatial LGCP\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana lgcp}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

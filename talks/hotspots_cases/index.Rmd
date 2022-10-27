@@ -133,23 +133,23 @@ a <- timevis::timevis(data = data.frame(start = c("2008-01-01",
                                       "Actuales (clusters de casos y cadenas de transmisión)",
                                       "Transmisión Activa (Identificación de cadenas de transmisión: knox test)"),
                           #type = c("background"),
-                          style = c("text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkred; border: 2px solid black; background-color: firebrick;",
-                                    "text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkblue; border: 2px solid black; background-color: dodgerblue;",
-                                    "text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkblue; border: 2px solid black; background-color: dodgerblue;", 
-                                    "text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkgreen; border: 2px solid black; background-color: darkgreen;",
-                                    "text-align: center; font-weight: bold; color: black; font-size: 15px; border-color: darkorange; border: 2px solid black; background-color: darkorange;", 
-                                    "text-align: left; font-weight: bold; color: black; font-size: 15px; border-color: darkorange; border: 1.5px solid black; background-color: darkorange;", 
-                                    "text-align: righ; font-weight: bold; color: black; font-size: 15px; border-color: darkorange; border: 1px solid gray; background-color: darkorange;"),
+                          style = c("text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #DB4437; border: 2px solid white; background-color: #DB4437;",
+                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;",
+                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;", 
+                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #0F9D58; border: 2px solid white; background-color: #0F9D58;",
+                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;", 
+                                    "text-align: left; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;", 
+                                    "text-align: righ; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;"),
                           group = c(1, 2, 2,3, 4, 4,4)),
         groups = data.frame(id = 1:4, 
                             content = c("Paciente", 
                                         "Vector",
                                         "Virus-Vector",
                                         "Análisis espacial"),
-                            style = c("text-align: center; font-weight: bold; color: black; font-size: 20px; border-color: darkred; border: 2px solid black; background-color: firebrick;",
-                                      "text-align: center; font-weight: bold; color: black; font-size: 20px; border-color: darkblue; border: 2px solid black; background-color: dodgerblue;",
-                                      "text-align: center; font-weight: bold; color: black; font-size: 20px; border-color: darkgreen; border: 2px solid black; background-color: darkgreen;",
-                                      "vertical-align: middle; text-align: center; font-weight: bold; color: black; font-size: 20px; border-color: darkorange; border: 2px solid black; background-color: darkorange;")))
+                            style = c("text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #DB4437; border: 2px solid white; background-color: #DB4437;",
+                                      "text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;",
+                                      "text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #0F9D58; border: 2px solid white; background-color: #0F9D58;",
+                                      "vertical-align: middle; text-align: center; font-weight: bold; color: white; font-size: 20px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;")))
 
 a
 
@@ -173,6 +173,7 @@ vertical-align: middle;
 htmltools::html_print(htmltools::tagList(htmltools::tags$style(style), a))
 
 ```
+
 
 
 ---

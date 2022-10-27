@@ -1,0 +1,245 @@
+---
+title: "Hotspots de la Transmisión de Dengue"
+author: "Felipe Antonio Dzul Manzanilla"
+date: '2022: Last compiled `r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: 
+      - default
+      - default-fonts
+      - duke-blue
+      - hygge-duke
+      - libs/cc-fonts.css
+      - libs/figure-captions.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: left, top
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringanExtra, echo = FALSE}
+xaringanExtra::use_progress_bar(color = "#0051BA", location = "top")
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+```{r share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "https://www.gob.mx/cms/uploads/action_program/main_image/26942/post_post_portadavectores.gif",
+  width = "110px",
+  height = "228px",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
+```
+
+### Ciclo de Vida del Programa de Prevención y Control del Dengue
+
+```{r, dpi=300,echo=FALSE, fig.align ="center", out.height="100%",out.width = "100%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = circle, style = filled, color = grey,
+  fixedsize = true, width = 2] 
+  
+  ###########
+  prog_den [label = 'Programa de Dengue',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'black']
+  brote [label = 'Brote',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   cp [label = 'Control de Probables',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   node [shape = circle, style = filled, color = grey] 
+    irs [label = 'Rociado Residual',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   cl [label = 'Control Larvario',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   ovitraps [label = 'Ovitrampas',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  adult [label = 'Colecta de Adultos',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  enc_ver [label = 'Encuesta Verificación',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+   plat [label = 'Plataforma',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  
+  #########
+  node [shape = rectangle, style = filled, color = grey, fixedsize = true, width = 2.5] 
+  hotspots [label = 'Hotspots',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  act [label = 'Casos Actuales',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+ 
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'black']
+  ent [label = 'Vigilancia Entomológica',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'black']
+ ind [label = 'Indicadores',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'black']
+  ###################
+  prog_den -> {epi, ent}[penwidth = 4]
+  
+  
+  act -> {
+  brote[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  cp[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  } -> plat[penwidth = 4]
+  epi -> {act, hotspots}[penwidth = 4]
+  hotspots -> {
+  cl[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  irs[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  } -> plat[penwidth = 4]
+  ent -> {adult, 
+  ovitraps,
+  enc_ver} -> plat[penwidth = 4]  
+  plat -> ind[penwidth = 4]
+  ind -> prog_den[penwidth = 4]
+  #ind -> {enc_ver, ovitraps, adult, cl, irs, cp, brote}
+
+ 
+ 
+ 
+  }", 
+  height = 600)
+
+```
+
+---
+### Línea de tiempo de la información epidemiológica & entomológica
+
+```{r,dpi=300, echo=FALSE, fig.align ="center", out.height="100%", out.width = "100%", warning=FALSE, message=FALSE}
+library(timevis)
+a <- timevis::timevis(data = data.frame(start = c("2008-01-01", 
+                                                  "2011-01-01",
+                                                  "2017-01-01",
+                                                  "2017-01-01",
+                                                  "2008-01-01",
+                                                  "2021-01-01", 
+                                                  "2021-03-01"),
+                                        end = c("2021-03-31", 
+                                                "2021-03-31", 
+                                                "2019-12-31",
+                                                "2019-12-31", 
+                                                "2020-12-31", 
+                                                "2021-03-31", 
+                                                "2021-03-31"),
+                          #style = c("color: darkblue; font-size: 15px; border-color: darkblue; border: 2px solid darkblue;"),
+                          content = c("Vigilancia Epidemiológica Pasiva", 
+                                      "Vigilancia Entomológica con Ovitrampas", 
+                                      "Vigilancia Entomológica con Adultos",
+                                      "Entomovirología",
+                                      "Hotspots Históricos",
+                                      "Actuales (clusters de casos y cadenas de transmisión)",
+                                      "Transmisión Activa (Identificación de cadenas de transmisión: knox test)"),
+                          #type = c("background"),
+                          style = c("text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #DB4437; border: 2px solid white; background-color: #DB4437;",
+                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;",
+                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;", 
+                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #0F9D58; border: 2px solid white; background-color: #0F9D58;",
+                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;", 
+                                    "text-align: left; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;", 
+                                    "text-align: righ; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;"),
+                          group = c(1, 2, 2,3, 4, 4,4)),
+        groups = data.frame(id = 1:4, 
+                            content = c("Paciente", 
+                                        "Vector",
+                                        "Virus-Vector",
+                                        "Análisis espacial"),
+                            style = c("text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #DB4437; border: 2px solid white; background-color: #DB4437;",
+                                      "text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;",
+                                      "text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #0F9D58; border: 2px solid white; background-color: #0F9D58;",
+                                      "vertical-align: middle; text-align: center; font-weight: bold; color: white; font-size: 20px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;")))
+
+a
+
+
+style <- "
+.vis-time-axis { 
+background-color: lightgray;
+backgroud-border: 3px solid #73AD21;
+backgroun-opacity; 0.1;
+font-weight: bold;
+text-align: center;
+vertical-align: middle;
+border: 1.5px solid #73AD21;
+font-size: 15px;}
+.vis-odd {
+color: blue;
+vertical-align: middle;
+  }
+
+"
+htmltools::html_print(htmltools::tagList(htmltools::tags$style(style), a))
+
+```
+
+
+---
+## **Análisis espacial del vector del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, 
+  style = filled, 
+  color = grey, 
+  nodesep = .5,
+  fixedsize = true, 
+  width = 2.5] 
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  ##### epidemiological data
+  
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor =  '#FF5A5F', color = 'white', fontcolor = 'white']
+  data_historic [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_datos_actuales [label = 'Datos Actuales',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_acumulados [label = 'Datos Acumulados',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_trans_activa [label = 'Transmisión Activa',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  
+  ##### Spatial Data
+  
+  areal [label = 'Areal Data',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  pp_data [label = 'Point Pattern Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  
+  
+ 
+ # Análisis 
+ hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ cadenas [label = 'Cadenas de Transmisión',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ cluster_ana [label = 'Cluster Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ lgcp [label = 'Spatial LGCP',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ 
+ # software
+ 
+ geoda [label = 'Geoda',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ cluster_s [label = 'ClusterSeer',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ satscan [label = 'SatScan',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ 
+ r_rstudio [label = 'R & RStudio',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+
+  denhotspot [label = 'denhotspots Package',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
+ 
+ ##### define the relation
+ 
+ epi -> {data_historic  data_datos_actuales}
+ data_historic -> areal -> hotspots -> geoda
+ data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana lgcp}
+ cadenas -> cluster_s
+ cluster_ana -> satscan
+ 
+ {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot
+ 
+}")
+
+```
+
+
