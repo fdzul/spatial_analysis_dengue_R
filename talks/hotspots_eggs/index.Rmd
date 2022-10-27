@@ -177,7 +177,7 @@ htmltools::html_print(htmltools::tagList(htmltools::tags$style(style), a))
 
 
 ---
-## **Análisis espacial del vector del Dengue**
+### **Análisis espacial del vector del Dengue**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
@@ -244,3 +244,27 @@ DiagrammeR::grViz("digraph {
 ```
 
 
+
+
+
+---
+# Dios Botic!
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+&nbsp;
+
+- ***Bio*** : https://fdzul.github.io/web_site_fadm/
+
+- ***email***       :     [felipe.dzul.m@gmail.com]()
+
+- ***celular***     :     [8139945623]()
+
+- ***slides***:     https://animated-longma-729cee.netlify.app/talks/hotspots_eggs/#1
+
+
+
+
+
+.footnote[La presentación fue creada via [**xaringan**](https://github.com/yihui/xaringan),
+[**revealjs**](https://revealjs.com/),
+[remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr),
+& [R Markdown](https://rmarkdown.rstudio.com) en [R]() & [RStudio](2.R_Scripts/libs/rstudio_leaflet/rstudio_leaflet.css).]
