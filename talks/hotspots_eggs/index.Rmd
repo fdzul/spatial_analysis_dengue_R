@@ -444,6 +444,10 @@ blocks_surveillance(locality = "Coatzacoalcos",
 ```
 ]
 
+---
+### Toma de Desiciones & Ovitrampas
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
 
 
 ---
