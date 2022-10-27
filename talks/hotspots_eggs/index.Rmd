@@ -396,54 +396,6 @@ DiagrammeR::grViz("digraph {
 ---
 ### **Vigilancia Entomológica con Ovitrampas**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-#step 1. load the ovitramps 
-load("C:/Users/HOME/Dropbox/ovitraps_activas&casesmx_klm/8.RData/ovitraps_coordinates.RData")
-
-
-#  Step 3. load the localities 
-loc_urb <- rgeomex::loc_inegi19_mx |>
-    sf::st_make_valid()
-
-
-
-# Step 4. extract the localities with ovitraps 
-loc_urb_ovi <- loc_urb[x,]
-
-
-# Step 5. load the high risk localities 
-y <- readRDS("C:/Users/HOME/OneDrive/proyects/hotspots_paper/8.RData/loc_temp_geocoded.rds")
-
-# Step 6. convert th df to sf ####
-y <- y |>
-    sf::st_as_sf(coords = c("long", "lat"),
-                 crs = 4326)
-# Step 7. extract the localities with high risk with ovitraps ####
-loc_urb_ovi_hr <- loc_urb_ovi[y, ]
-
-
-# Step 8. load several sf object for maps ####
-mex_edo <- rgeomex::AGEE_inegi19_mx
-path <- "C:/Users/HOME/OneDrive/datasets/INEGI/mapa_digital_5.0.A/marco geoestadistico nacional 2010/nacional.shp"
-mex <- sf::st_read(path, quiet = TRUE) |> sf::st_transform(crs = 4326)
-
-mapview::mapview(mex_edo, 
-                 legend = FALSE,
-                 color = "white",
-                 #col.regions = "white", 
-                 lwd = 3,
-                 alpha.regions = 0.1,
-                 alpha = 0.1) +
-    mapview::mapview(loc_urb_ovi,
-                     layer.name = "Ovitrampas",
-                     col.regions = "green",
-                     color = "green") +
-    mapview::mapview(loc_urb_ovi_hr,
-                     layer.name = "Ovitrampas Localidades Alto Riesgo",
-                     col.regions = "red",
-                     color = "red")
-
-```
 
 .tiny[.blue[.footnote[localidades urbanas = 4553, localidades urbanas con ovitrampas = 530, y localidades urbanas de alto risgo con ovitrampas 122]]]
 
