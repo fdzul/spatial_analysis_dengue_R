@@ -108,6 +108,8 @@ DiagrammeR::grViz("digraph {
 ---
 ### Línea de tiempo de la información epidemiológica & entomológica
 
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
 ```{r,dpi=300, echo=FALSE, fig.align ="center", out.height="100%", out.width = "100%", warning=FALSE, message=FALSE}
 library(timevis)
 a <- timevis::timevis(data = data.frame(start = c("2008-01-01", 
@@ -487,7 +489,7 @@ es Hotspots, de lo contrario es no Hotspots
 ]
 
 ---
-# Distribucion de casos por AGEB
+## Distribucion de casos por AGEB
 ```{r echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
 #
 load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
@@ -512,7 +514,7 @@ x$ageb |>
 
 
 ---
-# Casos por AGEB
+## Casos por AGEB
 
 ```{r,  echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
 
@@ -533,7 +535,7 @@ z |>
 
 
 ---
-#  Estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
+##  Estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$
 
 ```{r,  echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
 
@@ -553,7 +555,7 @@ getis |>
 ```
 
 ---
-#  Hotspots e Intensidad
+##  Hotspots e Intensidad
 
 ```{r,  echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
 
@@ -576,7 +578,7 @@ kableExtra::kable() |>
 ```
 
 ---
-# Intensidad de la Transmisión de Dengue
+## Intensidad de la Transmisión de Dengue
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
@@ -624,7 +626,7 @@ denhotspots::staticmap_intensity(x = hotspots,
 
 
 ---
-# Intensidad de la Transmisión de Dengue
+## Intensidad de la Transmisión de Dengue
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 ```{r,echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center" }
 source("C:/Users/HOME/Dropbox/r_developments/r_dashboards/github_pages/test_dashboard/3.Functions/hotspots_map.R")
