@@ -235,7 +235,7 @@ DiagrammeR::grViz("digraph {
  # Análisis 
  spde [label = 'SPDE-INLA',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
- prediction [label = 'Predicción Espacial de Huevos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ #prediction [label = 'Predicción Espacial de Huevos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
  # entomological study
  ovitraps [label = 'Ovitrampas',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
