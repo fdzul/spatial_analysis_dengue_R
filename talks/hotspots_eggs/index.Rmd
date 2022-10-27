@@ -396,7 +396,7 @@ DiagrammeR::grViz("digraph {
 ---
 ### **Vigilancia Entomológica con Ovitrampas**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
-```{r}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 #step 1. load the ovitramps 
 load("C:/Users/HOME/Dropbox/ovitraps_activas&casesmx_klm/8.RData/ovitraps_coordinates.RData")
 
@@ -446,6 +446,46 @@ mapview::mapview(mex_edo,
 ```
 
 .tiny[.blue[.footnote[localidades urbanas = 4553, localidades urbanas con ovitrampas = 530, y localidades urbanas de alto risgo con ovitrampas 122]]]
+
+
+---
+class: center, middle
+
+### Vigilancia Entomológica en México
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+.pull-left[
+.small[.justify-left[
+- **Muestro Sistemático**
+ - 1 manzana por cada 4 a 6 en zonas planas
+ - 1 manzana por cada 2 a 4 en zonas con pendientes
+ 
+- **Muestreo por autoselección**
+ - una casa por cada lado de la manzana
+- **Colecta semanal**
+
+- **Captura en línea**
+]
+]
+]
+
+.pull-right[
+.blue[Coatzacoalcos]
+```{r,fig.align ="center",fig.width=5, fig.height=8,echo=FALSE, warning=FALSE, message=FALSE}
+library(sf)
+library(magrittr)
+source('C:/Users/HOME/OneDrive/cursos_impartidos/2021/foro_estadistica/3.Functions/block_surveillance.R')
+path_coord <- "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/30_veracruz/DescargaOvitrampasMesFco.txt"
+
+blocks_surveillance(locality = "Coatzacoalcos",
+                    cve_geo = "30",
+                    path_coords = path_coord,
+                    blocks = rgeomex::blocks_ine20_mx_e)
+
+
+```
+]
+
+
 
 ---
 # Dios Botic!
