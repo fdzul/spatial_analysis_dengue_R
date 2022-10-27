@@ -53,30 +53,32 @@ DiagrammeR::grViz("digraph {
   # graph definitions
   graph [layout = dot, rankdir = TB]
   
-  # node definitions
-  node [shape = circle, style = filled, color = grey,
-  fixedsize = true, width = 2] 
+  
   
   ###########
-  prog_den [label = 'Programa de Dengue',  fillcolor =  '#36C5F0', color = 'white', fontcolor = 'black']
-  brote [label = 'Brote',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
-  cp [label = 'Control de Probables',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  # node definitions
+  node [shape = circle, style = filled, color = black,fixedsize = true, width = 2] 
+  prog_den [label = 'Programa de Dengue',  fillcolor =  '#4285F4', color = 'white', fontcolor = 'white']
+  #
+  brote [label = 'Brote',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  cp [label = 'Control de Probables',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  
   node [shape = circle, style = filled, color = grey] 
-  irs [label = 'Rociado Residual',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
-  cl [label = 'Control Larvario',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
-  ovitraps [label = 'Ovitrampas',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
-  adult [label = 'Colecta de Adultos',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
-  enc_ver [label = 'Encuesta Verificación',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
-  plat [label = 'Plataforma',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  irs [label = 'Rociado Residual',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  cl [label = 'Control Larvario',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  ovitraps [label = 'Ovitrampas',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  adult [label = 'Colecta de Adultos',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  enc_ver [label = 'Encuesta Verificación',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  plat [label = 'Plataforma',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
   
   #########
-  node [shape = rectangle, style = filled, color = grey, fixedsize = true, width = 2.5] 
-  hotspots [label = 'Hotspots',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
-  act [label = 'Casos Actuales',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  node [shape = rectangle, style = filled, color = black, fixedsize = true, width = 2.5] 
+  hotspots [label = 'Hotspots',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  act [label = 'Casos Actuales',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
  
-  epi [label = 'Vigilancia Epidemiológica',  fillcolor = '#2EB67D', color = 'white', fontcolor = 'black']
-  ent [label = 'Vigilancia Entomológica',  fillcolor = '#2EB67D', color = 'white', fontcolor = 'black']
- ind [label = 'Indicadores',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'black']
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor = '#DB4437', color = 'white', fontcolor = 'white']
+  ent [label = 'Vigilancia Entomológica',  fillcolor = '#DB4437', color = 'white', fontcolor = 'white']
+ ind [label = 'Indicadores',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'black']
   ###################
   prog_den -> {epi, ent}[penwidth = 4]
   
