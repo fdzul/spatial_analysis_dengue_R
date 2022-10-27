@@ -1,5 +1,5 @@
 ---
-title: "Hotspots de la Transmisión de Dengue"
+title: "Hotspots del Vector del Dengue"
 author: "Felipe Antonio Dzul Manzanilla"
 date: '2022: Last compiled `r Sys.Date()`'
 output:
@@ -268,9 +268,130 @@ DiagrammeR::grViz("digraph {
 
 ```
 
+---
+### **Análisis Espacial del Vector del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE,dpi=300,  fig.align ="center",out.height="70%", out.width = "90%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+  
+  #
+  cenaprece [label = 'CENAPRECE',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  ovitrap [label = 'Ovitrampas',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  coord [label = 'Coordenadas',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  ovicoord [label = 'ovi + coord']
+  
+  # flow chart for inegi
+  inegi [label = 'INEGI', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+  loc [label = 'Localidades Shapefile', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+
+  ###
+  mesh [label = '1. Mesh']
+  spde [label = '2. SPDE']
+  
+  proj_train [label = '3a. Projector Matrix A. Test']
+  proj_test [label = '3b. Projector Matrix A. Train']
+  
+  spatial_field [label = '4. Spatial Field W']
+  
+  stack_train [label = '5a. Stack Train']
+  stack_test [label = '5b. Stack Test']
+  stack_pred [label = '5c. Stack Prediction']
+  stack_joint [label = '6. Joint Stack']
+  
+  formula [label = '7. Formula']
+  inla [label = '8. INLA',  fillcolor = 'Orange', color = 'white', fontcolor = 'white']
+  
+ 
+  
+  # edge definitions with the node IDs
+  edge [color = black]
+  cenaprece -> {ovitrap, coord} -> ovicoord
+  #
+  inegi -> loc -> ovicoord
+  #
+  ovicoord -> mesh
+  mesh -> spde -> spatial_field ->  stack_joint
+  spde -> {proj_train,  proj_test}
+  spatial_field -> {stack_test, stack_train, stack_pred} ->  stack_joint -> formula -> inla 
+  proj_train -> stack_train
+  proj_test -> stack_test
+
+  
+  }", 
+  height = 500)
+
+```
 
 
+.tiny[.blue[.footnote[ [Modificado de Zuur et al 2017](http://www.highstat.com/index.php/beginner-s-guide-to-regression-models-with-spatial-and-temporal-correlation); [Dzul-Manzanilla et al 2019](http://acaentmex.org/entomologia/revista/2019/EMF/EMF%20497-501.pdf)]]]
+---
 
+### **Análisis Espacial del Vector del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE,dpi=300, fig.align ="center", out.height="70%", out.width = "90%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+  
+  #
+  
+  inla [label = '8. INLA',  fillcolor = 'Orange', color = 'white', fontcolor = 'white']
+  stat [label = '9. Statistics']
+  
+  zeros [label = '9.1. % Zeros']
+  disp [label = '9.2. Dispersion Statistics']
+  dic [label = '9.3. Deviance Information Criterio']
+  pear [label = '9.4. Pearson Residuals']
+  
+  ##
+  p [label = 'Poisson']
+  zip [label = 'ZeroInflated Poisson']
+  nb [label = 'Negative Binomial']
+  zinb [label = 'ZeroInflated Poisson Negative Binomial']
+  
+  sel [label = '10.Select the Distribution & Model']
+  
+  # prediction ####
+  ext_pred [label = '11. Extract Index Prediction']
+  coor_pred [label = '12. Extract Coordinates Prediction']
+  pred [label = '13. Prediction']
+ 
+  hotspots [label = '14.Hotspots', fillcolor = 'Orange', color = 'white', fontcolor = 'white']
+  save [label = '15. Save results']
+  
+  mappred [label = '15a. Prediction Map']
+  hotspotsb [label = '15b. Hotspots']
+  dics [label = '15c. DICs']
+  loc [label = '15d. Locality']
+  data [label = '15e. Dataset']
+  
+  # edge definitions with the node IDs
+  edge [color = black]
+  inla -> stat
+  stat -> {zeros, disp, dic,pear} -> {p, zip, nb, zinb} -> sel
+  sel -> ext_pred -> coor_pred -> pred -> hotspots -> save
+  save -> {mappred, hotspotsb, dics, loc, data}
+
+  
+  }", 
+  height = 500)
+
+```
+
+
+.tiny[.blue[.footnote[ [Modificado de Zuur et al 2017](http://www.highstat.com/index.php/beginner-s-guide-to-regression-models-with-spatial-and-temporal-correlation); [Dzul-Manzanilla et al 2019](http://acaentmex.org/entomologia/revista/2019/EMF/EMF%20497-501.pdf)]]]
 
 ---
 # Dios Botic!
