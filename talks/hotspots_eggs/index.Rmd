@@ -60,24 +60,24 @@ DiagrammeR::grViz("digraph {
   node [shape = circle, style = filled, color = black,fixedsize = true, width = 2] 
   prog_den [label = 'Programa de Dengue',  fillcolor =  '#4285F4', color = 'white', fontcolor = 'white']
   #
-  brote [label = 'Brote',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
-  cp [label = 'Control de Probables',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  brote [label = 'Brote',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
+  cp [label = 'Control de Probables',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
   
   node [shape = circle, style = filled, color = grey] 
-  irs [label = 'Rociado Residual',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
-  cl [label = 'Control Larvario',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
-  ovitraps [label = 'Ovitrampas',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
-  adult [label = 'Colecta de Adultos',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
-  enc_ver [label = 'Encuesta Verificación',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
-  plat [label = 'Plataforma',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  irs [label = 'Rociado Residual',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
+  cl [label = 'Control Larvario',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
+  ovitraps [label = 'Ovitrampas',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
+  adult [label = 'Colecta de Adultos',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
+  enc_ver [label = 'Encuesta Verificación',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
+  plat [label = 'Plataforma',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
   
   #########
   node [shape = rectangle, style = filled, color = black, fixedsize = true, width = 2.5] 
-  hotspots [label = 'Hotspots',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
-  act [label = 'Casos Actuales',  fillcolor = '#F4B400', color = 'white', fontcolor = 'black']
+  hotspots [label = 'Hotspots',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
+  act [label = 'Casos Actuales',  fillcolor = 'darkorange', color = 'white', fontcolor = 'black']
  
-  epi [label = 'Vigilancia Epidemiológica',  fillcolor = '#DB4437', color = 'white', fontcolor = 'white']
-  ent [label = 'Vigilancia Entomológica',  fillcolor = '#DB4437', color = 'white', fontcolor = 'white']
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
+  ent [label = 'Vigilancia Entomológica',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
  ind [label = 'Indicadores',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'black']
   ###################
   prog_den -> {epi, ent}[penwidth = 4]
@@ -139,9 +139,9 @@ a <- timevis::timevis(data = data.frame(start = c("2008-01-01",
                                     "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;",
                                     "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;", 
                                     "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #0F9D58; border: 2px solid white; background-color: #0F9D58;",
-                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;", 
-                                    "text-align: left; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;", 
-                                    "text-align: righ; font-weight: bold; color: white; font-size: 12px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;"),
+                                    "text-align: center; font-weight: bold; color: white; font-size: 12px; border-color: darkorange; border: 2px solid white; background-color: darkorange;", 
+                                    "text-align: left; font-weight: bold; color: white; font-size: 12px; border-color: darkorange; border: 2px solid white; background-color: darkorange;", 
+                                    "text-align: righ; font-weight: bold; color: white; font-size: 12px; border-color: darkorange; border: 2px solid white; background-color: darkorange;"),
                           group = c(1, 2, 2,3, 4, 4,4)),
         groups = data.frame(id = 1:4, 
                             content = c("Paciente", 
@@ -151,7 +151,7 @@ a <- timevis::timevis(data = data.frame(start = c("2008-01-01",
                             style = c("text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #DB4437; border: 2px solid white; background-color: #DB4437;",
                                       "text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #4285F4; border: 2px solid white; background-color: #4285F4;",
                                       "text-align: center; font-weight: bold; color: white; font-size: 15px; border-color: #0F9D58; border: 2px solid white; background-color: #0F9D58;",
-                                      "vertical-align: middle; text-align: center; font-weight: bold; color: white; font-size: 20px; border-color: #F4B400; border: 2px solid white; background-color: #F4B400;")))
+                                      "vertical-align: middle; text-align: center; font-weight: bold; color: white; font-size: 20px; border-color: darkorange; border: 2px solid white; background-color: darkorange;")))
 
 a
 
