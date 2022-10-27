@@ -397,14 +397,16 @@ DiagrammeR::grViz("digraph {
 ### **Vigilancia Entomológica con Ovitrampas**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+<img src="talks/hotspots_eggs/maps/loc.JPG" width="1000">
+
+
 .tiny[.blue[.footnote[localidades urbanas = 4553, localidades urbanas con ovitrampas = 530, y localidades urbanas de alto risgo con ovitrampas 122]]]
 
 
 ---
-class: center, middle
-
-### Vigilancia Entomológica en México
+### Vigilancia Entomológica con Ovitrampas en México
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
 .pull-left[
 .small[.justify-left[
 - **Muestro Sistemático**
