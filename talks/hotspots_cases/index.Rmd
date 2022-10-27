@@ -45,7 +45,7 @@ xaringanExtra::use_logo(
 )
 ```
 
-# Ciclo de Vida del Programa de Prevención y Control del Dengue
+### Ciclo de Vida del Programa de Prevención y Control del Dengue
 
 ```{r, dpi=300,echo=FALSE, fig.align ="center", out.height="80%",out.width = "100%"}
 DiagrammeR::grViz("digraph {
@@ -108,7 +108,7 @@ DiagrammeR::grViz("digraph {
 ---
 ### Línea de tiempo de la información epidemiológica & entomológica
 
-```{r,dpi=300, echo=FALSE, fig.align ="center", out.height="80%", out.width = "100%", warning=FALSE, message=FALSE}
+```{r,dpi=300, echo=FALSE, fig.align ="center", out.height="100%", out.width = "100%", warning=FALSE, message=FALSE}
 library(timevis)
 a <- timevis::timevis(data = data.frame(start = c("2008-01-01", 
                                                   "2011-01-01",
@@ -197,7 +197,7 @@ DiagrammeR::grViz("digraph {
   
   ##### epidemiological data
   
-  epi [label = 'Vigilancia Epidemiológica',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
   data_historic [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   data_datos_actuales [label = 'Datos Actuales',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   data_acumulados [label = 'Datos Acumulados',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
