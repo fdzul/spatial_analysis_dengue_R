@@ -409,13 +409,18 @@ DiagrammeR::grViz("digraph {
 
 .pull-left[
 .small[.justify-left[
+&nbsp;
 - **Muestro Sistemático**
  - 1 manzana por cada 4 a 6 en zonas planas
  - 1 manzana por cada 2 a 4 en zonas con pendientes
- 
+ &nbsp;
+
 - **Muestreo por autoselección**
  - una casa por cada lado de la manzana
+ &nbsp;
+
 - **Colecta semanal**
+&nbsp;
 
 - **Captura en línea**
 ]
