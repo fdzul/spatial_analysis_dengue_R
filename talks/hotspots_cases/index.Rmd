@@ -45,7 +45,7 @@ xaringanExtra::use_logo(
 )
 ```
 
-## Ciclo de Vida del Programa de Prevención y Control del Dengue
+# Ciclo de Vida del Programa de Prevención y Control del Dengue
 
 ```{r, dpi=300,echo=FALSE, fig.align ="center", out.height="80%",out.width = "100%"}
 DiagrammeR::grViz("digraph {
