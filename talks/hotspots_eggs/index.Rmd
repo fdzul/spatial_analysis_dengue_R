@@ -219,7 +219,9 @@ DiagrammeR::grViz("digraph {
   
   ento [label = 'Vigilancia Entomológica',  fillcolor =  '#FF5A5F', color = 'white', fontcolor = 'white']
   data_historic [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
-  data_datos_actuales [label = 'Datos del año Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  years  [label = '2014-2019',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_datos_actuales [label = 'Datos del Año Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   data_acumulados [label = 'Datos hasta la Semana Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   data_trans_activa [label = 'Semana Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
   
@@ -231,24 +233,33 @@ DiagrammeR::grViz("digraph {
   
  
  # Análisis 
+ spde [label = 'SPDE-INLA',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
- ovitraps [label = 'Ovitrampas',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ prediction [label = 'Predicción Espacial de Huevos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
+ # entomological studys
+ ovitraps [label = 'Ovitrampas',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  enc_ver [label = 'Encuesta-Verificación',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  adults [label = 'Colecta de Adultos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
  
  # software
  r_rstudio [label = 'R & RStudio',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
-
  deneggs [label = 'deneggs Package',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
+ 
+ 
  
  ##### define the relation
  
  
- ento -> ovitraps -> geo_data -> {data_historic data_datos_actuales}
+ ento -> {ovitraps  enc_ver adults} 
+ 
+ {ovitraps adults} -> geo_data -> {data_historic data_datos_actuales}
+ data_historic -> years
  
  data_datos_actuales -> {data_acumulados data_trans_activa}
  
- {data_historic data_acumulados data_trans_activa} -> hotspots
+ {years data_acumulados data_trans_activa} -> hotspots
  
  {hotspots} -> r_rstudio -> deneggs
  
