@@ -578,7 +578,7 @@ kableExtra::kable() |>
 ```
 
 ---
-## Intensidad de la Transmisión de Dengue
+### Intensidad de la Transmisión de Dengue
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
@@ -626,7 +626,7 @@ denhotspots::staticmap_intensity(x = hotspots,
 
 
 ---
-## Intensidad de la Transmisión de Dengue
+### Intensidad de la Transmisión de Dengue
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 ```{r,echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center" }
 source("C:/Users/HOME/Dropbox/r_developments/r_dashboards/github_pages/test_dashboard/3.Functions/hotspots_map.R")
