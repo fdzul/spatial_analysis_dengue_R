@@ -99,12 +99,13 @@ DiagrammeR::grViz("digraph {
   
   data_historic -> {hotspots}[penwidth = 4]
   
-  data_trans_activa -> {control_probables}[penwidth = 4]
-  data_acumulados -> {brote}[penwidth = 4]
+  data_trans_activa -> {control_probables}[penwidth = 4] 
+  data_acumulados -> {brote}[penwidth = 4] 
   
+  control_probables -> {plat}[penwidth = 4]
+  brote -> {plat}[penwidth = 4]
  
-  
-  #epi -> {act, hotspots}[penwidth = 4]
+
   
   hotspots -> {
   cl[arrowhead = crow, arrowtail = box, color = 'Maroon']
@@ -114,7 +115,7 @@ DiagrammeR::grViz("digraph {
   ent -> {adult, ovitraps, enc_ver} -> plat[penwidth = 4]  
   plat -> ind[penwidth = 4]
   ind -> prog_den[penwidth = 4]
-  #ind -> {enc_ver, ovitraps, adult, cl, irs, cp, brote}
+  
 
  
  
