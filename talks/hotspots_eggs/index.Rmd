@@ -397,7 +397,7 @@ DiagrammeR::grViz("digraph {
 ### **Vigilancia Entomológica con Ovitrampas**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
-<img src="maps/loc.jpg" width="1000">
+<img src="maps/loc.jpg">
 
 
 .tiny[.blue[.footnote[localidades urbanas = 4553, localidades urbanas con ovitrampas = 530, y localidades urbanas de alto risgo con ovitrampas 122]]]
