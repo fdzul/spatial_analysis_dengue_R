@@ -237,7 +237,7 @@ DiagrammeR::grViz("digraph {
  hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  prediction [label = 'Predicción Espacial de Huevos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
  
- # entomological studys
+ # entomological study
  ovitraps [label = 'Ovitrampas',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
   enc_ver [label = 'Encuesta-Verificación',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
   adults [label = 'Colecta de Adultos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
@@ -246,6 +246,7 @@ DiagrammeR::grViz("digraph {
  # software
  r_rstudio [label = 'R & RStudio',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
  deneggs [label = 'deneggs Package',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
+ 
  
  
  
@@ -259,7 +260,7 @@ DiagrammeR::grViz("digraph {
  
  data_datos_actuales -> {data_acumulados data_trans_activa}
  
- {years data_acumulados data_trans_activa} -> hotspots
+ {years data_acumulados data_trans_activa} ->spde -> hotspots
  
  {hotspots} -> r_rstudio -> deneggs
  
