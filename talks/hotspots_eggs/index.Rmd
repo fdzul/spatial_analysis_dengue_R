@@ -448,10 +448,34 @@ blocks_surveillance(locality = "Coatzacoalcos",
 ### Toma de Desiciones & Ovitrampas
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.height="80%", out.width = "100%"}
+# Steo 1. load the function ####
+source("C:/Users/HOME/Dropbox/r_developments/r_dashboards/github_pages/test_denv_dash_yuc/functions/ovitraps_occupancy_abundancy.R")
+
+
+ovitraps_occupancy_abundancy(ovitraps_path = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan",
+                             scale = "ovitraps")
+
+```
 
 
 ---
-# Dios Botic!
+### Toma de Desiciones & Ovitrampas
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, out.height="80%", out.width = "100%"}
+# Steo 1. load the function ####
+source("C:/Users/HOME/Dropbox/r_developments/r_dashboards/github_pages/test_denv_dash_yuc/functions/ovitraps_occupancy_abundancy.R")
+
+
+ovitraps_occupancy_abundancy(ovitraps_path = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan",
+                             scale = "blocks")
+
+```
+
+
+---
+## Dios Botic!
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 &nbsp;
 
