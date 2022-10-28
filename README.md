@@ -214,8 +214,8 @@ Felipe Antonio Dzul Manzanilla
 </table>
 
 -   [Hotspots de Transmisión del
-    dengue](https://animated-longma-729cee.netlify.app/talks/hotspots_cases/#1)
--   [Hotspots de Transmisión del dengue en
+    Dengue](https://animated-longma-729cee.netlify.app/talks/hotspots_cases/#1)
+-   [Hotspots de Transmisión del Dengue en
     R](https://animated-longma-729cee.netlify.app/talks/hotspots_cases_r/#1)
 
 ### Módulo III. Hotspots de la abundancia de huevos del vector del dengue en las localidades urbanas endémicas de México
@@ -282,6 +282,12 @@ Felipe Antonio Dzul Manzanilla
 </tr>
 </tbody>
 </table>
+
+-   [Hotspots de Vector del
+    Dengue](https://animated-longma-729cee.netlify.app/talks/hotspots_cases/#1)
+
+-   [Hotspots de Vector del Dengue en
+    R](https://animated-longma-729cee.netlify.app/talks/hotspots_cases/#1)
 
 ### Módulo IV. Modelo estratégico de focalización del dengue en las localidades urbanas endémicas de México.
 
