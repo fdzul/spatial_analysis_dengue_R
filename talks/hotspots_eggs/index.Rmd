@@ -445,7 +445,7 @@ blocks_surveillance(locality = "Coatzacoalcos",
 ]
 
 ---
-### Toma de Desiciones & Ovitrampas
+### Toma de Decisiones & Ovitrampas
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, out.height="80%", out.width = "100%"}
@@ -460,7 +460,7 @@ ovitraps_occupancy_abundancy(ovitraps_path = "C:/Users/HOME/Dropbox/cenaprece_da
 
 
 ---
-### Toma de Desiciones & Ovitrampas
+### Toma de Decisiones & Ovitrampas
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, out.height="80%", out.width = "100%"}
