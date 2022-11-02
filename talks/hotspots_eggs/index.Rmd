@@ -479,8 +479,8 @@ xaringanExtra::use_panelset()
 
 .panelset.sideways[
 ```{r include=FALSE}
-ovitraps_distribution <- c(source = "Distribución de Ovitrapas Código",
-                           output = "Distribución de Ovitrapas Mapa")
+ovitraps_distribution <- c(source = "Distribución de Ovitrampas Código",
+                           output = "Distribución de Ovitrampas Mapa")
 ovitraps_percentil_risk <- c(source = "Riesgo Entomológico Código",
                              output = "Riesgo Entomologico Mapa")
 ovitraps_hotblocks <- c(source = "Manzanas Calientes Código",
@@ -491,7 +491,7 @@ ovitraps_hotblocks <- c(source = "Manzanas Calientes Código",
 # Step 1. load the function 
 source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/ovitraps_risk_percentile.R")
 # Steo 2. define the path 
-path_vect <- "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan"
+path_vect <- "31_yucatan"
 path_coord <- paste(path_vect, "DescargaOvitrampasMesFco.txt", sep = "/")
 # Step 3. apply the function 
 ovitraps_risk_percentile(path_vector = path_vect,
@@ -511,13 +511,11 @@ ovitraps_risk_percentile(path_vector = path_vect,
 ```{r panelset = ovitraps_percentil_risk, warning=FALSE, message=FALSE}
 # Step 1. load the function 
 source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/ovitraps_risk_percentile.R")
-# Steo 2. define the path 
-path_vect <- "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan"
-path_coord <- paste(path_vect, "DescargaOvitrampasMesFco.txt", sep = "/")
-# Step 3. apply the function 
-ovitraps_risk_percentile(path_vector = path_vect,
+
+# Step 2. apply the function 
+ovitraps_risk_percentile(path_vector = "31_yucatan",
                          path_coord = path_coord,
-                         cve_edo = "31",
+                         cve_edo = "31_yucatan/DescargaOvitrampasMesFco.txt",
                          map_view = TRUE,
                          weeks = 43,
                          locality = "Valladolid",
@@ -532,8 +530,9 @@ ovitraps_risk_percentile(path_vector = path_vect,
 ```{r panelset = ovitraps_hotblocks, warning=FALSE, message=FALSE}
 # Step 1. load the function 
 source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/eggs_hotblocks.R")
+
 # Step 2. apply the function
-eggs_hotspots(path_vect = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan",
+eggs_hotspots(path_vect = "31_yucatan",
               cve_ent = "31",
               locality = "Tizimín",
               week = 43,
