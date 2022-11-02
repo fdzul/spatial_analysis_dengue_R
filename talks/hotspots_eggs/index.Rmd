@@ -460,7 +460,7 @@ ovitraps_occupancy_abundancy(ovitraps_path = "C:/Users/HOME/Dropbox/cenaprece_da
 
 
 ---
-### Toma de Decisiones & Ovitrampas
+### Decisiones Basadas en Evidencia & Ovitrampas
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, out.height="80%", out.width = "100%"}
@@ -472,6 +472,77 @@ ovitraps_occupancy_abundancy(ovitraps_path = "C:/Users/HOME/Dropbox/cenaprece_da
                              scale = "blocks")
 
 ```
+---
+### Visualización de Ovitrampas y Decisiones Basadas en Evidencia
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+.panelset.sideways[
+```{r include=FALSE}
+ovitraps_distribution <- c(source = "Distribución de Ovitrapas Código",
+                           output = "Distribución de Ovitrapas Mapa")
+ovitraps_percentil_risk <- c(source = "Riesgo Entomológico Código",
+                             output = "Riesgo Entomologico Mapa")
+ovitraps_hotblocks <- c(source = "Manzanas Calientes Código",
+                        output = "Manzanas Calientes Mapa")
+```
+
+```{r panelset = ovitraps_distribution, warning=FALSE, message=FALSE}
+# Step 1. load the function 
+source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/ovitraps_risk_percentile.R")
+
+# Steo 2. define the path 
+path_vect <- "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan"
+path_coord <- paste(path_vect, "DescargaOvitrampasMesFco.txt", sep = "/")
+
+# Step 3. apply the function 
+ovitraps_risk_percentile(path_vector = path_vect,
+                         path_coord = path_coord,
+                         cve_edo = "31",
+                         map_view = FALSE,
+                         weeks = 43,
+                         locality = "Valladolid",
+                         size = 4,
+                         alpha = .3,
+                         leg_title = "Huevos",
+                         palette_vir = "viridis",
+                         risk = FALSE)
+
+```
+
+```{r panelset = ovitraps_percentil_risk, warning=FALSE, message=FALSE}
+# Step 1. load the function 
+source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/ovitraps_risk_percentile.R")
+# Steo 2. define the path 
+path_vect <- "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan"
+path_coord <- paste(path_vect, "DescargaOvitrampasMesFco.txt", sep = "/")
+
+# Step 3. apply the function 
+ovitraps_risk_percentile(path_vector = path_vect,
+                         path_coord = path_coord,
+                         cve_edo = "31",
+                         map_view = TRUE,
+                         weeks = 43,
+                         locality = "Valladolid",
+                         size = 4,
+                         alpha = .3,
+                         leg_title = "Huevos",
+                         palette_vir = "viridis",
+                         risk = FALSE)
+```
+
+
+```{r panelset = ovitraps_hotblocks, warning=FALSE, message=FALSE}
+source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/eggs_hotblocks.R")
+eggs_hotspots(path_vect = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan",
+              cve_ent = "31",
+              locality = "Tizimín",
+              week = 43,
+              brand = "slack")
+```
+
+]
 
 
 ---
