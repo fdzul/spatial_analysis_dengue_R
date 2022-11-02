@@ -461,7 +461,6 @@ ovitraps_occupancy_abundancy(ovitraps_path = "C:/Users/HOME/Dropbox/cenaprece_da
 
 ---
 ### Decisiones Basadas en Evidencia & Ovitrampas
-<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, out.height="80%", out.width = "100%"}
 # Steo 1. load the function ####
@@ -473,7 +472,7 @@ ovitraps_occupancy_abundancy(ovitraps_path = "C:/Users/HOME/Dropbox/cenaprece_da
 
 ```
 ---
-### Visualización de Ovitrampas y Decisiones Basadas en Evidencia
+### Decisiones Basadas en Evidencia & Ovitrampas
 ```{r xaringan-panelset, echo=FALSE}
 xaringanExtra::use_panelset()
 ```
@@ -491,11 +490,9 @@ ovitraps_hotblocks <- c(source = "Manzanas Calientes Código",
 ```{r panelset = ovitraps_distribution, warning=FALSE, message=FALSE}
 # Step 1. load the function 
 source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/ovitraps_risk_percentile.R")
-
 # Steo 2. define the path 
 path_vect <- "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan"
 path_coord <- paste(path_vect, "DescargaOvitrampasMesFco.txt", sep = "/")
-
 # Step 3. apply the function 
 ovitraps_risk_percentile(path_vector = path_vect,
                          path_coord = path_coord,
@@ -517,7 +514,6 @@ source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/ovitrap
 # Steo 2. define the path 
 path_vect <- "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan"
 path_coord <- paste(path_vect, "DescargaOvitrampasMesFco.txt", sep = "/")
-
 # Step 3. apply the function 
 ovitraps_risk_percentile(path_vector = path_vect,
                          path_coord = path_coord,
@@ -534,7 +530,9 @@ ovitraps_risk_percentile(path_vector = path_vect,
 
 
 ```{r panelset = ovitraps_hotblocks, warning=FALSE, message=FALSE}
+# Step 1. load the function 
 source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/eggs_hotblocks.R")
+# Step 2. apply the function
 eggs_hotspots(path_vect = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/31_yucatan",
               cve_ent = "31",
               locality = "Tizimín",
