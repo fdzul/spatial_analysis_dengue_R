@@ -489,41 +489,39 @@ ovitraps_hotblocks <- c(source = "Manzanas Calientes Código",
 
 ```{r panelset = ovitraps_distribution, warning=FALSE, message=FALSE}
 # Step 1. load the function 
-source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/ovitraps_risk_percentile.R")
-# Steo 2. define the path 
-path_vect <- "31_yucatan"
-path_coord <- paste(path_vect, "DescargaOvitrampasMesFco.txt", sep = "/")
-# Step 3. apply the function 
-ovitraps_risk_percentile(path_vector = path_vect,
-                         path_coord = path_coord,
-                         cve_edo = "31",
-                         map_view = FALSE,
-                         weeks = 43,
-                         locality = "Valladolid",
-                         size = 4,
-                         alpha = .3,
-                         leg_title = "Huevos",
-                         palette_vir = "viridis",
-                         risk = FALSE)
+source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/eggs_risk.R")
+
+# Step 2. apply the function 
+eggs_risk(path_vect = "31_yucatan",
+          path_coord = "31_yucatan/DescargaOvitrampasMesFco.txt",
+          cve_edo = "31",
+          map_view = FALSE,
+          weeks = 43,
+          locality = "Valladolid",
+          size = 4,
+          alpha = .3,
+          leg_title = "Huevos",
+          palette_vir = "viridis",
+          risk = FALSE)
 
 ```
 
 ```{r panelset = ovitraps_percentil_risk, warning=FALSE, message=FALSE}
 # Step 1. load the function 
-source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/ovitraps_risk_percentile.R")
+source("C:/Users/HOME/Dropbox/r_developments/r_new_functions/3.Functions/eggs_risk.R")
 
 # Step 2. apply the function 
-ovitraps_risk_percentile(path_vector = "31_yucatan",
-                         path_coord = path_coord,
-                         cve_edo = "31_yucatan/DescargaOvitrampasMesFco.txt",
-                         map_view = TRUE,
-                         weeks = 43,
-                         locality = "Valladolid",
-                         size = 4,
-                         alpha = .3,
-                         leg_title = "Huevos",
-                         palette_vir = "viridis",
-                         risk = FALSE)
+eggs_risk(path_vect = "31_yucatan",
+          path_coord = "31_yucatan/DescargaOvitrampasMesFco.txt",
+          cve_edo = "31",
+          map_view = TRUE,
+          weeks = 43,
+          locality = "Valladolid",
+          size = 4,
+          alpha = .3,
+          leg_title = "Huevos",
+          palette_vir = "viridis",
+          risk = FALSE)
 ```
 
 
@@ -540,6 +538,8 @@ eggs_hotspots(path_vect = "31_yucatan",
 ```
 
 ]
+
+
 
 
 ---
