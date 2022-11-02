@@ -625,8 +625,10 @@ deneggs::eggs_hotspots(path_lect = "31_yucatan",
 
 ]
 
-
-
+---
+### Decisiones Basadas en Evidencia & Ovitrampas
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+![](fig/hotspots_eggs_intensity_guadalajara.jpg)
 
 ---
 ## Dios Botic!
