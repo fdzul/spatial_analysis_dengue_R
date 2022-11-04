@@ -91,7 +91,7 @@ ggplot2::ggplot() +
 $$μ{_i} ~ GF(mean = 0, var = \sum)$$]]
 
 ---
-# Análysis Geoestadístico de Ovitrampas
+# Análisis Geoestadístico de Ovitrampas
 ## Definición de argumentos.
 
 ```{r echo=FALSE}
@@ -104,7 +104,7 @@ tibble::tibble(argumento = c("path_lect", "path_coord", "year","locality",  "cve
 ```
 
 ---
-# Análysis Geoestadístico de Ovitrampas
+# Análisis Geoestadístico de Ovitrampas
 ## Definición de argumentos.
 
 ```{r echo=FALSE}
@@ -120,6 +120,41 @@ tibble::tibble(argumento = c("integration", "longitude", "latitude", "k", "sem",
     kableExtra::kable() |>
     kableExtra::kable_classic()
 ```
+
+---
+# Análisis Geoestadístico de Ovitrampas
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+panelset.sideways[
+```{r include=FALSE}
+spde_14_gua <- c(source = "código",
+                 output = "Mapa Predictivo")
+```
+
+```{r panelset = spde_14_gua, out.width='100%', warning=FALSE, message=FALSE}
+names(deneggs::eggs_hotspots(path_lect = "/Users/fdzul/Dropbox/cenaprece_datasets/2022/14_jalisco/",
+                       cve_ent = 14,
+                       locality  = c("Guadalajara", "Zapopan", "Tlaquepaque", "Tonala"),
+                       path_coord = "/Users/fdzul/Dropbox/cenaprece_datasets/2022/14_jalisco/DescargaOvitrampasMesFco.txt",
+                       longitude  = "Pocision_X",
+                       latitude =  "Pocision_Y",
+                       aproximation = "gaussian",
+                       integration = "eb",
+                       fam = "zeroinflatednbinomial1",
+                       k = 30,
+                       palette_vir  = "magma",
+                       leg_title = "Huevos",
+                       plot = FALSE,
+                       hist_dataset = FALSE,
+                       sem = 41,
+                       var = "eggs",
+                       cell_size = 2000,
+                       alpha = .99))
+
+```
+]
 
 ---
 # Dios Botic!
