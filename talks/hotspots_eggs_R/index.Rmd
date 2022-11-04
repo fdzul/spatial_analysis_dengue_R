@@ -45,4 +45,48 @@ xaringanExtra::use_logo(
 )
 ```
 
-### Ciclo de Vida del Programa de Prevención y Control del Dengue
+# Conceptos $\color{#2ECC40}s_{\color{#2ECC40}i}$, $\color{#2ECC40}D$, & $\color{#2ECC40}u_{\color{#2ECC40}{si}}$
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r echo=FALSE, warning=FALSE, message=FALSE,out.height="100%", out.width="80%",fig.align='center'}
+# Step 1. create the function for extract the locality 
+extract_locality <- function(cve_edo, locality){
+    rgeomex::loc_inegi19_mx |>
+        dplyr::filter(CVE_ENT %in% c(cve_edo)) |>
+        dplyr::filter(NOMGEO %in% c(rgeomex::find_most_similar_string(locality, unique(NOMGEO)))) |>
+        sf::st_make_valid()
+}
+
+# step 2. extract the locality ####
+aca <- extract_locality(cve_edo = "12",
+                         locality = "Acapulco de Juárez")
+
+# Step 3. Generate the points ####
+x <- sf::st_sample(x = aca,
+                   size = 30,
+                   type = "regular") |>
+    sf::st_set_crs(value = 4326) |>
+    sf::st_as_sf() |>
+    dplyr::mutate(id = paste("s", 1:length(x), sep = ""))
+
+ggplot2::ggplot() +
+    ggplot2::geom_sf(data = aca,
+                     alpha = 0.5,
+                     fill = "gray85") +
+    cowplot::theme_map() +
+    ggplot2::geom_sf(data = x,
+                     color = "#36C5F0",
+                     size = 3) +
+    ggplot2::geom_sf_text(data = x, 
+                          ggplot2::aes(label = id),
+                          size = 4,
+                          nudge_x = 0.009,
+                          nudge_y = 0.001,
+                          color = "#2EB67D")
+```
+
+
+
+.blue[.footnote[$$μ{_i} = \beta{_0} + u{_i}$$
+$$μ{_i} ~ GF(mean = 0, var = \sum)$$]]
+
