@@ -1,0 +1,48 @@
+---
+title: "Hotspots del Vector del Dengue"
+author: "Felipe Antonio Dzul Manzanilla"
+date: '2022: Last compiled `r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: 
+      - default
+      - default-fonts
+      - duke-blue
+      - hygge-duke
+      - libs/cc-fonts.css
+      - libs/figure-captions.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: left, top
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringanExtra, echo = FALSE}
+xaringanExtra::use_progress_bar(color = "#0051BA", location = "top")
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+```{r share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "https://www.gob.mx/cms/uploads/action_program/main_image/26942/post_post_portadavectores.gif",
+  width = "110px",
+  height = "228px",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
+```
+
+### Ciclo de Vida del Programa de Prevención y Control del Dengue
