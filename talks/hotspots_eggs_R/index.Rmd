@@ -91,6 +91,37 @@ ggplot2::ggplot() +
 $$μ{_i} ~ GF(mean = 0, var = \sum)$$]]
 
 ---
+# Análysis Geoestadístico de Ovitrampas
+## Definición de argumentos.
+
+```{r echo=FALSE}
+tibble::tibble(argumento = c("path_lect", "path_coord", "year","locality",  "cve_ent",
+                             "leg_title", "fam", "alpha", "plot", "aproximation"),
+    definicion = c("Ruta de ovitrampas", "Ruta de la coordenadas", "Año a analizar", "localidad", "Clave del Estado",
+                   "Título de la leyenda", "Nombre de la Distribución", "Nivel de Significancia", "Valor lógico para visualizar el mesh", "Es el método de aproximación para calcular los hiperparametros y valores marginales. Las opciones son gaussian, simplified.laplace & laplace")) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic()
+```
+
+---
+# Análysis Geoestadístico de Ovitrampas
+## Definición de argumentos.
+
+```{r echo=FALSE}
+tibble::tibble(argumento = c("integration", "longitude", "latitude", "k", "sem", "var",
+                             "cell_size", "palette_vir", "hist_dataset"),
+    definicion = c("Es la estrategia de integración. Las opciones son grid, eb & ccd)",
+                   "Coordenada geográfica (longitud)", "Coordenada geográfica (latitud)", "es un parametro pera definir los triangules exteriores e interiores",
+                   "Es la semana epidemiológica",
+                   "Es la variable de interes",
+                   "Es el tamaño de muestra para predecir",
+                   "es la paleta de viridis. Las opciones son magma, inferno, plasma & viridis",
+                   "Es un valor lógico para definir las bases históricas (FALSE) ó la actual base de ovitrampas(FALSE)")) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic()
+```
+
+---
 # Dios Botic!
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 &nbsp;
