@@ -1,5 +1,5 @@
 ---
-title: "Hotspots del Vector del Dengue"
+title: "Hotspots del Vector del Dengue en R"
 author: "Felipe Antonio Dzul Manzanilla"
 date: '2022: Last compiled `r Sys.Date()`'
 output:
@@ -199,7 +199,7 @@ deneggs::eggs_hotspots(path_lect = "C:/Users/HOME/Dropbox/cenaprece_datasets/202
 
 - ***celular***     :     [8139945623]()
 
-- ***slides***:     https://animated-longma-729cee.netlify.app/talks/hotspots_cases_R/#1
+- ***slides***:     https://animated-longma-729cee.netlify.app/talks/hotspots_eggs_R/#1
 
 
 
