@@ -106,15 +106,126 @@ top:1em;right:1em;
 
 # Conceptos `\(\color{#2ECC40}s_{\color{#2ECC40}i}\)`, `\(\color{#2ECC40}D\)`, &amp; `\(\color{#2ECC40}u_{\color{#2ECC40}{si}}\)`
 &lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+.pull-left[
+&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+]
 
-&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" width="80%" height="100%" style="display: block; margin: auto;" /&gt;
+.pull-right[
 
+`\(s{_i}\)` sitios de colecta con coordenadas geográficas (longitud. latitud).
+&amp;nbsp;
 
+`\(D\)` area de estudio (zona metropolitana de Guadalajara).
+&amp;nbsp;
 
-.blue[.footnote[$$\mu{_i} = \beta{_0} + u{_i}$$
-`$$u{_i} ~ GF(mean = 0, var = \sum)$$`]]
+`\(Y{_i}\)` es la variable de respuesta (Número de Huevos por Ovitrampa o Manzana).
+&amp;nbsp;
+
+`\(y{_i}\)` tiene una distribución (binomial negativa ó zibn).
+&amp;nbsp;
+
+`\(U{_s{_i}}\)` el efecto espacial &amp; el proceso ocurre en un campo gaussiano continuo (Gaussian Field).
+]
+
 ---
 # Análisis Geoestadístico de Ovitrampas
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+
+.pull-left[
+Modelo sin correlación espacial
+`\begin{align*}
+Huevos &amp; = \beta{_0} + \beta x + \epsilon{_i} \\
+\beta{_0} &amp; = intercepto \\
+\beta x &amp; =  pendiente \\
+\epsilon{_i} &amp; = error \\
+\epsilon{_i} &amp;\sim {\sf Norm}(0, \sigma^2) \\
+\end{align*}`
+
+Modelo con efecto espacial
+`\begin{align*}
+Huevos &amp; = \beta{_0} + \beta x + u{_i}+\epsilon{_i} \\
+Huevos &amp; = \beta{_0} + u{_i}+\epsilon{_i} \\
+u{_i} &amp; = efecto espacial \\
+u{_i} &amp;\sim {\sf GF}(0, \sum) \\
+\end{align*}`
+
+]
+
+.pull-rigth[
+Cuando D es regular
+&amp;nbsp;
+
+Se usa Gausian Makovian RF (GMRF) para aproximar la matriz de covarianzas
+
+&amp;nbsp;
+
+Cuando D es irregular
+&amp;nbsp;
+&amp;nbsp;
+
+Se usa SPDE &amp; Elemento Finito para aproximar la matriz de covarianzas
+
+
+]
+
+
+---
+# SPDE y elemento finito
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+
+.pull-left[
+SPDE
+&amp;nbsp;
+
+`$$(K^2-\Delta)^{a/2}U(s) = W(s)$$`
+
+Elemento Finito
+&amp;nbsp;
+
+`$$u(s) = \sum_{i=1}^{G} \alpha{_k}(s{_i})W{_k}$$`
+]
+
+.pull-right[
+![](index_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+
+```
+## [1] 31
+```
+]
+
+---
+## **Calculo de `\(\alpha{_k}\)`**
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+
+.pull-left[
+![Alt text](https://becarioprecario.bitbucket.io/spde-gitbook/figs/spde-intro-interp2d-1.png "Figure 2.8. Kraisky et al 2019")
+]
+
+.pull-right[
+-  Coordenadas en los vértices
+&amp;nbsp;
+
+   Sí `\(s{_i}\)` caé en el vértice 1, el resto 0.\\
+   `\(u(s) = w{_k}\)`
+
+-  Cordenadas dentro del Triángulo
+&amp;nbsp;
+
+   Sí `\(s{_i}\)` caé dentro del triángulo \\
+   se ponderan los tres puntos\\
+   `$$u(s) = \sum_{i=1}^{G} \alpha{_k}(s{_i})W{_k}$$`
+   
+   `$$u(s) = 0.17 * W{_1} + 0.54 * W{_3} + 0.26 * W{_3}$$`
+
+- Coordenadas sobre un borde
+&amp;nbsp;
+  
+  Sí `\(s{_i}\)` caé en el borde\\
+  se ponderan los dos valores \\
+  
+  `$$u(s) = \sum_{i=1}^{G} \alpha{_k}(s{_i})W{_k}$$`
+
+]
 
 ---
 ## **Análisis Geoestadístico de Ovitrampas en R**
@@ -316,12 +427,9 @@ deneggs::eggs_hotspots(path_lect = "C:/Users/HOME/Dropbox/cenaprece_datasets/202
 
 .panel[.panel-name[Mapa]
 
-&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="100%" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" width="100%" /&gt;
 
 ]
-
-
-
 
 ]
 ---

@@ -47,8 +47,8 @@ xaringanExtra::use_logo(
 
 # Conceptos $\color{#2ECC40}s_{\color{#2ECC40}i}$, $\color{#2ECC40}D$, & $\color{#2ECC40}u_{\color{#2ECC40}{si}}$
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
-
-```{r echo=FALSE, warning=FALSE, message=FALSE,out.height="100%", out.width="80%",fig.align='center'}
+.pull-left[
+```{r echo=FALSE, warning=FALSE,depi = 300, message=FALSE, out.height="100%", out.width="100%",fig.align='center'}
 # Step 1. create the function for extract the locality 
 extract_locality <- function(cve_edo, locality){
     rgeomex::loc_inegi19_mx |>
@@ -58,11 +58,11 @@ extract_locality <- function(cve_edo, locality){
 }
 
 # step 2. extract the locality ####
-aca <- extract_locality(cve_edo = "12",
-                         locality = "Acapulco de Juárez")
+y <- extract_locality(cve_edo = "14",
+                         locality = c("Guadalajara", "Zapopan", "Tlaquepaque", "Tonala"))
 
 # Step 3. Generate the points ####
-x <- sf::st_sample(x = aca,
+x <- sf::st_sample(x = y,
                    size = 30,
                    type = "regular") |>
     sf::st_set_crs(value = 4326) |>
@@ -70,7 +70,7 @@ x <- sf::st_sample(x = aca,
     dplyr::mutate(id = paste("s", 1:length(x), sep = ""))
 
 ggplot2::ggplot() +
-    ggplot2::geom_sf(data = aca,
+    ggplot2::geom_sf(data = y,
                      alpha = 0.5,
                      fill = "gray85") +
     cowplot::theme_map() +
@@ -84,29 +84,151 @@ ggplot2::ggplot() +
                           nudge_y = 0.001,
                           color = "#2EB67D")
 ```
+]
 
+.pull-right[
 
+$s{_i}$ sitios de colecta con coordenadas geográficas (longitud. latitud).
+&nbsp;
 
-.blue[.footnote[$$\mu{_i} = \beta{_0} + u{_i}$$
-$$u{_i} ~ GF(mean = 0, var = \sum)$$]]
+$D$ area de estudio (zona metropolitana de Guadalajara).
+&nbsp;
+
+$Y{_i}$ es la variable de respuesta (Número de Huevos por Ovitrampa o Manzana).
+&nbsp;
+
+$y{_i}$ tiene una distribución (binomial negativa ó zibn).
+&nbsp;
+
+$U{_s{_i}}$ el efecto espacial & el proceso ocurre en un campo gaussiano continuo (Gaussian Field).
+]
+
 ---
 # Análisis Geoestadístico de Ovitrampas
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.pull-left[
+Modelo sin correlación espacial
+\begin{align*}
+Huevos & = \beta{_0} + \beta x + \epsilon{_i} \\
+\beta{_0} & = intercepto \\
+\beta x & =  pendiente \\
+\epsilon{_i} & = error \\
+\epsilon{_i} &\sim {\sf Norm}(0, \sigma^2) \\
+\end{align*}
+
+Modelo con efecto espacial
+\begin{align*}
+Huevos & = \beta{_0} + \beta x + u{_i}+\epsilon{_i} \\
+Huevos & = \beta{_0} + u{_i}+\epsilon{_i} \\
+u{_i} & = efecto espacial \\
+u{_i} &\sim {\sf GF}(0, \sum) \\
+\end{align*}
+
+]
+
+.pull-rigth[
+Cuando D es regular
+&nbsp;
+
+Se usa Gausian Makovian RF (GMRF) para aproximar la matriz de covarianzas
+
+&nbsp;
+
+Cuando D es irregular
+&nbsp;
+&nbsp;
+
+Se usa SPDE & Elemento Finito para aproximar la matriz de covarianzas
+
+
+]
+
+
+---
+# SPDE y elemento finito
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.pull-left[
+SPDE
+&nbsp;
+
+$$(K^2-\Delta)^{a/2}U(s) = W(s)$$
+
+Elemento Finito
+&nbsp;
+
+$$u(s) = \sum_{i=1}^{G} \alpha{_k}(s{_i})W{_k}$$
+]
+
+.pull-right[
+```{r, echo=FALSE, warning=FALSE, message=FALSE, dpi = 300}
+set.seed(123)
+s <- cbind(x1 = runif(5),
+           y1 = runif(5))
+mesh <- INLA::inla.mesh.2d(loc = s, 
+                           max.edge = 1)
+plot(mesh)
+par(new=TRUE)
+plot(s, pch = 16, cex = 2, col = "red")
+
+# Numero de vertices (G)
+mesh$n
+
+```
+]
+
+---
+## **Calculo de $\alpha{_k}$**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.pull-left[
+![Alt text](https://becarioprecario.bitbucket.io/spde-gitbook/figs/spde-intro-interp2d-1.png "Figure 2.8. Kraisky et al 2019")
+]
+
+.pull-right[
+-  Coordenadas en los vértices
+&nbsp;
+
+   Sí $s{_i}$ caé en el vértice 1, el resto 0.\\
+   $u(s) = w{_k}$
+
+-  Cordenadas dentro del Triángulo
+&nbsp;
+
+   Sí $s{_i}$ caé dentro del triángulo \\
+   se ponderan los tres puntos\\
+   $$u(s) = \sum_{i=1}^{G} \alpha{_k}(s{_i})W{_k}$$
+   
+   $$u(s) = 0.17 * W{_1} + 0.54 * W{_3} + 0.26 * W{_3}$$
+
+- Coordenadas sobre un borde
+&nbsp;
+  
+  Sí $s{_i}$ caé en el borde\\
+  se ponderan los dos valores \\
+  
+  $$u(s) = \sum_{i=1}^{G} \alpha{_k}(s{_i})W{_k}$$
+
+]
 
 ---
 ## **Análisis Geoestadístico de Ovitrampas en R**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
-## 1. Instalar el paquete **deneggs**. 
+## 1. Instalar el paquete **INLA**. 
+
+## 2. Instalar el paquete **deneggs**. 
 &nbsp;
 
-## 2. Definir la ruta de los archivos de las lecturas y las coordenadas.
+## 3. Definir la ruta de los archivos de las lecturas y las coordenadas.
 &nbsp;
 
-## 3. Definir la localidad de interes y la clave del estado.
+## 4. Definir la localidad de interes y la clave del estado.
 &nbsp;
 
-## 4. Correr la función **deneggs::eggs_hotspots**.
+## 5. Correr la función **deneggs::eggs_hotspots**.
 
 
 
@@ -203,9 +325,6 @@ deneggs::eggs_hotspots(path_lect = "C:/Users/HOME/Dropbox/cenaprece_datasets/202
                        alpha = .99)$map
 
 ```
-
-
-
 
 ]
 ---
