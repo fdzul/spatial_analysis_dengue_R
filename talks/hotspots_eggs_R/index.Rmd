@@ -190,23 +190,23 @@ mesh$n
 -  Coordenadas en los vértices
 &nbsp;
 
-   Sí $s{_i}$ caé en el vértice 1, el resto 0.\\
+   Sí $s{_i}$ caé en el vértice 1, el resto 0.
    $u(s) = w{_k}$
 
 -  Cordenadas dentro del Triángulo
 &nbsp;
 
-   Sí $s{_i}$ caé dentro del triángulo \\
-   se ponderan los tres puntos\\
+   Sí $s{_i}$ caé dentro del triángulo
+   se ponderan los tres puntos
    $$u(s) = \sum_{i=1}^{G} \alpha{_k}(s{_i})W{_k}$$
    
-   $$u(s) = 0.17 * W{_1} + 0.54 * W{_3} + 0.26 * W{_3}$$
+   $$0.17 * W{_1} + 0.54 * W{_3} + 0.29 * W{_3}$$
 
 - Coordenadas sobre un borde
 &nbsp;
   
-  Sí $s{_i}$ caé en el borde\\
-  se ponderan los dos valores \\
+  Sí $s{_i}$ caé en el borde
+  se ponderan los dos valores 
   
   $$u(s) = \sum_{i=1}^{G} \alpha{_k}(s{_i})W{_k}$$
 
