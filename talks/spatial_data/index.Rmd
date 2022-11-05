@@ -452,6 +452,7 @@ ggplot2::ggplot() +
 
 ```
 
+
 ```{r panelset = hexagonal_grid, out.width='100%', warning=FALSE, message=FALSE}
 # Step 2. make the grid #####
 grid_hexagonal = sf::st_make_grid(x = loc$locality,
