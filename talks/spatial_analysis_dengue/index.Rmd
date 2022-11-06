@@ -909,7 +909,7 @@ library(sf)
 library(sp)
 library(plotly)
 
- x <- denhotspots::spatial_lgcp(dataset = geocoded_dataset,
+ denhotspots::spatial_lgcp(dataset = geocoded_dataset,
                           locality = "Merida",
                           cve_edo = "31",
                           longitude = "x",
@@ -921,8 +921,7 @@ library(plotly)
                           resolution = 0.015,
                           approach = "lattice",
                           cell_size = 1500,
-                          name = "YlGnBu")
- x$map
+                          name = "YlGnBu")$map
 
 ```
 
