@@ -1,0 +1,358 @@
+---
+title: "Análisis Espacial del Dengue"
+author: "Felipe Antonio Dzul Manzanilla"
+date: '2022: Last compiled `r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: 
+      - default
+      - default-fonts
+      - duke-blue
+      - hygge-duke
+      - libs/cc-fonts.css
+      - libs/figure-captions.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringanExtra, echo = FALSE}
+xaringanExtra::use_progress_bar(color = "#0051BA", location = "top")
+```
+
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+
+```{r share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "https://www.gob.mx/cms/uploads/action_program/main_image/26942/post_post_portadavectores.gif",
+  width = "110px",
+  height = "228px",
+  position = xaringanExtra::css_position(top = "1em", right = "1em")
+)
+```
+
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+
+### Ciclo de Vida del Programa de Prevención y Control del Dengue
+
+```{r, dpi=300,echo=FALSE, fig.align ="center", out.height="100%",out.width = "100%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = circle, style = filled, color = grey,
+  fixedsize = true, width = 2] 
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  ###########
+  prog_den [label = 'Programa de Dengue',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+  brote [label = 'Brote',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  cp [label = 'Control de Probables',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  node [shape = circle, style = filled, color = grey] 
+ 
+  
+  ovitraps [label = 'Ovitrampas',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  adult [label = 'Colecta de Adultos',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  enc_ver [label = 'Encuesta Verificación',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  plat [label = 'Plataforma',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+  
+  #########
+  node [shape = rectangle, style = filled, color = grey, fixedsize = true, width = 2.5] 
+  act [label = 'Casos Actuales',  fillcolor = 'DarkOrange', color = 'white', fontcolor = 'black']
+ 
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  ent [label = 'Vigilancia Entomológica',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+ ind [label = 'Indicadores',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  ###################
+  prog_den -> {epi, ent}[penwidth = 4]
+  
+  
+  act -> {
+  brote[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  cp[arrowhead = crow, arrowtail = box, color = 'Maroon']
+  } -> plat[penwidth = 4]
+  epi -> {act}[penwidth = 4]
+  ent -> {adult, 
+  ovitraps,
+  enc_ver} -> plat[penwidth = 4]  
+  plat -> ind[penwidth = 4]
+  ind -> prog_den[penwidth = 4]
+  #ind -> {enc_ver, ovitraps, adult, cl, irs, cp, brote}
+
+ 
+ 
+ 
+  }", 
+  height = 550)
+
+```
+
+
+
+
+---
+### **Análisis Espacial de la Transmisión del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, 
+  style = filled, 
+  color = grey, 
+  nodesep = .5,
+  fixedsize = true, 
+  width = 2.5] 
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  ##### epidemiological data
+  
+  epi [label = 'Vigilancia Epidemiológica',  fillcolor =  '#DB4437', color = 'white', fontcolor = 'white']
+  data_historic [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_datos_actuales [label = 'Datos Actuales',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_acumulados [label = 'Datos Acumulados',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_trans_activa [label = 'Transmisión Activa',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  
+  ##### Spatial Data
+  
+  areal [label = 'Areal Data',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+  pp_data [label = 'Point Pattern Data',  fillcolor =  ' #0F9D58', color = 'white', fontcolor = 'white']
+  
+  
+ 
+ # Análisis 
+ hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ cadenas [label = 'Cadenas de Transmisión',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ cluster_ana [label = 'Cluster Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ lgcp [label = 'Spatial LGCP',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ 
+ # software
+ 
+ geoda [label = 'Geoda',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ cluster_s [label = 'ClusterSeer',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ satscan [label = 'SatScan',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ 
+ r_rstudio [label = 'R & RStudio',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+
+  denhotspot [label = 'denhotspots Package',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
+ 
+ ##### define the relation
+ 
+ epi -> {data_historic  data_datos_actuales}
+ data_historic -> areal -> hotspots -> geoda
+ data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana lgcp}
+ cadenas -> cluster_s
+ cluster_ana -> satscan
+ 
+ {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot
+ 
+}")
+
+```
+
+---
+### **Hotspots de la Transmisión del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.pull-left[
+1. Bajar las bases de datos del **[SINAVE](https://www.sinave.gob.mx/)**.
+2. Geocodificar las bases.
+3. Bajar los shapefile del **[INEGI](https://www.inegi.org.mx/)**.
+4. Seleccionar la localidad de interes y extraer los AGEBs.
+5. Contar el número de casos por AGEB.
+6. Cálcular el Z-score de los casos.
+7. Generar la matriz de adjacencias.
+8. Cálcular el estadístico espacial local Getis&Ord $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$.
+9. Realizar la la corrección de Bonferroni.
+10. Cálcular los hotspots.
+11. Visualizar los hotspots.
+]
+.pull-right[
+```{r, dpi=300,echo=FALSE, fig.align ="center", out.width = "100%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+  
+  # flowchart for hotspots
+  sinave [label = 'SINAVE',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  denv [label = 'Bases de DENV',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  geocode [label = 'Geocodificación',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  cases_ageb [label = 'Casos por AGEBs']
+  z_score [label = 'Z-score']
+  gi [label = 'Estadístico Espacial Local (Gi*)']
+  bonferroni [label = 'Corrección de Bonferroni']
+  hotspots [label = 'Hotspots', style = filled, color = orange]
+  
+  # flow chart for inegi
+  inegi [label = 'INEGI', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+  loc [label = 'Localidades Shapefile', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+  ageb [label = 'AGEB Shapefile', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+  loc_esp [label = 'Localidad de Ínteres', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+  ageb_esp [label = 'AGEBs de la Localidad de Ínteres', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+  mat [label = 'Matriz de Adjacencias', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+  
+  # edge definitions with the node IDs
+  edge [color = black]
+  sinave -> denv -> geocode -> cases_ageb -> z_score -> gi -> bonferroni -> hotspots 
+  inegi -> {ageb, loc}
+  loc -> loc_esp -> ageb_esp
+  ageb -> ageb_esp
+  ageb_esp -> mat
+  mat -> cases_ageb 
+ 
+  }", 
+  height = 550)
+
+```
+]
+
+.tiny[.blue[.footnote[ Dzul-Manzanilla et al 2021]]]
+
+
+---
+### Estadístico Espacial Local $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$ (Hotspots)
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+$$\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*} = \frac{\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}}
+{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}}$$
+
+donde:
+ 
+$\color{#FF4136}\sum_{\color{#FF4136}j \color{#FF4136}= \color{#FF4136}1}^\color{#FF4136}{n} \color{#FF4136}w_{\color{#FF4136}i\color{#FF4136}j}\color{#FF4136}x_{\color{#FF4136}j}$ el numerador, es la suma de los valores $x_{i}$ de la unidad espacial de interes con sus vecinos $x_{j}$ &
+ 
+  
+
+ 
+ $\frac{}{\color{#0074D9}\sum_{\color{#0074D9}j \color{#0074D9}= \color{#0074D9}1}^{\color{#0074D9}n} \color{#0074D9}x_{\color{#0074D9}j}}$ el denominador, es la suma de todos los valores $x$ en toda la localidad de interes.
+
+
+### **Hotspots** 
+son las áreas o las unidades espaciales con valores altos de $\color{#2ECC40}G_{\color{#2ECC40}i}^{\color{#2ECC40}*}$ y homogéneos de la unidad espaciales de interes $x_{ij}$. En otras palabras el estadístico espacial, identifica las unidades espaciales $x_{ij}$ con valores altos comparados con el valor promedio de todas la unidades espaciales en la localidad de interes.
+
+
+
+.tiny[.blue[.footnote[Getis & Ord 1991; Ord & Getis 1995]]]
+
+---
+### **Cadenas de Transmisión Knox test**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.pull-left[
+1. Bajar las bases de datos del **[SINAVE](https://www.sinave.gob.mx/)**.
+&nbsp;
+
+2. Geocodificar las bases.
+&nbsp;
+
+3. Generar la base (onset y coordenadas).
+&nbsp;
+
+4. Aplicar el [**Knox test**]().
+&nbsp;
+
+5. Definir los [**Space-Time link**]().
+&nbsp;
+
+6. Visualizar [**Space-Time link**]().
+]
+.pull-right[
+```{r, dpi=300,echo=FALSE, fig.align ="center", out.width = "100%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+  
+  
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  # flowchart for sinave
+  sinave [label = 'SINAVE',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
+  denv [label = 'Bases de DENV',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
+  geocode [label = 'Geocodificación',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
+ 
+  
+  # knox
+  base [label = 'Genera la base (onset-coordenadas)',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  
+  knox [label = 'Knox test',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  
+  time_link [label = 'Space-Time Link',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  
+   vis [label = 'Visualización',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
+  
+  # edge definitions with the node IDs
+  sinave -> denv -> geocode -> base -> knox -> time_link -> vis
+  
+   
+ 
+  }", 
+  height = 550)
+
+```
+]
+
+.tiny[.blue[.footnote[]]]
+
+---
+### **Cadenas de Transmisión Knox test**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+$$\color{Orange}{Knox} = \frac{1}{2} \sum_{i=1}^{n}  \sum_{i=1}^{n} \color{Green}{S_{ij}} \color{red}{T_{ij}}$$
+donde:
+
+$\color{Green}{S_{ij}}$ = 1 si el caso $( i\ne j)$ & la $d_{ij} \le \delta^s$ (metros = 400), de lo contrario 0.
+
+$\color{red}{T_{ij}}$ = 1 si el caso $( i\ne j)$ & la $d_{ij} \le \delta^t$ (dÍas = 20), de los contrario 0.
+
+**Hipotesis Nula** las distancias temporales entre pares de casos son independientes de las distancias espaciales.
+
+**Hipotesis Alternativa** existe dependencia de las distancias espaciales y temporales entre los pares de casos (existen cadenas de transmisión).
+
+
+```{r echo=FALSE,dpi=300,warning=FALSE, fig.align ="center", out.width = "100%",fig.cap = "Tabla de contingencia de knox test"}
+x <- data.frame("Close" = c("$0_{1}$", "$0_{3}$", "$S_{3}$"),
+                "Not close" = c("$0_{2}$", "$0_{4}$", "$S_{4}$"),
+                "Total" = c("$S_{1}$", "$S_{2}$", "$N$"))
+row.names(x) <- c("Close in Space", "Not close in Space", "Total")
+kableExtra::kbl(x, align = "c") |>
+    kableExtra::kable_paper("striped", full_width = F) |>
+    kableExtra::add_header_above(c(" " = 1, "Time" = 3)) |>
+    kableExtra::pack_rows("",3, 3)
+
+```
+
+
+.tiny[.blue[.footnote[Viet et al 2015]]]
+
