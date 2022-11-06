@@ -908,6 +908,7 @@ library(ggplot2)
 library(sf)
 library(sp)
 library(plotly)
+library(htmlwidgets)
 
  (denhotspots::spatial_lgcp(dataset = geocoded_dataset,
                           locality = "Merida",
