@@ -825,5 +825,41 @@ hotspots_map(cve_ent = "14",
 
 ]
 
+---
+### **Cadenas de Transmisión Knox test**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.panelset.sideways[
+```{r include=FALSE}
+knox_merida_prob <- c(source = "Código",
+                      output = "Probables")
+knox_merida_conf <- c(source = "Código",
+                      output = "Confirmados")
+```
+```{r panelset = knox_merida_prob, out.width='100%', warning=FALSE, message=FALSE}
+# Step 1. load the dengue cases geocoded
+load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/geo_den_mx_31_merida_2022_10_31.RData")
+
+# Step 2. visualize the space-time link 
+denhotspots::transmission_chains_map(geocoded_dataset = y,
+                                     cve_edo = "31",
+                                     locality = "Merida",
+                                     dengue_cases = "Probable")
+
+```
+
+
+```{r panelset = knox_merida_conf, out.width='100%', warning=FALSE, message=FALSE}
+# Step 1. load the dengue cases geocoded
+load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/geo_den_mx_31_merida_2022_10_31.RData")
+
+# Step 2. visualize the space-time link 
+denhotspots::transmission_chains_map(geocoded_dataset = y,
+                                     cve_edo = "31",
+                                     locality = "Merida",
+                                     dengue_cases = "Confirmado")
+
+```
+]
 
 
