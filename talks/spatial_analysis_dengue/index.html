@@ -21,6 +21,8 @@
     <script src="libs/viz-1.8.2/viz.js"></script>
     <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
     <script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="libs/cc-fonts.css" type="text/css" />
     <link rel="stylesheet" href="libs/figure-captions.css" type="text/css" />
   </head>
@@ -40,8 +42,6 @@ class: center, middle, inverse, title-slide
 
 ---
 
-
-class: left, top
 
 
 
@@ -106,8 +106,8 @@ top:1em;right:1em;
 
 ### Ciclo de Vida del Programa de Prevención y Control del Dengue
 
-<div id="htmlwidget-2aced2aeb6fe91c4cb39" style="width:100%;height:550px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2aced2aeb6fe91c4cb39">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = circle, style = filled, color = grey,\n  fixedsize = true, width = 2] \n  \n  ###########\n  prog_den [label = \"Programa de Dengue\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"black\"]\n  brote [label = \"Brote\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  cp [label = \"Control de Probables\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  node [shape = circle, style = filled, color = grey] \n \n  \n  ovitraps [label = \"Ovitrampas\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  adult [label = \"Colecta de Adultos\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  enc_ver [label = \"Encuesta Verificación\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  plat [label = \"Plataforma\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  \n  #########\n  node [shape = rectangle, style = filled, color = grey, fixedsize = true, width = 2.5] \n  act [label = \"Casos Actuales\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"black\"]\n  ent [label = \"Vigilancia Entomológica\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"black\"]\n ind [label = \"Indicadores\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"black\"]\n  ###################\n  prog_den -> {epi, ent}[penwidth = 4]\n  \n  \n  act -> {\n  brote[arrowhead = crow, arrowtail = box, color = \"Maroon\"]\n  cp[arrowhead = crow, arrowtail = box, color = \"Maroon\"]\n  } -> plat[penwidth = 4]\n  epi -> {act}[penwidth = 4]\n  ent -> {adult, \n  ovitraps,\n  enc_ver} -> plat[penwidth = 4]  \n  plat -> ind[penwidth = 4]\n  ind -> prog_den[penwidth = 4]\n  #ind -> {enc_ver, ovitraps, adult, cl, irs, cp, brote}\n\n \n \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bc17d5543f936f1dfaca" style="width:100%;height:550px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bc17d5543f936f1dfaca">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = circle, style = filled, color = grey,\n  fixedsize = true, width = 2] \n  \n  ###########\n  prog_den [label = \"Programa de Dengue\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"black\"]\n  brote [label = \"Brote\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  cp [label = \"Control de Probables\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  node [shape = circle, style = filled, color = grey] \n \n  \n  ovitraps [label = \"Ovitrampas\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  adult [label = \"Colecta de Adultos\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  enc_ver [label = \"Encuesta Verificación\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  plat [label = \"Plataforma\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n  \n  #########\n  node [shape = rectangle, style = filled, color = grey, fixedsize = true, width = 2.5] \n  act [label = \"Casos Actuales\",  fillcolor = \"DarkOrange\", color = \"white\", fontcolor = \"black\"]\n \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"black\"]\n  ent [label = \"Vigilancia Entomológica\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"black\"]\n ind [label = \"Indicadores\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"black\"]\n  ###################\n  prog_den -> {epi, ent}[penwidth = 4]\n  \n  \n  act -> {\n  brote[arrowhead = crow, arrowtail = box, color = \"Maroon\"]\n  cp[arrowhead = crow, arrowtail = box, color = \"Maroon\"]\n  } -> plat[penwidth = 4]\n  epi -> {act}[penwidth = 4]\n  ent -> {adult, \n  ovitraps,\n  enc_ver} -> plat[penwidth = 4]  \n  plat -> ind[penwidth = 4]\n  ind -> prog_den[penwidth = 4]\n  #ind -> {enc_ver, ovitraps, adult, cl, irs, cp, brote}\n\n \n \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 
@@ -116,8 +116,8 @@ top:1em;right:1em;
 ### **Análisis Espacial de la Transmisión del Dengue**
 &lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
 
-<div id="htmlwidget-a25abf05f17bb32f0e97" style="width:100%;height:504px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a25abf05f17bb32f0e97">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos Actuales\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos Acumulados\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n lgcp [label = \"Spatial LGCP\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana lgcp}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-da952487e5f6f531dc12" style="width:100%;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-da952487e5f6f531dc12">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### epidemiological data\n  \n  epi [label = \"Vigilancia Epidemiológica\",  fillcolor =  \"#DB4437\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos Actuales\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos Acumulados\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Transmisión Activa\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  areal [label = \"Areal Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  pp_data [label = \"Point Pattern Data\",  fillcolor =  \" #0F9D58\", color = \"white\", fontcolor = \"white\"]\n  \n  \n \n # Análisis \n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cadenas [label = \"Cadenas de Transmisión\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n cluster_ana [label = \"Cluster Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n lgcp [label = \"Spatial LGCP\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n \n geoda [label = \"Geoda\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n cluster_s [label = \"ClusterSeer\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n satscan [label = \"SatScan\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n \n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n\n  denhotspot [label = \"denhotspots Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n ##### define the relation\n \n epi -> {data_historic  data_datos_actuales}\n data_historic -> areal -> hotspots -> geoda\n data_datos_actuales -> {data_acumulados, data_trans_activa} -> pp_data -> {cadenas cluster_ana lgcp}\n cadenas -> cluster_s\n cluster_ana -> satscan\n \n {geoda cluster_s satscan lgcp} -> r_rstudio -> denhotspot\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 ---
 ### **Hotspots de la Transmisión del Dengue**
@@ -137,8 +137,8 @@ top:1em;right:1em;
 11. Visualizar los hotspots.
 ]
 .pull-right[
-<div id="htmlwidget-b6e32918ce4d5fcfda37" style="width:100%;height:550px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b6e32918ce4d5fcfda37">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  cases_ageb [label = \"Casos por AGEBs\"]\n  z_score [label = \"Z-score\"]\n  gi [label = \"Estadístico Espacial Local (Gi*)\"]\n  bonferroni [label = \"Corrección de Bonferroni\"]\n  hotspots [label = \"Hotspots\", style = filled, color = orange]\n  \n  # flow chart for inegi\n  inegi [label = \"INEGI\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc [label = \"Localidades Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb [label = \"AGEB Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc_esp [label = \"Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb_esp [label = \"AGEBs de la Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  mat [label = \"Matriz de Adjacencias\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> z_score -> gi -> bonferroni -> hotspots \n  inegi -> {ageb, loc}\n  loc -> loc_esp -> ageb_esp\n  ageb -> ageb_esp\n  ageb_esp -> mat\n  mat -> cases_ageb \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-72f90558b01dcda130a7" style="width:100%;height:550px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-72f90558b01dcda130a7">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"SeaGreen\", color = \"white\", fontcolor = \"white\"]\n  cases_ageb [label = \"Casos por AGEBs\"]\n  z_score [label = \"Z-score\"]\n  gi [label = \"Estadístico Espacial Local (Gi*)\"]\n  bonferroni [label = \"Corrección de Bonferroni\"]\n  hotspots [label = \"Hotspots\", style = filled, color = orange]\n  \n  # flow chart for inegi\n  inegi [label = \"INEGI\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc [label = \"Localidades Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb [label = \"AGEB Shapefile\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  loc_esp [label = \"Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  ageb_esp [label = \"AGEBs de la Localidad de Ínteres\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  mat [label = \"Matriz de Adjacencias\", fillcolor = \"DeepSkyBlue\", color = \"white\", fontcolor = \"black\"]\n  \n  # edge definitions with the node IDs\n  edge [color = black]\n  sinave -> denv -> geocode -> cases_ageb -> z_score -> gi -> bonferroni -> hotspots \n  inegi -> {ageb, loc}\n  loc -> loc_esp -> ageb_esp\n  ageb -> ageb_esp\n  ageb_esp -> mat\n  mat -> cases_ageb \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 .tiny[.blue[.footnote[ Dzul-Manzanilla et al 2021]]]
@@ -166,7 +166,7 @@ son las áreas o las unidades espaciales con valores altos de `\(\color{#2ECC40}
 
 
 
-.tiny[.blue[.footnote[ Getis &amp; Ord 1991; Ord &amp; Getis 1995]]]
+.tiny[.blue[.footnote[Getis &amp; Ord 1991; Ord &amp; Getis 1995]]]
 
 ---
 ### **Cadenas de Transmisión Knox test**
@@ -182,29 +182,81 @@ son las áreas o las unidades espaciales con valores altos de `\(\color{#2ECC40}
 3. Generar la base (onset y coordenadas).
 &amp;nbsp;
 
-4. Aplicar el **Knox test**.
+4. Aplicar el [**Knox test**]().
 &amp;nbsp;
 
-5. Definir los **Space-Time link**.
+5. Definir los [**Space-Time link**]().
 &amp;nbsp;
 
-6. Visualizar  **Space-Time link**.
+6. Visualizar [**Space-Time link**]().
 ]
 .pull-right[
-<div id="htmlwidget-912cb2bbdda26c6286fa" style="width:100%;height:550px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-912cb2bbdda26c6286fa">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  # flowchart for hotspots\n  sinave [label = \"SINAVE\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n  \n  \n  \n  \n  \n  # edge definitions with the node IDs\n  sinave -> denv -> geocode  \n  \n   \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a0de7520d6d9752668d4" style="width:100%;height:550px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a0de7520d6d9752668d4">{"x":{"diagram":"digraph {\n\n  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, style = filled, color = grey] \n  \n  \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  # flowchart for sinave\n  sinave [label = \"SINAVE\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  denv [label = \"Bases de DENV\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n  geocode [label = \"Geocodificación\",  fillcolor = \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n  \n  # knox\n  base [label = \"Genera la base (onset-coordenadas)\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  \n  knox [label = \"Knox test\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  \n  time_link [label = \"Space-Time Link\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  \n   vis [label = \"Visualización\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n  \n  # edge definitions with the node IDs\n  sinave -> denv -> geocode -> base -> knox -> time_link -> vis\n  \n   \n \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
-.tiny[.blue[.footnote[ ]]]
+.tiny[.blue[.footnote[]]]
+
+---
+### **Cadenas de Transmisión Knox test**
+&lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
+`$$\color{Orange}{Knox} = \frac{1}{2} \sum_{i=1}^{n}  \sum_{i=1}^{n} \color{Green}{S_{ij}} \color{red}{T_{ij}}$$`
+donde:
+
+`\(\color{Green}{S_{ij}}\)` = 1 si el caso `\(( i\ne j)\)` &amp; la `\(d_{ij} \le \delta^s\)` (metros = 400), de lo contrario 0.
+
+`\(\color{red}{T_{ij}}\)` = 1 si el caso `\(( i\ne j)\)` &amp; la `\(d_{ij} \le \delta^t\)` (dÍas = 20), de los contrario 0.
+
+**Hipotesis Nula** las distancias temporales entre pares de casos son independientes de las distancias espaciales.
+
+**Hipotesis Alternativa** existe dependencia de las distancias espaciales y temporales entre los pares de casos (existen cadenas de transmisión).
 
 
+&lt;table class=" lightable-paper lightable-striped" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="empty-cells: hide;" colspan="1"&gt;&lt;/th&gt;
+&lt;th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"&gt;&lt;div style="TRUE"&gt;Time&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Close &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Not.close &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Close in Space &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(0_{1}\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(0_{2}\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(S_{1}\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Not close in Space &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(0_{3}\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(0_{4}\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(S_{2}\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="1"&gt;&lt;td colspan="4" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;" indentlevel="1"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(S_{3}\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(S_{4}\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(N\)` &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+.tiny[.blue[.footnote[Viet et al 2015; ]]]
 
 ---
 ### **Análisis Espacial del Vector del Dengue**
 &lt;hr style="height:2px;border-width:0;color:#330019;background-color:#330019"&gt;
 
-<div id="htmlwidget-2b1737965c3a2d53b5d8" style="width:100%;height:504px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2b1737965c3a2d53b5d8">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### entomological data\n  \n  ento [label = \"Vigilancia Entomológica\",  fillcolor =  \"#FF5A5F\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  years  [label = \"2014-2019\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos del Año Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos hasta la Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  geo_data [label = \"Geoestatistical Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n  \n \n # Análisis \n spde [label = \"SPDE-INLA\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n #prediction [label = \"Predicción Espacial de Huevos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n # entomological study\n ovitraps [label = \"Ovitrampas\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  enc_ver [label = \"Encuesta-Verificación\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  adults [label = \"Colecta de Adultos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n deneggs [label = \"deneggs Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n \n \n \n ##### define the relation\n \n \n ento -> {ovitraps  enc_ver adults} \n \n {ovitraps adults} -> geo_data -> {data_historic data_datos_actuales}\n data_historic -> years\n \n data_datos_actuales -> {data_acumulados data_trans_activa}\n \n {years data_acumulados data_trans_activa} ->spde -> hotspots\n \n {hotspots} -> r_rstudio -> deneggs\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-43700ffa34211e42cebe" style="width:100%;height:504px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-43700ffa34211e42cebe">{"x":{"diagram":"digraph {\n                  # graph definitions\n  graph [layout = dot, rankdir = TB]\n  \n  # node definitions\n  node [shape = rectangle, \n  style = filled, \n  color = grey, \n  nodesep = .5,\n  fixedsize = true, \n  width = 2.5] \n  \n  # edge definition\n  edge [color = grey, arrowhead = normal, arrowtail = dot]\n  \n  ##### entomological data\n  \n  ento [label = \"Vigilancia Entomológica\",  fillcolor =  \"#FF5A5F\", color = \"white\", fontcolor = \"white\"]\n  data_historic [label = \"Datos Históricos\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  years  [label = \"2014-2019\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_datos_actuales [label = \"Datos del Año Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_acumulados [label = \"Datos hasta la Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  data_trans_activa [label = \"Semana Actual\",  fillcolor =  \"gray\", color = \"white\", fontcolor = \"white\"]\n  \n  \n  ##### Spatial Data\n  \n  geo_data [label = \"Geoestatistical Data\",  fillcolor =  \"#0F9D58\", color = \"white\", fontcolor = \"white\"]\n \n  \n \n # Análisis \n spde [label = \"SPDE-INLA\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n hotspots [label = \"Hotspots Analysis\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n #prediction [label = \"Predicción Espacial de Huevos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n # entomological study\n ovitraps [label = \"Ovitrampas\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  enc_ver [label = \"Encuesta-Verificación\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n  adults [label = \"Colecta de Adultos\",  fillcolor =  \"orange\", color = \"white\", fontcolor = \"black\"]\n \n \n # software\n r_rstudio [label = \"R & RStudio\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"]\n deneggs [label = \"deneggs Package\",  fillcolor =  \"DodgerBlue\", color = \"white\", fontcolor = \"white\"] \n \n \n \n \n ##### define the relation\n \n \n ento -> {ovitraps  enc_ver adults} \n \n {ovitraps adults} -> geo_data -> {data_historic data_datos_actuales}\n data_historic -> years\n \n data_datos_actuales -> {data_acumulados data_trans_activa}\n \n {years data_acumulados data_trans_activa} ->spde -> hotspots\n \n {hotspots} -> r_rstudio -> deneggs\n \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 

@@ -18,8 +18,6 @@ output:
       countIncrementalSlides: false
 ---
 
-class: left, top
-
 ```{r xaringan-fit-screen, echo=FALSE}
 xaringanExtra::use_fit_screen()
 ```
@@ -255,7 +253,7 @@ son las áreas o las unidades espaciales con valores altos de $\color{#2ECC40}G_
 
 
 
-.tiny[.blue[.footnote[ Getis & Ord 1991; Ord & Getis 1995]]]
+.tiny[.blue[.footnote[Getis & Ord 1991; Ord & Getis 1995]]]
 
 ---
 ### **Cadenas de Transmisión Knox test**
@@ -271,13 +269,13 @@ son las áreas o las unidades espaciales con valores altos de $\color{#2ECC40}G_
 3. Generar la base (onset y coordenadas).
 &nbsp;
 
-4. Aplicar el **Knox test**.
+4. Aplicar el [**Knox test**]().
 &nbsp;
 
-5. Definir los **Space-Time link**.
+5. Definir los [**Space-Time link**]().
 &nbsp;
 
-6. Visualizar  **Space-Time link**.
+6. Visualizar [**Space-Time link**]().
 ]
 .pull-right[
 ```{r, dpi=300,echo=FALSE, fig.align ="center", out.width = "100%"}
@@ -294,18 +292,23 @@ DiagrammeR::grViz("digraph {
   # edge definition
   edge [color = grey, arrowhead = normal, arrowtail = dot]
   
-  # flowchart for hotspots
+  # flowchart for sinave
   sinave [label = 'SINAVE',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
   denv [label = 'Bases de DENV',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
   geocode [label = 'Geocodificación',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
  
   
+  # knox
+  base [label = 'Genera la base (onset-coordenadas)',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
   
+  knox [label = 'Knox test',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
   
+  time_link [label = 'Space-Time Link',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
   
+   vis [label = 'Visualización',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
   
   # edge definitions with the node IDs
-  sinave -> denv -> geocode  
+  sinave -> denv -> geocode -> base -> knox -> time_link -> vis
   
    
  
@@ -315,9 +318,37 @@ DiagrammeR::grViz("digraph {
 ```
 ]
 
-.tiny[.blue[.footnote[ ]]]
+.tiny[.blue[.footnote[]]]
+
+---
+### **Cadenas de Transmisión Knox test**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+$$\color{Orange}{Knox} = \frac{1}{2} \sum_{i=1}^{n}  \sum_{i=1}^{n} \color{Green}{S_{ij}} \color{red}{T_{ij}}$$
+donde:
+
+$\color{Green}{S_{ij}}$ = 1 si el caso $( i\ne j)$ & la $d_{ij} \le \delta^s$ (metros = 400), de lo contrario 0.
+
+$\color{red}{T_{ij}}$ = 1 si el caso $( i\ne j)$ & la $d_{ij} \le \delta^t$ (dÍas = 20), de los contrario 0.
+
+**Hipotesis Nula** las distancias temporales entre pares de casos son independientes de las distancias espaciales.
+
+**Hipotesis Alternativa** existe dependencia de las distancias espaciales y temporales entre los pares de casos (existen cadenas de transmisión).
 
 
+```{r echo=FALSE,dpi=300,warning=FALSE, fig.align ="center", out.width = "100%",fig.cap = "Tabla de contingencia de knox test"}
+x <- data.frame("Close" = c("$0_{1}$", "$0_{3}$", "$S_{3}$"),
+                "Not close" = c("$0_{2}$", "$0_{4}$", "$S_{4}$"),
+                "Total" = c("$S_{1}$", "$S_{2}$", "$N$"))
+row.names(x) <- c("Close in Space", "Not close in Space", "Total")
+kableExtra::kbl(x, align = "c") |>
+    kableExtra::kable_paper("striped", full_width = F) |>
+    kableExtra::add_header_above(c(" " = 1, "Time" = 3)) |>
+    kableExtra::pack_rows("",3, 3)
+
+```
+
+
+.tiny[.blue[.footnote[Viet et al 2015; ]]]
 
 ---
 ### **Análisis Espacial del Vector del Dengue**
