@@ -107,7 +107,7 @@ DiagrammeR::grViz("digraph {
 
 
 ---
-### Línea de tiempo de la información epidemiológica & entomológica
+### Línea de Tiempo de la Información Epidemiológica & Entomológica
 
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
@@ -181,7 +181,7 @@ htmltools::html_print(htmltools::tagList(htmltools::tags$style(style), a))
 
 
 ---
-## **Análisis espacial del dengue**
+## **Análisis Espacial del Dengue**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
@@ -494,8 +494,8 @@ es Hotspots, de lo contrario es no Hotspots
 ## Distribucion de casos por AGEB
 ```{r echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
 #
-#load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
-load("~/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+
 # map ####
 x$ageb |>
     dplyr::bind_cols(z) |>
@@ -521,9 +521,9 @@ x$ageb |>
 
 ```{r,  echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
 
-#load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
 
-load("~/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+
 # Casos
 
 names(z) <- unlist(stringr::str_extract_all(names(z),
@@ -544,8 +544,8 @@ z |>
 
 ```{r,  echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
 
-#load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
-load("~/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+
 # Getis ####
 getis <- hotspots |>
     dplyr::select(dplyr::starts_with("getis_"))
@@ -565,9 +565,9 @@ getis |>
 
 ```{r,  echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
 
-#load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+load("C:/Users/HOME/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
 
-load("~/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
+#load("~/Dropbox/r_developments/r_talks/test_dengue_spatial_analysis/RData/acapulco_getis.RData")
 # Hotspots ####
 hotspots <- hotspots |>
     dplyr::select(dplyr::starts_with("hotspots"))
@@ -592,8 +592,8 @@ kableExtra::kable() |>
 
 ```{r, echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center"}
 # Step 1. load the dengue geocoded dataset ####
-#load("C:/Users/HOME/OneDrive/proyects/priority_research_projects/hotspots_high_risk_localities_138/8.RData/geocoded_dataset.RData")
-load("~/OneDrive/proyects/priority_research_projects/hotspots_high_risk_localities_138/8.RData/geocoded_dataset.RData")
+load("C:/Users/HOME/OneDrive/proyects/priority_research_projects/hotspots_high_risk_localities_138/8.RData/geocoded_dataset.RData")
+#load("~/OneDrive/proyects/priority_research_projects/hotspots_high_risk_localities_138/8.RData/geocoded_dataset.RData")
 
 
 # Step 2. extract the locality #####
@@ -638,8 +638,8 @@ denhotspots::staticmap_intensity(x = hotspots,
 ### Intensidad de la Transmisión de Dengue
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 ```{r,echo=FALSE, warning = FALSE,message = FALSE, fig.align ="center" }
-#source("C:/Users/HOME/Dropbox/r_developments/r_dashboards/github_pages/test_dashboard/3.Functions/hotspots_map.R")
-source("~/Dropbox/r_developments/r_new_functions/3.Functions/hotspots_map.R")
+source("C:/Users/HOME/Dropbox/r_developments/r_dashboards/github_pages/test_dashboard/3.Functions/hotspots_map.R")
+#source("~/Dropbox/r_developments/r_new_functions/3.Functions/hotspots_map.R")
 hotspots_map(cve_ent = "12",
              locality = "Acapulco de Juarez",
              hotspots = hotspots,

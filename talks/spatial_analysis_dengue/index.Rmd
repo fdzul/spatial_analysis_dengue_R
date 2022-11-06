@@ -104,7 +104,7 @@ DiagrammeR::grViz("digraph {
 
 
 ---
-### **Análisis espacial de la transmision del  dengue**
+### **Análisis Espacial de la Transmisión del Dengue**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 ```{r, echo=FALSE, out.width='100%', fig.align='center'}
