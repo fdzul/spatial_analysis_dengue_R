@@ -869,12 +869,12 @@ denhotspots::transmission_chains_map(geocoded_dataset = y,
 
 .panelset.sideways[
 ```{r include=FALSE}
-lgcp_merida <- c(source = "Código",
+lgcp_merida <- c(source = "Código1",
                  output = "Mérida")
-lgcp_hermosillo <- c(source = "Código",
+lgcp_hermosillo <- c(source = "Código2",
                      output = "Hermosillo")
 
-lgcp_navojoa <- c(source = "Código",
+lgcp_navojoa <- c(source = "Código3",
                   output = "Navojoa")
 ```
 
