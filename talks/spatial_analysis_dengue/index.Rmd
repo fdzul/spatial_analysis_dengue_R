@@ -356,3 +356,377 @@ kableExtra::kbl(x, align = "c") |>
 
 .tiny[.blue[.footnote[Viet et al 2015]]]
 
+---
+### **Log-Gaussian Cox Process**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.pull-left[
+1. Bajar las bases de datos del **[SINAVE](https://www.sinave.gob.mx/)**.
+&nbsp;
+
+2. Geocodificar las bases.
+&nbsp;
+
+4. Aplicar el [**LGCP**]().
+&nbsp;
+
+5. Visualizar [** el modelo**]().
+]
+.pull-right[
+```{r, dpi=300,echo=FALSE, fig.align ="center", out.width = "100%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+  
+  
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  # flowchart for sinave
+  sinave [label = 'SINAVE',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
+  denv [label = 'Bases de DENV',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
+  geocode [label = 'Geocodificación',  fillcolor = '#0F9D58', color = 'white', fontcolor = 'white']
+ 
+  
+  # knox
+  lgcp [label = 'LGCP',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  
+ 
+  
+   vis [label = 'Visualización',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
+  
+  # edge definitions with the node IDs
+  sinave -> denv -> geocode -> lgcp  -> vis
+  
+   
+ 
+  }", 
+  height = 550)
+
+```
+]
+
+.tiny[.blue[.footnote[Moraga, 2020]]]
+
+
+
+---
+### **Log Gaussian Cox Process**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+ **Modelo General** 
+$$ \varLambda{_s} = exp(n{_s})$$
+
+El modelo asume que los casos han son una parcial realización de un proceso Gausiano (log-Gaussian).
+
+ 
+ **Modelo en un Grid** 
+
+$$\varLambda_{ij} = \int\limits_{s_{ij}}^{} exp(n(s))ds$$
+$$\varLambda_{ij} \approx |s_{ij}| exp(n_{ij})$$
+donde $|s_{ij}|$ es el área de la celda $s_{ij}$
+
+$y_{ij}|n_{ij} \sim Poisson(|s_{ij}|exp(n_{ij}))$
+
+$n_{ij} = \beta{_0} + \beta{_1} \space x \space cov (s_{ij}) + f{_s}(s_{ij}) + f{_u}(s_{ij})$
+
+---
+### **Análisis Espacial del Vector del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE, out.width='100%', fig.align='center'}
+DiagrammeR::grViz("digraph {
+                  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, 
+  style = filled, 
+  color = grey, 
+  nodesep = .5,
+  fixedsize = true, 
+  width = 2.5] 
+  
+  # edge definition
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  ##### entomological data
+  
+  ento [label = 'Vigilancia Entomológica',  fillcolor =  '#FF5A5F', color = 'white', fontcolor = 'white']
+  data_historic [label = 'Datos Históricos',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  years  [label = '2014-2019',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_datos_actuales [label = 'Datos del Año Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_acumulados [label = 'Datos hasta la Semana Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  data_trans_activa [label = 'Semana Actual',  fillcolor =  'gray', color = 'white', fontcolor = 'white']
+  
+  
+  ##### Spatial Data
+  
+  geo_data [label = 'Geoestatistical Data',  fillcolor =  '#0F9D58', color = 'white', fontcolor = 'white']
+ 
+  
+ 
+ # Análisis 
+ spde [label = 'SPDE-INLA',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ hotspots [label = 'Hotspots Analysis',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ #prediction [label = 'Predicción Espacial de Huevos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ # entomological study
+ ovitraps [label = 'Ovitrampas',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  enc_ver [label = 'Encuesta-Verificación',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+  adults [label = 'Colecta de Adultos',  fillcolor =  'orange', color = 'white', fontcolor = 'black']
+ 
+ 
+ # software
+ r_rstudio [label = 'R & RStudio',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white']
+ deneggs [label = 'deneggs Package',  fillcolor =  'DodgerBlue', color = 'white', fontcolor = 'white'] 
+ 
+ 
+ 
+ 
+ ##### define the relation
+ 
+ 
+ ento -> {ovitraps  enc_ver adults} 
+ 
+ {ovitraps adults} -> geo_data -> {data_historic data_datos_actuales}
+ data_historic -> years
+ 
+ data_datos_actuales -> {data_acumulados data_trans_activa}
+ 
+ {years data_acumulados data_trans_activa} ->spde -> hotspots
+ 
+ {hotspots} -> r_rstudio -> deneggs
+ 
+}")
+
+```
+
+---
+### **Análisis Espacial del Vector del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE,dpi=300,  fig.align ="center",out.height="70%", out.width = "90%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+  
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  #
+  cenaprece [label = 'CENAPRECE',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  ovitrap [label = 'Ovitrampas',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  coord [label = 'Coordenadas',  fillcolor = 'SeaGreen', color = 'white', fontcolor = 'white']
+  ovicoord [label = 'ovi + coord']
+  
+  # flow chart for inegi
+  inegi [label = 'INEGI', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+  loc [label = 'Localidades Shapefile', fillcolor = 'DeepSkyBlue', color = 'white', fontcolor = 'black']
+
+  ###
+  mesh [label = '1. Mesh']
+  spde [label = '2. SPDE']
+  
+  proj_train [label = '3a. Projector Matrix A. Test']
+  proj_test [label = '3b. Projector Matrix A. Train']
+  
+  spatial_field [label = '4. Spatial Field W']
+  
+  stack_train [label = '5a. Stack Train']
+  stack_test [label = '5b. Stack Test']
+  stack_pred [label = '5c. Stack Prediction']
+  stack_joint [label = '6. Joint Stack']
+  
+  formula [label = '7. Formula']
+  inla [label = '8. INLA',  fillcolor = 'Orange', color = 'white', fontcolor = 'white']
+  
+ 
+  
+  # edge definitions with the node IDs
+  cenaprece -> {ovitrap, coord} -> ovicoord
+  #
+  inegi -> loc -> ovicoord
+  #
+  ovicoord -> mesh
+  mesh -> spde -> spatial_field ->  stack_joint
+  spde -> {proj_train,  proj_test}
+  spatial_field -> {stack_test, stack_train, stack_pred} ->  stack_joint -> formula -> inla 
+  proj_train -> stack_train
+  proj_test -> stack_test
+
+  
+  }", 
+  height = 500)
+
+```
+
+
+.tiny[.blue[.footnote[ [Modificado de Zuur et al 2017](http://www.highstat.com/index.php/beginner-s-guide-to-regression-models-with-spatial-and-temporal-correlation); [Dzul-Manzanilla et al 2019](http://acaentmex.org/entomologia/revista/2019/EMF/EMF%20497-501.pdf)]]]
+
+
+---
+### **Análisis Espacial del Vector del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+```{r, echo=FALSE,dpi=300, fig.align ="center", out.height="70%", out.width = "90%"}
+DiagrammeR::grViz("digraph {
+
+  # graph definitions
+  graph [layout = dot, rankdir = TB]
+  
+  # node definitions
+  node [shape = rectangle, style = filled, color = grey] 
+  edge [color = grey, arrowhead = normal, arrowtail = dot]
+  
+  #
+  
+  inla [label = '8. INLA',  fillcolor = 'Orange', color = 'white', fontcolor = 'white']
+  stat [label = '9. Statistics']
+  
+  zeros [label = '9.1. % Zeros']
+  disp [label = '9.2. Dispersion Statistics']
+  dic [label = '9.3. Deviance Information Criterio']
+  pear [label = '9.4. Pearson Residuals']
+  
+  ##
+  p [label = 'Poisson']
+  zip [label = 'ZeroInflated Poisson']
+  nb [label = 'Negative Binomial']
+  zinb [label = 'ZeroInflated Poisson Negative Binomial']
+  
+  sel [label = '10.Select the Distribution & Model']
+  
+  # prediction ####
+  ext_pred [label = '11. Extract Index Prediction']
+  coor_pred [label = '12. Extract Coordinates Prediction']
+  pred [label = '13. Prediction']
+ 
+  hotspots [label = '14.Hotspots', fillcolor = 'Orange', color = 'white', fontcolor = 'white']
+  save [label = '15. Save results']
+  
+  mappred [label = '15a. Prediction Map']
+  hotspotsb [label = '15b. Hotspots']
+  dics [label = '15c. DICs']
+  loc [label = '15d. Locality']
+  data [label = '15e. Dataset']
+  
+  # edge definitions with the node IDs
+  inla -> stat
+  stat -> {zeros, disp, dic,pear} -> {p, zip, nb, zinb} -> sel
+  sel -> ext_pred -> coor_pred -> pred -> hotspots -> save
+  save -> {mappred, hotspotsb, dics, loc, data}
+
+  
+  }", 
+  height = 500)
+
+```
+
+
+.tiny[.blue[.footnote[ [Modificado de Zuur et al 2017](http://www.highstat.com/index.php/beginner-s-guide-to-regression-models-with-spatial-and-temporal-correlation); [Dzul-Manzanilla et al 2019](http://acaentmex.org/entomologia/revista/2019/EMF/EMF%20497-501.pdf)]]]
+
+
+
+---
+### **Analisis Geoéstadistico con INLA**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+.pull-left[
+```{r echo=FALSE, warning=FALSE,depi = 300, message=FALSE, out.height="100%", out.width="100%",fig.align='center'}
+# Step 1. create the function for extract the locality 
+extract_locality <- function(cve_edo, locality){
+    rgeomex::loc_inegi19_mx |>
+        dplyr::filter(CVE_ENT %in% c(cve_edo)) |>
+        dplyr::filter(NOMGEO %in% c(rgeomex::find_most_similar_string(locality, unique(NOMGEO)))) |>
+        sf::st_make_valid()
+}
+
+# step 2. extract the locality ####
+y <- extract_locality(cve_edo = "14",
+                         locality = c("Guadalajara", "Zapopan", "Tlaquepaque", "Tonalá"))
+
+# Step 3. Generate the points ####
+x <- sf::st_sample(x = y,
+                   size = 30,
+                   type = "regular") |>
+    sf::st_set_crs(value = 4326) |>
+    sf::st_as_sf() |>
+    dplyr::mutate(id = paste("s", 1:length(x), sep = ""))
+
+ggplot2::ggplot() +
+    ggplot2::geom_sf(data = y,
+                     alpha = 0.5,
+                     fill = "gray85") +
+    cowplot::theme_map() +
+    ggplot2::geom_sf(data = x,
+                     color = "#36C5F0",
+                     size = 3) +
+    ggplot2::geom_sf_text(data = x, 
+                          ggplot2::aes(label = id),
+                          size = 4,
+                          nudge_x = 0.009,
+                          nudge_y = 0.001,
+                          color = "#2EB67D")
+```
+]
+
+.pull-right[
+
+$s{_i}$ sitios de colecta con coordenadas geográficas (longitud. latitud).
+&nbsp;
+
+$D$ area de estudio (zona metropolitana de Guadalajara).
+&nbsp;
+
+$Y{_i}$ es la variable de respuesta (Número de Huevos por Ovitrampa o Manzana).
+&nbsp;
+
+$y{_i}$ tiene una distribución (binomial negativa ó zibn).
+&nbsp;
+
+$U{_s{_i}}$ el efecto espacial & el proceso ocurre en un campo gaussiano continuo (Gaussian Field).
+
+
+
+
+
+]
+
+Se usa SPDE & Elemento Finito para aproximar la matriz de covarianzas de $U{_s{_i}}$
+
+$\color{#2ECC40}{el \space proceso \space se \space encuentra \space implementado \space en \space INLA}$
+
+---
+### **Análisis Espacial del Dengue de México en R**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+Paquetes en R desarrollados por el Programa ([denhotspots](https://fdzul.github.io/denhotspots/) & [deneggs](https://github.com/fdzul/deneggs)) para el análisis espacial.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+tibble::tibble("Análisis"= c("Hotspots",
+                             "Visualización de los Hotspots",
+                             "Cadenas de Transmisión",
+                             "Visualiación de las Cadenas de Transmisión",
+                             "LGCP",
+                             "Visualización de LGCP",
+                             "Hotspots de Huevos",
+                             "Visualización de Hotspots"),
+               "denhotspots" = c(T,T, T, T,
+                                T, T,F, F),
+               "deneggs" = c(F, F, F, F,
+                             F, F, T, T)) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic()
+
+```
+
