@@ -836,7 +836,7 @@ knox_merida_prob <- c(source = "Código",
 knox_merida_conf <- c(source = "Código",
                       output = "Confirmados")
 ```
-```{r panelset = knox_merida_prob, out.width='90%', warning=FALSE, message=FALSE}
+```{r panelset = knox_merida_prob, warning=FALSE, message=FALSE}
 # Step 1. load the dengue cases geocoded
 load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/geo_den_mx_31_merida_2022_10_31.RData")
 
@@ -849,7 +849,7 @@ denhotspots::transmission_chains_map(geocoded_dataset = y,
 ```
 
 
-```{r panelset = knox_merida_conf, out.width='90%', warning=FALSE, message=FALSE}
+```{r panelset = knox_merida_conf, warning=FALSE, message=FALSE}
 # Step 1. load the dengue cases geocoded
 load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/geo_den_mx_31_merida_2022_10_31.RData")
 
@@ -869,17 +869,11 @@ denhotspots::transmission_chains_map(geocoded_dataset = y,
 
 .panelset.sideways[
 ```{r include=FALSE}
-lgcp_merida <- c(source = "Código1",
-                 output = "Mérida")
-lgcp_hermosillo <- c(source = "Código2",
-                     output = "Hermosillo")
+lgcp_merida <- c(source = "Código",
+                 output = "Probables")
 
-lgcp_navojoa <- c(source = "Código3",
-                  output = "Navojoa")
 ```
-
-```{r panelset = lgcp_merida, out.width='100%', warning=FALSE, message=FALSE}
-
+```{r panelset = lgcp_merida, out.width='90%', warning=FALSE, message=FALSE}
 
 # Step 1. load the dengue geocoded dataset ####
 load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/den2022_positivos.RData")
@@ -920,7 +914,7 @@ denhotspots::spatial_lgcp(dataset = geocoded_dataset,
                           longitude = "x",
                           latitude = "y",
                           k = 30,
-                          plot = FALSE,
+                          plot = TRUE,
                           aproximation = "gaussian",
                           integration = "laplace",
                           resolution = 0.015,
@@ -931,108 +925,8 @@ denhotspots::spatial_lgcp(dataset = geocoded_dataset,
 ```
 
 
-```{r panelset = lgcp_hermosillo, out.width='100%', warning=FALSE, message=FALSE}
-# Step 1. load the dengue geocoded dataset ####
-load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/den2022_positivos.RData")
-
-
-
-# Step 2. extract the dengue cases #####
-geocoded_dataset <- z |>
-    dplyr::filter(ESTATUS_CASO == 2) |>
-    dplyr::mutate(onset = FEC_INI_SIGNOS_SINT,
-                  date = as.character(onset),
-                  id = VEC_ID) |>
-    dplyr::mutate(x = long,
-                  y = lat) |>
-    sf::st_as_sf(coords = c("long", "lat"),
-                 crs = 4326) |>
-    dplyr::select(x, y, onset) 
-
-# Step 3. extract the locality ####
-loc <- rgeomex::extract_locality(cve_edo = 26,
-                                        locality = "Hermosillo")
-
-
-# Step 4. extract the dengue cases of the locality 
-geocoded_dataset <- geocoded_dataset[loc,] |>
-    sf::st_drop_geometry()
-
-
-# Step 5. map of lgcp 
-library(magrittr)
-library(ggplot2)
-library(sf)
-library(sp)
-
-lgcp_hermosillo <- denhotspots::spatial_lgcp(dataset = geocoded_dataset,
-                                             locality = "Hermosillo",
-                                             cve_edo = "26",
-                                             longitude = "x",
-                                             latitude = "y",
-                                             k = 30,
-                                             plot = FALSE,
-                                             aproximation = "gaussian",
-                                             integration = "laplace",
-                                             resolution = 0.015,
-                                             approach = "lattice",
-                                             cell_size = 1500,
-                                             name = "YlGnBu")
-lgcp_hermosillo$map
-```
-
-```{r panelset = lgcp_navojoa, out.width='100%', warning=FALSE, message=FALSE}
-
-# Step 1. load the dengue geocoded dataset ####
-load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/den2022_positivos.RData")
-
-
-
-# Step 2. extract the dengue cases #####
-geocoded_dataset <- z |>
-    dplyr::filter(ESTATUS_CASO == 2) |>
-    dplyr::mutate(onset = FEC_INI_SIGNOS_SINT,
-                  date = as.character(onset),
-                  id = VEC_ID) |>
-    dplyr::mutate(x = long,
-                  y = lat) |>
-    sf::st_as_sf(coords = c("long", "lat"),
-                 crs = 4326) |>
-    dplyr::select(x, y, onset) 
-
-# Step 3. extract the locality ####
-loc <- rgeomex::extract_locality(cve_edo = 26,
-                                 locality = "Navojoa")
-
-
-# Step 4. extract the dengue cases of the locality 
-geocoded_dataset <- geocoded_dataset[loc,] |>
-    sf::st_drop_geometry()
-
-
-# Step 5. map of lgcp 
-library(magrittr)
-library(ggplot2)
-library(sf)
-library(sp)
-
-denhotspots::spatial_lgcp(dataset = geocoded_dataset,
-                          locality = "Navojoa",
-                          cve_edo = "26",
-                          longitude = "x",
-                          latitude = "y",
-                          k = 30,
-                          plot = FALSE,
-                          aproximation = "gaussian",
-                          integration = "laplace",
-                          resolution = 0.012,
-                          approach = "lattice",
-                          cell_size = 2500,
-                          name = "YlGnBu")$map
-```
 
 ]
-
 
 
 
