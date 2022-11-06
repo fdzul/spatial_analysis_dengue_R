@@ -869,11 +869,10 @@ denhotspots::transmission_chains_map(geocoded_dataset = y,
 
 .panelset.sideways[
 ```{r include=FALSE}
-lgcp_merida <- c(source = "Código",
-                 output = "Probables")
-
+lgcp_merida <- c(source = "Codigo",
+                 output = "Merida")
 ```
-```{r panelset = lgcp_merida, out.width='90%', warning=FALSE, message=FALSE}
+```{r panelset = lgcp_merida, warning=FALSE, message=FALSE}
 
 # Step 1. load the dengue geocoded dataset ####
 load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/den2022_positivos.RData")
@@ -908,23 +907,22 @@ library(ggplot2)
 library(sf)
 library(sp)
 
-denhotspots::spatial_lgcp(dataset = geocoded_dataset,
+x <- denhotspots::spatial_lgcp(dataset = geocoded_dataset,
                           locality = "Merida",
                           cve_edo = "31",
                           longitude = "x",
                           latitude = "y",
                           k = 30,
-                          plot = TRUE,
+                          plot = FALSE,
                           aproximation = "gaussian",
                           integration = "laplace",
                           resolution = 0.015,
                           approach = "lattice",
                           cell_size = 1500,
-                          name = "YlGnBu")$map
+                          name = "YlGnBu")
+x$map
 
 ```
-
-
 
 ]
 
