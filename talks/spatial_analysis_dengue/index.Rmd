@@ -878,7 +878,8 @@ lgcp_navojoa <- c(source = "Código",
                   output = "Navojoa")
 ```
 
-```{r panelset = knox_merida, out.width='100%', warning=FALSE, message=FALSE}
+```{r panelset = lgcp_merida, out.width='100%', warning=FALSE, message=FALSE}
+
 
 # Step 1. load the dengue geocoded dataset ####
 load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/den2022_positivos.RData")
