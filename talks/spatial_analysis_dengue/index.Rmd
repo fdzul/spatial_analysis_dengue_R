@@ -43,6 +43,11 @@ xaringanExtra::use_logo(
 )
 ```
 
+```{r xaringan-panelset, echo=FALSE}
+xaringanExtra::use_panelset()
+```
+
+
 ### Ciclo de Vida del Programa de Prevención y Control del Dengue
 
 ```{r, dpi=300,echo=FALSE, fig.align ="center", out.height="100%",out.width = "100%"}
@@ -647,7 +652,7 @@ extract_locality <- function(cve_edo, locality){
 
 # step 2. extract the locality ####
 y <- extract_locality(cve_edo = "14",
-                         locality = c("Guadalajara", "Zapopan", "Tlaquepaque", "Tonala"))
+                         locality = c("Guadalajara", "Zapopan", "Tlaquepaque", "Tonalá"))
 
 # Step 3. Generate the points ####
 x <- sf::st_sample(x = y,
@@ -699,6 +704,476 @@ $U{_s{_i}}$ el efecto espacial & el proceso ocurre en un campo gaussiano continu
 Se usa SPDE & Elemento Finito para aproximar la matriz de covarianzas de $U{_s{_i}}$
 
 $\color{#2ECC40}{el \space proceso \space se \space encuentra \space implementado \space en \space INLA}$
+
+---
+### **Análisis Espacial del Dengue de México en R**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+Paquetes en R desarrollados por el Programa ([denhotspots](https://fdzul.github.io/denhotspots/) & [deneggs](https://github.com/fdzul/deneggs)) para el análisis espacial.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+tibble::tibble("Análisis"= c("Hotspots",
+                             "Visualización de los Hotspots",
+                             "Cadenas de Transmisión",
+                             "Visualiación de las Cadenas de Transmisión",
+                             "LGCP",
+                             "Visualización de LGCP",
+                             "Hotspots de Huevos",
+                             "Visualización de Hotspots"),
+               "denhotspots" = c(T,T, T, T,
+                                T, T,F, F),
+               "deneggs" = c(F, F, F, F,
+                             F, F, T, T)) |>
+    kableExtra::kable() |>
+    kableExtra::kable_classic()
+
+```
+
+
+---
+### **Hotspots de la Transmisión del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.panelset[
+
+.panel[.panel-name[Dataset]
+```{r}
+# Step 1. load the dengue geocoded dataset ####
+load("C:/Users/HOME/OneDrive/proyects/priority_research_projects/hotspots_high_risk_localities_138/8.RData/geocoded_dataset.RData")
+
+
+```
+
+]
+
+.panel[.panel-name[Extract Locality]
+```{r, message=FALSE, warning=FALSE}
+# Step 2. extract the locality #####
+x <- rgeomex::extract_ageb(locality = c("Guadalajara", "Zapopan", 
+                                        "Tlaquepaque", "Tonalá"), 
+                           cve_geo = "14")
+
+
+```
+
+]
+
+.panel[.panel-name[Cases by AGEB]
+```{r}
+library(magrittr)
+z <- denhotspots::point_to_polygons(x = y,
+                                    y = x$ageb,
+                                    ids = names(x$ageb)[-10],
+                                    time = ANO,
+                                    coords = c("long", "lat"),
+                                    crs = 4326,
+                                    dis = "DENV") 
+
+```
+
+]
+
+.panel[.panel-name[Hotspots]
+```{r}
+hotspots <- denhotspots::gihi(x = z,
+                              id = names(z)[c(1:9)], 
+                              time = "year",
+                              dis = "DENV",
+                              gi_hi = "gi",
+                              alpha = 0.95)
+
+```
+
+]
+
+]
+
+
+
+---
+### **Hotspots de la Transmisión del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.panelset.sideways[
+```{r include=FALSE}
+estatic_map <- c(source = "Static Map Code",
+                 output = "Static Map")
+interactive_map <- c(source = "Interactive Map Code",
+                     output = "Interactive Map")
+```
+
+```{r panelset = estatic_map}
+denhotspots::staticmap_intensity(x = hotspots,
+                                 pal = rcartocolor::carto_pal,
+                                 pal_name = TRUE,
+                                 name = "OrYel",
+                                 breaks = 1,
+                                 dir_pal = -1,
+                                 x_leg = 0.5,
+                                 y_leg = 0.1,
+                                 ageb = TRUE)
+```
+
+```{r panelset = interactive_map,  message=FALSE, warning=FALSE}
+source("C:/Users/HOME/Dropbox/r_developments/r_dashboards/github_pages/test_dashboard/3.Functions/hotspots_map.R")
+hotspots_map(cve_ent = "14",
+             locality = c("Guadalajara", "Zapopan", 
+                          "Tlaquepaque", "Tonalá"),
+             hotspots = hotspots,
+             static_map = FALSE)
+```
+
+
+]
+
+
+---
+### **Cadenas de Transmisión Knox test**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.panelset.sideways[
+```{r include=FALSE}
+knox_merida_prob <- c(source = "Código",
+                      output = "Probables")
+knox_merida_conf <- c(source = "Código",
+                      output = "Confirmados")
+```
+```{r panelset = knox_merida_prob, out.width='100%', warning=FALSE, message=FALSE}
+# Step 1. load the dengue cases geocoded
+load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/geo_den_mx_31_merida_2022_10_31.RData")
+
+# Step 2. visualize the space-time link 
+denhotspots::transmission_chains_map(geocoded_dataset = y,
+                                     cve_edo = "31",
+                                     locality = "Merida",
+                                     dengue_cases = "Probable")
+
+```
+
+
+```{r panelset = knox_merida_conf, out.width='100%', warning=FALSE, message=FALSE}
+# Step 1. load the dengue cases geocoded
+load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/geo_den_mx_31_merida_2022_10_31.RData")
+
+# Step 2. visualize the space-time link 
+denhotspots::transmission_chains_map(geocoded_dataset = y,
+                                     cve_edo = "31",
+                                     locality = "Merida",
+                                     dengue_cases = "Confirmado")
+
+```
+]
+
+---
+### **Log Gaussian Cox Process**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.panelset.sideways[
+```{r include=FALSE}
+lgcp_merida <- c(source = "Código",
+                 output = "Mérida")
+lgcp_hermosillo <- c(source = "Código",
+                     output = "Hermosillo")
+
+lgcp_navojoa <- c(source = "Código",
+                  output = "Navojoa")
+```
+```{r panelset = knox_merida_prob, out.width='100%', warning=FALSE, message=FALSE}
+
+# Step 1. load the dengue geocoded dataset ####
+load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/den2022_positivos.RData")
+
+
+
+# Step 2. extract the dengue cases #####
+geocoded_dataset <- z |>
+    dplyr::filter(ESTATUS_CASO == 2) |>
+    dplyr::mutate(onset = FEC_INI_SIGNOS_SINT,
+                  date = as.character(onset),
+                  id = VEC_ID) |>
+    dplyr::mutate(x = long,
+                  y = lat) |>
+    sf::st_as_sf(coords = c("long", "lat"),
+                 crs = 4326) |>
+    dplyr::select(x, y, onset) 
+
+# Step 3. extract the locality ####
+loc <- rgeomex::extract_locality(cve_edo = 31,
+                                 locality = "Mérida")
+
+
+# Step 4. extract the dengue cases of the locality 
+geocoded_dataset <- geocoded_dataset[loc,] |>
+    sf::st_drop_geometry()
+
+
+# Step 5. map of lgcp 
+library(magrittr)
+library(ggplot2)
+library(sf)
+library(sp)
+
+denhotspots::spatial_lgcp(dataset = geocoded_dataset,
+                          locality = "Merida",
+                          cve_edo = "31",
+                          longitude = "x",
+                          latitude = "y",
+                          k = 30,
+                          plot = TRUE,
+                          aproximation = "gaussian",
+                          integration = "laplace",
+                          resolution = 0.015,
+                          approach = "lattice",
+                          cell_size = 1500,
+                          name = "YlGnBu")$map
+
+```
+
+
+```{r panelset = lgcp_hermosillo, out.width='100%', warning=FALSE, message=FALSE}
+# Step 1. load the dengue geocoded dataset ####
+load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/den2022_positivos.RData")
+
+
+
+# Step 2. extract the dengue cases #####
+geocoded_dataset <- z |>
+    dplyr::filter(ESTATUS_CASO == 2) |>
+    dplyr::mutate(onset = FEC_INI_SIGNOS_SINT,
+                  date = as.character(onset),
+                  id = VEC_ID) |>
+    dplyr::mutate(x = long,
+                  y = lat) |>
+    sf::st_as_sf(coords = c("long", "lat"),
+                 crs = 4326) |>
+    dplyr::select(x, y, onset) 
+
+# Step 3. extract the locality ####
+loc <- rgeomex::extract_locality(cve_edo = 26,
+                                        locality = "Hermosillo")
+
+
+# Step 4. extract the dengue cases of the locality 
+geocoded_dataset <- geocoded_dataset[loc,] |>
+    sf::st_drop_geometry()
+
+
+# Step 5. map of lgcp 
+library(magrittr)
+library(ggplot2)
+library(sf)
+library(sp)
+
+lgcp_hermosillo <- denhotspots::spatial_lgcp(dataset = geocoded_dataset,
+                                             locality = "Hermosillo",
+                                             cve_edo = "26",
+                                             longitude = "x",
+                                             latitude = "y",
+                                             k = 30,
+                                             plot = TRUE,
+                                             aproximation = "gaussian",
+                                             integration = "laplace",
+                                             resolution = 0.015,
+                                             approach = "lattice",
+                                             cell_size = 1500,
+                                             name = "YlGnBu")
+lgcp_hermosillo$map
+```
+
+```{r panelset = lgcp_navojoa, out.width='100%', warning=FALSE, message=FALSE}
+
+# Step 1. load the dengue geocoded dataset ####
+load("C:/Users/HOME/OneDrive/proyects/geocoding_mex/2022/9.RData_geocoded/den2022_positivos.RData")
+
+
+
+# Step 2. extract the dengue cases #####
+geocoded_dataset <- z |>
+    dplyr::filter(ESTATUS_CASO == 2) |>
+    dplyr::mutate(onset = FEC_INI_SIGNOS_SINT,
+                  date = as.character(onset),
+                  id = VEC_ID) |>
+    dplyr::mutate(x = long,
+                  y = lat) |>
+    sf::st_as_sf(coords = c("long", "lat"),
+                 crs = 4326) |>
+    dplyr::select(x, y, onset) 
+
+# Step 3. extract the locality ####
+loc <- rgeomex::extract_locality(cve_edo = 26,
+                                 locality = "Navojoa")
+
+
+# Step 4. extract the dengue cases of the locality 
+geocoded_dataset <- geocoded_dataset[loc,] |>
+    sf::st_drop_geometry()
+
+
+# Step 5. map of lgcp 
+library(magrittr)
+library(ggplot2)
+library(sf)
+library(sp)
+
+denhotspots::spatial_lgcp(dataset = geocoded_dataset,
+                          locality = "Navojoa",
+                          cve_edo = "26",
+                          longitude = "x",
+                          latitude = "y",
+                          k = 30,
+                          plot = TRUE,
+                          aproximation = "gaussian",
+                          integration = "laplace",
+                          resolution = 0.012,
+                          approach = "lattice",
+                          cell_size = 2500,
+                          name = "YlGnBu")$map
+```
+
+]
+
+
+---
+### **Análisis Geoéstadístico del Vector del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+.panelset.sideways[
+```{r include=FALSE}
+spde_gua_sem40 <- c(source = "Código 1",
+                    output = "Semana 40")
+spde_gua_sem41 <- c(source = "Codigo 2",
+                    output  = "Semana 41")
+spde_gua_sem42 <- c(source = "Codigo 3",
+                    output  = "Semana 42")
+spde_gua_sem43 <- c(source = "Codigo 4", 
+                    output  = "Semana 43")
+
+```
+
+```{r panelset = spde_gua_sem40, out.width='100%', warning=FALSE, message=FALSE}
+deneggs::eggs_hotspots(path_lect = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/14_jalisco",
+                       cve_ent = "14",
+                       locality  = c("Guadalajara", "Zapopan",
+                                     "Tlaquepaque", "Tonala"),
+                       path_coord = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/14_jalisco/DescargaOvitrampasMesFco.txt",
+                       longitude  = "Pocision_X",
+                       latitude =  "Pocision_Y",
+                       aproximation = "gaussian",
+                       integration = "eb",
+                       fam = "zeroinflatednbinomial1",
+                       k = 40,
+                       palette_vir  = "magma",
+                       leg_title = "Huevos",
+                       plot = FALSE,
+                       hist_dataset = FALSE,
+                       sem = 40,
+                       var = "eggs",
+                       cell_size = 2000,
+                       alpha = .99)$map
+
+```
+
+
+```{r panelset = spde_gua_sem41, out.width='100%', warning=FALSE, message=FALSE}
+deneggs::eggs_hotspots(path_lect = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/14_jalisco",
+                       cve_ent = "14",
+                       locality  = c("Guadalajara", "Zapopan",
+                                     "Tlaquepaque", "Tonala"),
+                       path_coord = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/14_jalisco/DescargaOvitrampasMesFco.txt",
+                       longitude  = "Pocision_X",
+                       latitude =  "Pocision_Y",
+                       aproximation = "gaussian",
+                       integration = "eb",
+                       fam = "zeroinflatednbinomial1",
+                       k = 30,
+                       palette_vir  = "magma",
+                       leg_title = "Huevos",
+                       plot = FALSE,
+                       hist_dataset = FALSE,
+                       sem = 41,
+                       var = "eggs",
+                       cell_size = 2000,
+                       alpha = .99)$map
+
+```
+
+```{r panelset = spde_gua_sem42, out.width='100%', warning=FALSE, message=FALSE}
+deneggs::eggs_hotspots(path_lect = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/14_jalisco",
+                       cve_ent = "14",
+                       locality  = c("Guadalajara", "Zapopan",
+                                     "Tlaquepaque", "Tonala"),
+                       path_coord = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/14_jalisco/DescargaOvitrampasMesFco.txt",
+                       longitude  = "Pocision_X",
+                       latitude =  "Pocision_Y",
+                       aproximation = "gaussian",
+                       integration = "eb",
+                       fam = "zeroinflatednbinomial1",
+                       k = 30,
+                       palette_vir  = "magma",
+                       leg_title = "Huevos",
+                       plot = FALSE,
+                       hist_dataset = FALSE,
+                       sem = 42,
+                       var = "eggs",
+                       cell_size = 2000,
+                       alpha = .99)$map
+
+```
+
+
+```{r panelset = spde_gua_sem43, out.width='100%', warning=FALSE, message=FALSE}
+deneggs::eggs_hotspots(path_lect = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/14_jalisco",
+                       cve_ent = "14",
+                       locality  = c("Guadalajara", "Zapopan",
+                                     "Tlaquepaque", "Tonala"),
+                       path_coord = "C:/Users/HOME/Dropbox/cenaprece_datasets/2022/14_jalisco/DescargaOvitrampasMesFco.txt",
+                       longitude  = "Pocision_X",
+                       latitude =  "Pocision_Y",
+                       aproximation = "gaussian",
+                       integration = "eb",
+                       fam = "zeroinflatednbinomial1",
+                       k = 30,
+                       palette_vir  = "magma",
+                       leg_title = "Huevos",
+                       plot = FALSE,
+                       hist_dataset = FALSE,
+                       sem = 43,
+                       var = "eggs",
+                       cell_size = 2000,
+                       alpha = .99)$map
+
+```
+
+
+]
+
+---
+### **Análisis Geoéstadístico del Vector del Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.panel.sideway[
+```{r include=FALSE}
+spde_valladolid <- c(source = "Código",
+                     output = "Mapa de Intensidad")
+```
+```{r panelset = spde_valladolid, out.width='100%', warning=FALSE, message=FALSE}
+
+
+```
+
+
+]
+
+
+---
+### **Dashboard**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+
+
 
 
 ---
