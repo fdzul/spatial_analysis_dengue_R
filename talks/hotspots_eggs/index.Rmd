@@ -331,6 +331,7 @@ DiagrammeR::grViz("digraph {
 
 
 .tiny[.blue[.footnote[ [Modificado de Zuur et al 2017](http://www.highstat.com/index.php/beginner-s-guide-to-regression-models-with-spatial-and-temporal-correlation); [Dzul-Manzanilla et al 2019](http://acaentmex.org/entomologia/revista/2019/EMF/EMF%20497-501.pdf)]]]
+
 ---
 
 ### **Análisis Espacial del Vector del Dengue**
