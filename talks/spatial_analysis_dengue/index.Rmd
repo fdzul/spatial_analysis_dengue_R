@@ -1195,14 +1195,34 @@ deneggs::eggs_hotspots_intensity_map(spde_betas = x22$betas,
 
 ]
 
-
 ---
-### **Dashboard**
+### **Estratificación del Riesgo de Transmision**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
+---
+### **Desarrollo en R**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 
+Dashboards
+- [Programa de Prevención y Control de las Arbovirosis del Estado de Yucatan](https://fdzul.github.io/denv_dash_yuc/#cadenas-de-transmisi%C3%B3n)
+
+Manuales
+- [Manual para la identificación de los hotspots en áreas úrbanas](https://fdzul.github.io/manual_hotspots/)
+
+- [Modelo Estratégico de Focalización del Dengue en áreas urbanas de México](https://fdzul.github.io/strategic_mod_den_targeting/)
+
+Paquetes
+
+- [denhotspots](https://fdzul.github.io/denhotspots/)
+- [deneggs](https://github.com/fdzul/deneggs)
+- [rgeomex](https://github.com/fdzul/rgeomex)
+- [boldenr](https://github.com/fdzul/boldenr)
+
+Cursos
+
+- [Análisis Espacial del Dengue en R](https://fdzul.github.io/spatial_analysis_dengue_R/)
 
 ---
 ## Dios Botic!
