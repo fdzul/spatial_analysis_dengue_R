@@ -1243,6 +1243,166 @@ knitr::include_graphics("figs/map_risk_guadalajara.jpg")
 ```
 ]
 
+---
+### Control Espacio-Temporal del Dengue
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+.pull-left[.panel-name[Paradigma Tradicional]
+&nbsp;
+
+```{r, echo=FALSE, dpi = 300, warning=FALSE, message=FALSE}
+# Step 1.
+load("C:/Users/HOME/OneDrive/automatic_read_sinave/8.RData/epid_channel_inf.RData")
+
+rm(w, y, z)
+
+# Extrac the data
+x <- x |>
+    dplyr::filter(DES_EDO_RES == "VERACRUZ") 
+    
+
+y <- tibble::tibble(SEM = x$SEM,
+                    y = x$q25)
+
+
+# plot risk stratificaction  
+ggplot2::ggplot()+
+    ggplot2::geom_line(data = x, 
+                       ggplot2::aes(x = SEM,
+                                    y = q75),
+                       size = 2,
+                       col = "#E01E5A") +
+    ggplot2::ylab("Número de Casos") +
+    ggplot2::xlab("Semanas Epidemiológicas") +
+    ggplot2::geom_vline(xintercept = 25,
+                        color = "#36C5F0",
+                        size = 1,
+                        linetype = 2) +
+    ggplot2::annotate("text",
+                      label = "Control Proactivo",
+                      x = 10, 
+                      y = 450,
+                      #text = "risk",
+                      col = "#ECB22E",
+                      size = 6) +
+    ggplot2::annotate("text",
+                      label = "Control Reactivo",
+                      x = 42, 
+                      y = 450,
+                      #text = "risk",
+                      col = "#ECB22E",
+                      size = 6) +
+    ggplot2::annotate("text",
+                      label = "Control de Probables",
+                      x = 10, 
+                      y = 200,
+                      size = 6,
+                      col = "#6d2d41") +
+    ggplot2::annotate("text",
+                      label = "Control de Brotes",
+                      x = 36, 
+                      y = 200,
+                      size = 6,
+                      col = "#6d2d41")
+```
+
+]
+.pull-right[.panel-name[Nuevo Paradigma]
+&nbsp;
+
+```{r, dpi=300,echo=FALSE, warning=FALSE, message=FALSE}
+# Step 1. load the dataset
+load("C:/Users/HOME/OneDrive/automatic_read_sinave/8.RData/epid_channel_inf.RData")
+
+
+rm(w, y, z)
+
+x <- x |>
+    dplyr::filter(DES_EDO_RES == "VERACRUZ") 
+    
+
+y <- tibble::tibble(SEM = x$SEM,
+                    y = x$q25)
+
+
+# plot risk stratificaction 
+ggplot2::ggplot()+
+    ggplot2::geom_line(data = x, 
+                       ggplot2::aes(x = SEM,
+                                    y = q75),
+                       size = 2,
+                       col = "gray90") +
+    ggplot2::geom_line(data = y, 
+                       ggplot2::aes(x = SEM,
+                                    y = y),
+                       color = "#2EB67D",
+                       size = 2) +
+    ggplot2::ylab("Número de Casos") +
+    ggplot2::xlab("Semanas Epidemiológicas") +
+    ggplot2::geom_vline(xintercept = 25,
+                        color = "#6d2d41", "#36C5F0",
+                        size = 1,
+                        linetype = 2) +
+    ggplot2::annotate("text",
+                      label = "Estratificacion de Riesgo",
+                      x = 10, 
+                      y = 200,
+                      col = "#2EB67D",
+                      size = 6) +
+    ggplot2::annotate("text",
+                      label = "Control Proactivo",
+                      x = 10, 
+                      y = 450,
+                      #text = "risk",
+                      col = "#ECB22E",
+                      size = 6) +
+    ggplot2::annotate("text",
+                      label = "Control Reactivo",
+                      x = 42, 
+                      y = 450,
+                      #text = "risk",
+                      col = "#ECB22E",
+                      size = 6)  +
+    ggplot2::annotate("text",
+                      label = "Control de Probables",
+                      x = 8, 
+                      y = 315,
+                      size = 6,
+                      col = "#36C5F0") +
+    ggplot2::annotate("text",
+                      label = "Control de Probables",
+                      x = 40, 
+                      y = 315,
+                      size = 6,
+                      col = "#36C5F0") +
+    ggplot2::annotate("text",
+                      label = "Rociado Residual +",
+                      x = 10, 
+                      y = 150,
+                      col = "#6d2d41",
+                      size = 6) +
+    ggplot2::annotate("text",
+                      label = "Control Larvario",
+                      x = 10, 
+                      y = 130,
+                      col = "#6d2d41",
+                      size = 6) +
+    ggplot2::annotate("text",
+                      label = "Cadenas de Transmisión +",
+                      x = 40, 
+                      y = 200,
+                      col = "#2EB67D",
+                      size = 6) +
+    ggplot2::annotate("text",
+                      label = "Log Gaussian Cox Process",
+                      x = 40, 
+                      y = 155,
+                      col = "#2EB67D",
+                      size = 6)
+```
+]
+
+.tiny[.blue[.footnote[ Dzul-Manzanilla et al 2021]]]
 
 ---
 ### **Desarrollo en R**
@@ -1262,14 +1422,12 @@ Manuales
 
 Paquetes
 
-- [denhotspots](https://fdzul.github.io/denhotspots/)
-- [deneggs](https://github.com/fdzul/deneggs)
-- [rgeomex](https://github.com/fdzul/rgeomex)
-- [boldenr](https://github.com/fdzul/boldenr)
+- [denhotspots](https://fdzul.github.io/denhotspots/), [deneggs](https://github.com/fdzul/deneggs), [rgeomex](https://github.com/fdzul/rgeomex), & [boldenr](https://github.com/fdzul/boldenr)
 
 Cursos
 
-- [Análisis Espacial del Dengue en R](https://fdzul.github.io/spatial_analysis_dengue_R/) En Honor al difunto Dr. **Leandro Hernández Barrios**
+- [Análisis Espacial del Dengue en R](https://fdzul.github.io/spatial_analysis_dengue_R/) 
+En honor al Dr. **Leandro Hernández Barrios** que en paz descanse.
 
 ---
 ## Dios Botic!
