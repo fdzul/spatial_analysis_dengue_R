@@ -1152,7 +1152,7 @@ deneggs::eggs_hotspots(path_lect = "C:/Users/HOME/Dropbox/cenaprece_datasets/202
 ]
 
 ---
-### **Análisis Geoéstadístico del Vector del Dengue**
+### **Análisis Geoéstadístico y Hotspots del Vector del Dengue**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
 
 .panelset.sideways[
@@ -1196,8 +1196,52 @@ deneggs::eggs_hotspots_intensity_map(spde_betas = x22$betas,
 ]
 
 ---
-### **Estratificación del Riesgo de Transmision**
+### **Análisis Geoéstadístico y Hotspots del Vector del Dengue**
 <hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+
+![](figs/hotspots_eggs_intensity_guadalajara.jpg)
+
+
+---
+class: center, middle
+### **Modelo de Estratificación del Riesgo de Transmisión de Dengue**
+<hr style="height:2px;border-width:0;color:#330019;background-color:#330019">
+&nbsp;
+
+.pull-left[
+.blue[Concepto]
+<img src = "figs/stacked_maps_cases.jpg">
+
+]
+.pull-right[
+.blue[Mapa de Riesgo]
+<img src = "figs/map_risk_guadalajara.jpg">
+]
+
+
+.tiny[.blue[.footnote[Dzul-Manzanilla et al 2021.]]]
+
+
+---
+## Definición del Modelo estratégico de focalización 
+&nbsp;
+
+.pull-left[
+- .red[**Áreas con riesgo muy alto de transmisión**.] Hotposts de casos + hotspots del vector. 
+
+- .orange[**Áreas con riesgo alto de transmisión**.]  Hotspots de transmisión de casos.
+
+- .yellow[**Áreas con riesgo medio de transmisión**.] Hotspots del vector.
+
+- .green[**Áreas con riesgo bajo de transmisión**]. Sin hotspots del vector o hotspots de casos.
+]
+
+.pull-right[
+Guadalajara
+```{r, out.width = "90%", fig.fullwidth =TRUE, fig.width=10, fig.height=2, echo = FALSE, message=FALSE,dpi=300, warning=FALSE}
+knitr::include_graphics("figs/map_risk_guadalajara.jpg")
+```
+]
 
 
 ---
@@ -1207,6 +1251,9 @@ deneggs::eggs_hotspots_intensity_map(spde_betas = x22$betas,
 
 Dashboards
 - [Programa de Prevención y Control de las Arbovirosis del Estado de Yucatan](https://fdzul.github.io/denv_dash_yuc/#cadenas-de-transmisi%C3%B3n)
+
+- [Estratificacion del Riesgo de Transmisión de Dengue del Estado de Veracruz](https://fdzul.github.io/dengue_risk_map_veracruz/#dengue-risk-maps)
+
 
 Manuales
 - [Manual para la identificación de los hotspots en áreas úrbanas](https://fdzul.github.io/manual_hotspots/)
@@ -1222,7 +1269,7 @@ Paquetes
 
 Cursos
 
-- [Análisis Espacial del Dengue en R](https://fdzul.github.io/spatial_analysis_dengue_R/)
+- [Análisis Espacial del Dengue en R](https://fdzul.github.io/spatial_analysis_dengue_R/) En Honor al difunto Dr. **Leandro Hernández Barrios**
 
 ---
 ## Dios Botic!
