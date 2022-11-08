@@ -213,6 +213,8 @@ Felipe Antonio Dzul Manzanilla
 </tbody>
 </table>
 
+- [Análisis Espacial del Dengue en
+  R](https://animated-longma-729cee.netlify.app/talks/spatial_analysis_dengue/#1)
 - [Hotspots de Transmisión del
   Dengue](https://animated-longma-729cee.netlify.app/talks/hotspots_cases/#1)
 - [Hotspots de Transmisión del Dengue en
