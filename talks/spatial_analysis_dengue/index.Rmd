@@ -233,7 +233,9 @@ DiagrammeR::grViz("digraph {
 ```
 ]
 
-.tiny[.blue[.footnote[[Dzul-Manzanilla et al 2021](https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(21)00030-9/fulltext)]]]]
+.tiny[.blue[.footnote[
+[Dzul-Manzanilla et al 2021](https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(21)00030-9/fulltext)
+]]]
 
 
 ---
