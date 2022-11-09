@@ -176,7 +176,7 @@ tibble::tibble(Tema = c("Hotspots de casos",
 
 ## Personal de Apoyo
 
-[Carlos Gastesoro]()
+[Lic. Carlos Alberto García Gastesoro]()
 
 
 ## Encuesta

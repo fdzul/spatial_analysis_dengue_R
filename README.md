@@ -379,7 +379,7 @@ Manzanilla](https://fdzul.github.io/web_site_fadm/)
 
 ## Personal de Apoyo
 
-[Carlos Gastesoro]()
+[Lic. Carlos Alberto García Gastesoro]()
 
 ## Encuesta
 
