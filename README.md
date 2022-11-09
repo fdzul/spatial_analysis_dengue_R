@@ -377,4 +377,10 @@ Manzanilla](https://fdzul.github.io/web_site_fadm/)
 
 [Dr. Angel Arguello]()
 
-## Inscripción
+## Personal de Apoyo
+
+[Carlos Gastesoro]()
+
+## Encuesta
+
+[Formulario](https://forms.gle/BF3heUoEzrwn7XzB8)

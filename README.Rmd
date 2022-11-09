@@ -174,7 +174,12 @@ tibble::tibble(Tema = c("Hotspots de casos",
 
 [Dr. Angel Arguello ]()
 
+## Personal de Apoyo
+
+[Carlos Gastesoro]()
 
 
-## Inscripción 
+## Encuesta
+
+[Formulario](https://forms.gle/BF3heUoEzrwn7XzB8)
 
