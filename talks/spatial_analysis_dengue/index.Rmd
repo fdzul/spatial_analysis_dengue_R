@@ -233,7 +233,7 @@ DiagrammeR::grViz("digraph {
 ```
 ]
 
-.tiny[.blue[.footnote[ Dzul-Manzanilla et al 2021]]]
+.tiny[.blue[.footnote[[Dzul-Manzanilla et al 2021](https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(21)00030-9/fulltext)]]]]
 
 
 ---
@@ -411,7 +411,7 @@ DiagrammeR::grViz("digraph {
 ```
 ]
 
-.tiny[.blue[.footnote[Moraga, 2020]]]
+.tiny[.blue[.footnote[ [Moraga, 2020](https://journal.r-project.org/archive/2021/RJ-2021-017/RJ-2021-017.pdf) ]]]
 
 
 
@@ -1402,7 +1402,7 @@ ggplot2::ggplot()+
 ```
 ]
 
-.tiny[.blue[.footnote[ Dzul-Manzanilla et al 2021]]]
+.tiny[.blue[.footnote[[Dzul-Manzanilla et al 2021](https://www.thelancet.com/journals/lanplh/article/PIIS2542-5196(21)00030-9/fulltext)]]]
 
 ---
 ### **Desarrollo en R**
