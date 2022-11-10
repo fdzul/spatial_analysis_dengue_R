@@ -183,3 +183,5 @@ tibble::tibble(Tema = c("Hotspots de casos",
 
 [Formulario](https://forms.gle/BF3heUoEzrwn7XzB8)
 
+## [Recursos](https://github.com/fdzul/carpetas_curso)
+
