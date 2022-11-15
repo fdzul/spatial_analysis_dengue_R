@@ -386,5 +386,3 @@ Manzanilla](https://fdzul.github.io/web_site_fadm/)
 [Formulario](https://forms.gle/BF3heUoEzrwn7XzB8)
 
 ## [Recursos](https://github.com/fdzul/carpetas_curso)
-
-\$$$$AIzaSyC45yKgiBGZE8N71ivuIsRxXJMQlIX4qA8$$\$\$
